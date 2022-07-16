@@ -1,2 +1,1 @@
-# magnit
-Site for Magnit Developer
+### Magnit
