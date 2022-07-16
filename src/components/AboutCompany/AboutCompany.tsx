@@ -5,6 +5,7 @@ TextContainer, TextBlock, TextsBlocks, NumberSection, SumTitle, SumDesc
 } from "./AboutCompany.styles";
 import { text } from "../../utils/Text";
 import {AboutCompanyNumbers} from "./AboutCompany.constants";
+import PartnerBlock from "./PartnerBlock/PartnerBlock";
 
 const AboutCompany = () => {
 
@@ -17,14 +18,15 @@ const AboutCompany = () => {
           <TextBlock>{text.TEXT_BLOCK2}</TextBlock>
         </TextContainer>
         <TextContainer>
-          {AboutCompanyNumbers.map((el) => (
-            <NumberSection>
+          {AboutCompanyNumbers.map((el, i) => (
+            <NumberSection key={i}>
               <SumTitle>{el.sum}</SumTitle>
               <SumDesc>{el.description}</SumDesc>
             </NumberSection>
           ))}
         </TextContainer>
       </TextsBlocks>
+      <PartnerBlock />
     </Container>
   )
 }

@@ -55,7 +55,6 @@ body {
 
 img {
   display: block;
-  width: 100%;
   object-fit: cover;
 }
 
@@ -66,7 +65,7 @@ img {
   --container-width-sm: 90%;
   --greyColorText: rgba(255, 255, 255, 0.6);
   --blueColor: #4DB5FF;
-  --backgroundWhite: #F7F8F9;
+  --backgroundWhite: #FFF;
   --mainColor: #022346;
 }
 
