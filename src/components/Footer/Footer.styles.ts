@@ -5,9 +5,10 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export const StyledFooter = styled.footer`
   background-color: ${theme.backgroundColor};
-  padding: 30px 60px;
+  padding: 60px 30px;
   display: flex;
   justify-content: space-between;
+	color: #FFF;
 `;
 
 export const Container = styled.div`
@@ -24,6 +25,7 @@ export const Logo = styled.div`
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
+  margin: 40px 0;
 `;
 
 export const List = styled.ul`
@@ -34,7 +36,7 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  margin: 0 20px 0 0;
+  margin: 0 60px 0 0;
 
 `;
 
@@ -42,6 +44,7 @@ export const Link = styled(AnchorLink)`
   margin: 0;
   text-transform: uppercase;
   font-size: 1rem;
+  line-height: 1;
   font-weight: 400;
   color: #FFF;
   position: relative;
@@ -65,3 +68,30 @@ export const Link = styled(AnchorLink)`
     transform: scaleX(1);
   }
 `;
+
+export const Copyright = styled.p`
+	font-size: 1rem;
+  line-height: 1;
+`
+
+export const RowContainer = styled.div`
+	display: grid;
+	gap: 30px 60px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+`
+
+export const Number = styled.p`
+	font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 600;
+`
+
+export const LinksContainer = styled.div`
+
+`
+
+export const SocialLink = styled.img`
+	width: 30px;
+  height: 30px;
+`
