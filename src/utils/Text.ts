@@ -33,4 +33,8 @@ export const text = {
 
   COPYRIGHT: '2022 Строительная компания МАГНИТ. Все права защищены',
   PHONE_NUMBER: '+7 (910) 123-45-67',
+  ADDRESS: 'Адрес:',
+  ADDRESS_TEXT: 'Россия, г. Краснодар, ул. Название улицы, 238, оф. 8782',
+  EMAIL: 'E-mail:',
+  EMAIL_TEXT: 'info@mywd-design.ru',
 };

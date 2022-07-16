@@ -8,7 +8,7 @@ export const StyledFooter = styled.footer`
   padding: 60px 30px;
   display: flex;
   justify-content: space-between;
-	color: #FFF;
+  color: #fff;
 `;
 
 export const Container = styled.div`
@@ -37,7 +37,6 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   margin: 0 60px 0 0;
-
 `;
 
 export const Link = styled(AnchorLink)`
@@ -46,7 +45,7 @@ export const Link = styled(AnchorLink)`
   font-size: 1rem;
   line-height: 1;
   font-weight: 400;
-  color: #FFF;
+  color: #fff;
   position: relative;
   text-decoration: none;
 
@@ -57,7 +56,7 @@ export const Link = styled(AnchorLink)`
     height: 2px;
     bottom: 0;
     margin: -5px 0;
-    background-color: #FFF;
+    background-color: #fff;
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.4s ease-in-out 0s;
@@ -70,28 +69,52 @@ export const Link = styled(AnchorLink)`
 `;
 
 export const Copyright = styled.p`
-	font-size: 1rem;
+  font-size: 1rem;
   line-height: 1;
-`
+`;
 
-export const RowContainer = styled.div`
-	display: grid;
-	gap: 30px 60px;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-`
+export const ContactContainer = styled.div`
+  display: grid;
+  gap: 60px 30px;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(2, min-content);
+`;
 
 export const Number = styled.p`
-	font-size: 2rem;
+  font-size: 2rem;
   line-height: 1.2;
   font-weight: 600;
-`
+`;
 
 export const LinksContainer = styled.div`
-
-`
+  display: flex;
+  align-items: center;
+`;
 
 export const SocialLink = styled.img`
-	width: 30px;
+  width: 30px;
   height: 30px;
-`
+  margin-right: 8px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+`;
+
+export const ColumnContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Title = styled.h4`
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+`;
+export const Paragraph = styled.p`
+  font-size: 1rem;
+  line-height: 1.5;
+	max-width: 286px;
+`;

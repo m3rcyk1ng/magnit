@@ -8,14 +8,20 @@ import {
   ListItem,
   Link,
   Copyright,
-  RowContainer,
+  ContactContainer,
   Number,
   LinksContainer,
-  SocialLink
+  SocialLink,
+  ColumnContainer,
+  Title,
+  Paragraph,
 } from './Footer.styles';
 import { navItems } from '../../utils/NavItems';
 import { text } from '../../utils/Text';
-import WhatsappIcon from '../../assets/images/whatsapp.svg';
+import WhatsappIcon from '../../assets/images/whatsapp-icon.svg';
+import ViberIcon from '../../assets/images/viber-icon.svg';
+import TelegramIcon from '../../assets/images/telegram-icon.svg';
+import IntagramIcon from '../../assets/images/instagram-icon.svg';
 
 function Footer() {
   return (
@@ -35,12 +41,23 @@ function Footer() {
         </Nav>
         <Copyright>&#169; {text.COPYRIGHT}</Copyright>
       </Container>
-      <RowContainer>
+      <ContactContainer>
         <Number>{text.PHONE_NUMBER}</Number>
         <LinksContainer>
-          <SocialLink src={WhatsappIcon}/>
+          <SocialLink src={WhatsappIcon} />
+          <SocialLink src={IntagramIcon} />
+          <SocialLink src={TelegramIcon} />
+          <SocialLink src={ViberIcon} />
         </LinksContainer>
-      </RowContainer>
+        <ColumnContainer>
+          <Title>{text.ADDRESS}</Title>
+          <Paragraph>{text.ADDRESS_TEXT}</Paragraph>
+        </ColumnContainer>
+        <ColumnContainer>
+          <Title>{text.EMAIL}</Title>
+          <Paragraph>{text.EMAIL_TEXT}</Paragraph>
+        </ColumnContainer>
+      </ContactContainer>
     </StyledFooter>
   );
 }
