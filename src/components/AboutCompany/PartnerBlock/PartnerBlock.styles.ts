@@ -41,7 +41,7 @@ export const BackgroundHexagonSecond = styled.div `
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 20px;
+  margin: -30px 20px 0;
   &:hover {
     filter: drop-shadow(0 20px 20px rgba(217, 217, 217, 0.54));
   }
