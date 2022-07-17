@@ -17,8 +17,7 @@ export const TextContainer = styled.div `
 export const TextBlock = styled.div `
   display: block;
   line-height: 2;
-  min-width: 37.5rem;
-  width: 37.5rem;
+  max-width: 37.5rem;
   margin-right: 12rem;
   font-size: 1.125rem;
   &:last-child {
@@ -29,8 +28,9 @@ export const TextBlock = styled.div `
 export const NumberSection = styled.div `
   display: flex;
   flex-direction: column;
-  min-width: 16.5rem;
-  width: 16.5rem;
+  //min-width: 16.5rem;
+  //width: 16.5rem;
+  max-width: 16.5rem;
   border-left: 1px solid var(--mainColor);
 `;
 
