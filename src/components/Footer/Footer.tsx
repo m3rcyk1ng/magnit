@@ -1,12 +1,10 @@
-import React from 'react';
 import {
   StyledFooter,
   Container,
-  Logo,
   Nav,
   List,
   ListItem,
-  Link,
+  StyledLink,
   Copyright,
   ContactContainer,
   Number,
@@ -18,6 +16,7 @@ import {
 } from './Footer.styles';
 import { navItems } from '../../utils/NavItems';
 import { text } from '../../utils/Text';
+import Logo from '../Logo/Logo';
 import WhatsappIcon from '../../assets/images/whatsapp-icon.svg';
 import ViberIcon from '../../assets/images/viber-icon.svg';
 import TelegramIcon from '../../assets/images/telegram-icon.svg';
@@ -32,9 +31,7 @@ function Footer() {
           <List>
             {navItems.map(({ title, path }, i) => (
               <ListItem key={i}>
-                <Link href={path} offset={95}>
-                  {title}
-                </Link>
+                <StyledLink to={path}>{title}</StyledLink>
               </ListItem>
             ))}
           </List>

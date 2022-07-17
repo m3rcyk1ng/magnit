@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 import { theme } from '../../utils/Theme';
 import logo from '../../assets/images/logoWhite.png';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Link } from 'react-router-dom';
 
 export const StyledFooter = styled.footer`
   background-color: ${theme.backgroundColor};
-  padding: 60px 30px;
+  padding: 40px 30px;
   display: flex;
   justify-content: space-between;
   color: #fff;
+  flex-shrink: 0;
 `;
 
 export const Container = styled.div`
@@ -39,7 +40,7 @@ export const ListItem = styled.li`
   margin: 0 60px 0 0;
 `;
 
-export const Link = styled(AnchorLink)`
+export const StyledLink = styled(Link)`
   margin: 0;
   text-transform: uppercase;
   font-size: 1rem;

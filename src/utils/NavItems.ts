@@ -8,8 +8,8 @@ export const navItems = [
 		path: '/about'
 	},
 	{
-		title: 'партнеры',
-		path: '/partners'
+		title: 'о проектах',
+		path: '/projects'
 	},
 	{
 		title: 'вакансии',
