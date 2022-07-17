@@ -6,11 +6,12 @@ import AboutCompany from '../AboutCompany/AboutCompany';
 
 function App() {
   return (
-    <div className="App">
-      {/*<Header />*/}
+    <div className="App" style={{minHeight: '100vh', display: 'flex', flexDirection: 'column'}}>
+      <Header />
       <Routes>
         <Route path="/" element={<AboutCompany />} />
       </Routes>
+      <div style={{flexGrow: '1'}}/>
       {/*<AboutMe />*/}
       <Footer />
     </div>

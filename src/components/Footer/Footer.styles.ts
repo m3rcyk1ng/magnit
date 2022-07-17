@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 
 export const StyledFooter = styled.footer`
   background-color: ${theme.backgroundColor};
-  padding: 60px 30px;
+  padding: 40px 30px;
   display: flex;
   justify-content: space-between;
   color: #fff;
+  flex-shrink: 0;
 `;
 
 export const Container = styled.div`

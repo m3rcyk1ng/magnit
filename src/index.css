@@ -51,6 +51,7 @@ body {
   background: var(--backgroundWhite);
   color: var(--mainColor);
   line-height: 1.2;
+  height: 100%;
 }
 
 img {
