@@ -6,7 +6,7 @@ import {
   Nav,
   List,
   ListItem,
-  Link,
+  StyledLink,
   Copyright,
   ContactContainer,
   Number,
@@ -32,9 +32,9 @@ function Footer() {
           <List>
             {navItems.map(({ title, path }, i) => (
               <ListItem key={i}>
-                <Link href={path} offset={95}>
+                <StyledLink to={path}>
                   {title}
-                </Link>
+                </StyledLink>
               </ListItem>
             ))}
           </List>

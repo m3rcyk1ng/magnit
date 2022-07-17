@@ -11,9 +11,15 @@ export const PartnerLogo = styled.img `
   object-fit: cover;
 `;
 
-export const Row = styled.div `
-  display: flex;
-  flex-direction: row;
+export const FirstRow = styled.div `
+  display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-content: center;
+`;
+
+export const SecondaryRow = styled.div `
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
 `;
 

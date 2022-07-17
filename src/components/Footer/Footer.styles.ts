@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { theme } from '../../utils/Theme';
 import logo from '../../assets/images/logoWhite.png';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Link } from 'react-router-dom';
 
 export const StyledFooter = styled.footer`
   background-color: ${theme.backgroundColor};
@@ -39,7 +39,7 @@ export const ListItem = styled.li`
   margin: 0 60px 0 0;
 `;
 
-export const Link = styled(AnchorLink)`
+export const StyledLink = styled(Link)`
   margin: 0;
   text-transform: uppercase;
   font-size: 1rem;

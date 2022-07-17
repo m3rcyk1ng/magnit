@@ -1,6 +1,6 @@
 import styled from "styled-components";
-// import { theme } from "../../utils/Theme";
-//
+import { theme } from "../../utils/Theme";
+
 // export const ButtonsContainer = styled.div `
 //   display: flex;
 //   justify-content: center;

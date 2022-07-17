@@ -1,12 +1,12 @@
 import React from 'react';
-import { PartnerLogo, BackgroundHexagon, GridContainer, BackgroundHexagonSecond, Row } from './PartnerBlock.styles';
+import { PartnerLogo, BackgroundHexagon, GridContainer, BackgroundHexagonSecond, FirstRow,SecondaryRow  } from './PartnerBlock.styles';
 import { PARTNERS_FIRST_ROW, PARTNERS_SECOND_ROW} from "./PartnerBlock.constants";
 
 const PartnerBlock = () => {
 
   return (
     <GridContainer>
-      <Row>
+      <FirstRow>
       {PARTNERS_FIRST_ROW.map(({name, image, href}, index) => (
         <a key={index} href={href} target='_blank'>
           <BackgroundHexagon>
@@ -14,8 +14,8 @@ const PartnerBlock = () => {
           </BackgroundHexagon>
         </a>
       ))}
-      </Row>
-      <Row>
+      </FirstRow>
+      <SecondaryRow>
         {PARTNERS_SECOND_ROW.map(({name, image, href}, index) => (
           <a key={index} href={href} target='_blank'>
             <BackgroundHexagonSecond>
@@ -23,7 +23,7 @@ const PartnerBlock = () => {
             </BackgroundHexagonSecond>
           </a>
         ))}
-      </Row>
+      </SecondaryRow>
     </GridContainer>
   )
 }

@@ -11,11 +11,6 @@ import { Container } from '../../index.styles';
 //   ScrollDown,
 //   PhotoProfile
 // } from "./Header.styles";
-import { text } from "../../utils/Text";
-import GithubIcon from '../../assets/images/github.svg';
-import TelegramIcon from '../../assets/images/tg.svg'
-import InstIcon from '../../assets/images/inst.svg'
-import ProfilePhoto from '../../assets/images/profile-photo.png'
 
 const Header = () => {
 
