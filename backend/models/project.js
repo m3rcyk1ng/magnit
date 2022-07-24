@@ -1,7 +1,7 @@
 const isUrl = require('validator/lib/isURL');
 const mongoose = require('mongoose');
 
-const cardSchema = new mongoose.Schema({
+const projectSchema = new mongoose.Schema({
 	squareMeters: {
 		type: String,
 		required: true,
@@ -22,14 +22,13 @@ const cardSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	// image: {
-	//   type: String,
-	//   required: true,
-	//   validate: {
-	//     validator: (url) => isUrl(url),
-	//   },
-	// },
-	//
+	image: {
+	  type: String,
+	  required: true,
+	  validate: {
+	    validator: (url) => isUrl(url),
+	  },
+	},
 	name: {
 		type: String,
 		required: true,
@@ -40,4 +39,4 @@ const cardSchema = new mongoose.Schema({
 	},
 });
 
-module.exports = mongoose.model('card', cardSchema);
+module.exports = mongoose.model('projects', projectSchema);

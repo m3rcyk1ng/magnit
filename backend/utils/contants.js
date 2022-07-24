@@ -6,7 +6,7 @@ const options = {
   preflightContinue: false,
   optionsSuccessStatus: 204,
   allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
-  credentials: true,
+  credentials: false, //TODO
 };
 
 module.exports = {

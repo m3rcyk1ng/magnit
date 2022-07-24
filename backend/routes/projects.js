@@ -8,48 +8,38 @@ const {
 } = require('celebrate');
 
 const {
-  getMovies,
-  createMovie,
+  getProjects,
+  createProject,
   deleteMovie,
-} = require('../controllers/cards');
+} = require('../controllers/projects');
 
-const { isURL } = require('../middlewares/validator');
 const urlRegExp = new RegExp('^(?:http(s)?:\\/\\/)?[\\w.-]+(?:\\.[\\w.-]+)+[\\w\\-._~:/?#[\\]@!$&\'()*+,;=.]+$');
 
-router.get('/cards', getMovies);
+router.get('/projects', getProjects);
 
-router.post('/movies', celebrate({
+router.post('/projects', celebrate({
   // валидируем параметры
   body: Joi.object()
     .keys({
-      country: Joi.string()
-        .required(),
-      director: Joi.string()
-        .required(),
-      duration: Joi.number()
+      squareMeters: Joi.string()
         .required(),
       year: Joi.string()
         .required(),
-      description: Joi.string()
+      month: Joi.string()
+        .required(),
+      city: Joi.string()
+        .required(),
+      project: Joi.string()
         .required(),
       image: Joi.string()
         .required()
         .pattern(urlRegExp),
-        // .custom(isURL),
-      trailer: Joi.string()
-        .required()
-        .custom(isURL),
-      thumbnail: Joi.string()
-        .required()
-        .custom(isURL),
-      movieId: Joi.number()
+      name: Joi.string()
         .required(),
-      nameRU: Joi.string()
-        .required(),
-      nameEN: Joi.string()
+      street: Joi.string()
         .required(),
     }),
-}), createMovie);
+}), createProject);
 
 router.delete('/movies/:movieId', celebrate({
   // валидируем параметры

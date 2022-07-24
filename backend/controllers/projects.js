@@ -1,16 +1,16 @@
-const Card = require('../models/card');
+const Project = require('../models/project');
 
 const NotFoundError = require('../errors/not-found-error');
 const BadRequestError = require('../errors/bad-request-error');
 const ForbiddenError = require('../errors/forbidden-error');
 
-module.exports.getCards = (req, res, next) => {
-  Card.find({})
-		.then((cards) => res.status(200).send({data: cards}))
+module.exports.getProjects = (req, res, next) => {
+	Project.find({})
+		.then((projects) => res.status(200).send({data: projects}))
 		.catch(next);
 };
 
-module.exports.createCard = (req, res, next) => {
+module.exports.createProject = (req, res, next) => {
 	const {
 		squareMeters,
 		year,
@@ -20,10 +20,10 @@ module.exports.createCard = (req, res, next) => {
 		image,
 		name,
 		street,
-		cardId,
+		projectId,
 	} = req.body;
 
-  Card.create({
+	Project.create({
 		squareMeters,
 		year,
 		month,
@@ -32,19 +32,19 @@ module.exports.createCard = (req, res, next) => {
 		image,
 		name,
 		street,
-		cardId,
+		projectId,
 	})
-		.then((card) => res.status(200).send({data: card}))
+		.then((project) => res.status(200).send({data: project}))
 		.catch((err) => {
 			if (err.name === 'ValidationError') {
-				next(new BadRequestError('Переданы некорректные данные при создании фильма'));
+				next(new BadRequestError('Переданы некорректные данные при создании проекта'));
 			}
 			next(err);
 		});
 };
 
 module.exports.deleteMovie = (req, res, next) => {
-  Card.findById(req.params.movieId)
+	Project.findById(req.params.movieId)
 		.then((movie) => {
 			if (!movie) {
 				next(new NotFoundError('Фильм с указанным _id не найден'));

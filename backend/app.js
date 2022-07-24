@@ -16,8 +16,8 @@ const { options } = require('./utils/contants');
 const { limiter } = require('./middlewares/limiter');
 
 mongoose.connect(DATA_BASE);
-// app.use('*', cors(options));
-// app.use(cookieParser());
+app.use('*', cors(options));
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet());

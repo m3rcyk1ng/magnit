@@ -37,4 +37,5 @@ export const text = {
   ADDRESS_TEXT: 'Россия, г. Краснодар, ул. Название улицы, 238, оф. 8782',
   EMAIL: 'E-mail:',
   EMAIL_TEXT: 'info@mywd-design.ru',
+  PROJECT: 'Проекты',
 };
