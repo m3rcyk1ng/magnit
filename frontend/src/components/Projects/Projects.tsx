@@ -11,6 +11,7 @@ function Projects() {
     projectApi
       .getProjects()
       .then((projects) => {
+        console.log({projects})
         setProjects(projects.data);
       })
       .catch((err) => {
