@@ -34,6 +34,7 @@ function Projects() {
           key={_id}
         />
       ))}
+      <button>{'Не забудь сделать меня, я кнопка ещё!'}</button>
     </Container>
   );
 }
