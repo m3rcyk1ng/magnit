@@ -5,6 +5,10 @@ export const ProjectContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 80px;
+	&:nth-of-type(2n) {
+		flex-direction: row-reverse;
+	}
 `;
 export const LeftBlock = styled.div`
   display: flex;
