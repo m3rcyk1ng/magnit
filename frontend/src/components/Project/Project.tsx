@@ -9,7 +9,9 @@ import {
   ProjectName,
   StreetText,
   Polygon,
+  Button,
 } from './Project.styles';
+import { text } from '../../utils/Text';
 
 interface IProject {
   month: string;
@@ -40,6 +42,7 @@ function Project(props: IProject) {
       <RigthBlock>
         <ProjectName>{name}</ProjectName>
         <StreetText>{street}</StreetText>
+        <Button>{text.BUTTON_MORE}</Button>
       </RigthBlock>
     </ProjectContainer>
   );

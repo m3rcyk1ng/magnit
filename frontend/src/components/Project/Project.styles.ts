@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import polygon from '../../assets/images/polygon.svg';
+import { theme } from "../../utils/Theme";
 
 export const ProjectContainer = styled.div`
   display: flex;
@@ -64,3 +65,38 @@ export const Polygon = styled.div`
   height: 0.6rem;
   margin-right: 1.25rem;
 `;
+
+export const Button = styled.button`
+  padding: 1.125rem 1.875rem;
+	font-size: 0.875rem;
+  line-height: 1.21;
+  font-weight: 700;
+  text-transform: uppercase;
+	border: 2px solid ${theme.backgroundColor};
+  margin-top: 1.875rem;
+	background-color: transparent;
+	color: ${theme.backgroundColor};
+  position: relative;
+  display: block;
+	
+	&::after {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 0;
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+	
+	&:hover:after {
+    width: 100%;
+  }
+	
+	&:hover {
+		cursor: pointer;
+    background-color: ${theme.backgroundColor};
+    color: ${theme.whiteColor};
+    transition: 0.35s ease;
+	}
+`

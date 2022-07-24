@@ -38,4 +38,5 @@ export const text = {
   EMAIL: 'E-mail:',
   EMAIL_TEXT: 'info@mywd-design.ru',
   PROJECT: 'Проекты',
+  BUTTON_MORE: 'подробнее о проекте',
 };
