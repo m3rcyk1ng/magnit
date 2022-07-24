@@ -7,6 +7,8 @@ import {
   ProjectImage,
   RigthBlock,
   ProjectName,
+  StreetText,
+  Polygon,
 } from './Project.styles';
 
 interface IProject {
@@ -26,15 +28,18 @@ function Project(props: IProject) {
       <LeftBlock>
         <InfoRow>
           <InfoText>{month}</InfoText>
+          <Polygon />
           <InfoText>{year}</InfoText>
+          <Polygon />
           <InfoText>{city}</InfoText>
+          <Polygon />
           <InfoText>{project}</InfoText>
         </InfoRow>
         <ProjectImage src={image} />
       </LeftBlock>
       <RigthBlock>
         <ProjectName>{name}</ProjectName>
-        <InfoText>{street}</InfoText>
+        <StreetText>{street}</StreetText>
       </RigthBlock>
     </ProjectContainer>
   );
