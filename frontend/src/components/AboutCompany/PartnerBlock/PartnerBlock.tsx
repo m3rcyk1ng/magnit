@@ -1,7 +1,8 @@
+import { FunctionComponent } from 'react';
 import { PartnerLogo, BackgroundHexagon, GridContainer, FirstRow } from './PartnerBlock.styles';
-import { PARTNERS_FIRST_ROW } from "./PartnerBlock.constants";
+import { PARTNERS_FIRST_ROW } from './PartnerBlock.constants';
 
-const PartnerBlock = () => {
+const PartnerBlock: FunctionComponent = () => {
 
   return (
     <GridContainer>

@@ -17,14 +17,6 @@ export const FirstRow = styled.div `
 	justify-content: center;
 `;
 
-export const SecondaryRow = styled.div `
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  margin: 0 auto;
-  gap: 0 25px;
-`;
-
 export const BackgroundHexagon = styled.div `
   background-image: url(${HexagonIcon});
   background-size: cover;

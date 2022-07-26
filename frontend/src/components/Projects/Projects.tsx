@@ -1,13 +1,10 @@
+import { FunctionComponent } from "react";
 import { Container } from '../../index.styles';
 import { text } from '../../utils/Text';
-import ProjectCard from '../ProjectCard/ProjectCard';
+import ProjectCard from './ProjectCard/ProjectCard';
+import { IProjects } from "./Project.interfaces";
 
-interface IProjects {
-  projects: any[];
-  onSubmit: any;
-}
-
-function Projects({ projects, onSubmit }: IProjects) {
+const Projects: FunctionComponent<IProjects> = ({ projects, onSubmit }) => {
 
   return (
     <Container>
@@ -22,7 +19,7 @@ function Projects({ projects, onSubmit }: IProjects) {
           street={street}
           year={year}
           key={_id}
-          id={_id}
+          id={_id || ''}
           onSubmit={onSubmit}
         />
       ))}

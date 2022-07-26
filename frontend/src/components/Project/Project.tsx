@@ -1,11 +1,12 @@
+import { FunctionComponent } from 'react';
 import { Container } from '../../index.styles';
 
 interface IProject {
   currentProject: any[];
 }
 
-function Project({ currentProject }: IProject) {
-  console.log({ currentProject });
+const Project: FunctionComponent<IProject> = ({ currentProject }) => {
+  // console.log({ currentProject });
 
   return (
     <Container>

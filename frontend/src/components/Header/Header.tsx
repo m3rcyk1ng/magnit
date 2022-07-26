@@ -1,8 +1,9 @@
+import {FunctionComponent} from 'react';
 import { StyledHeader, Nav, ListItem, List, StyledLink } from './Header.styles';
 import Logo from '../Logo/Logo';
 import { navItems } from '../../utils/NavItems';
 
-const Header = () => {
+const Header: FunctionComponent = () => {
   return (
     <StyledHeader>
       <Logo />

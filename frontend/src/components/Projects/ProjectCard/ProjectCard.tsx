@@ -1,3 +1,4 @@
+import { FunctionComponent } from 'react';
 import {
   ProjectContainer,
   LeftBlock,
@@ -10,22 +11,11 @@ import {
   Polygon,
   Button,
 } from './ProjectCard.styles';
-import { text } from '../../utils/Text';
+import { text } from '../../../utils/Text';
 import { useNavigate } from 'react-router-dom';
+import { IProjectCard } from '../Project.interfaces';
 
-interface IProject {
-  month: string;
-  year: string;
-  city: string;
-  project: string;
-  image: string;
-  street: string;
-  name: string;
-  id: string;
-  onSubmit: any
-}
-
-function ProjectCard(props: IProject) {
+const ProjectCard: FunctionComponent<IProjectCard> = (props) => {
   const { month, year, city, project, image, street, name, id, onSubmit } = props;
   const navigate = useNavigate();
 

@@ -38,6 +38,7 @@ function App() {
           element={<Projects projects={projects} onSubmit={handleFindProjectById} />}
         />
         <Route path="/project" element={<Project currentProject={currentProject} />} />
+        <Route path="/contacts" element={<Project currentProject={currentProject} />} />
       </Routes>
       <div style={{ flexGrow: '1' }} />
       <Footer />

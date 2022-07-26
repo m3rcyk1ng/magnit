@@ -1,3 +1,4 @@
+import { FunctionComponent } from 'react';
 import {
   StyledFooter,
   Container,
@@ -22,7 +23,7 @@ import ViberIcon from '../../assets/images/viber-icon.svg';
 import TelegramIcon from '../../assets/images/telegram-icon.svg';
 import IntagramIcon from '../../assets/images/instagram-icon.svg';
 
-function Footer() {
+const Footer: FunctionComponent = () => {
   return (
     <StyledFooter>
       <Container>

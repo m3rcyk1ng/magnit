@@ -1,22 +1,22 @@
 export const navItems = [
 	{
-		title: 'главная',
+		title: 'Главная',
 		path: '/'
 	},
 	{
-		title: 'о компании',
+		title: 'О компании',
 		path: '/about'
 	},
 	{
-		title: 'о проектах',
+		title: 'О проектах',
 		path: '/projects'
 	},
 	{
-		title: 'вакансии',
+		title: 'Вакансии',
 		path: '/vacancies'
 	},
 	{
-		title: 'контакты',
+		title: 'Контакты',
 		path: '/contacts'
 	},
 ]

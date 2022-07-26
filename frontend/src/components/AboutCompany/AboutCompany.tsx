@@ -1,3 +1,4 @@
+import { FunctionComponent } from 'react';
 import { Container } from '../../index.styles';
 import {
 TextContainer, TextBlock, TextsBlocks, NumberSection, SumTitle, SumDesc
@@ -6,7 +7,7 @@ import { text } from "../../utils/Text";
 import {AboutCompanyNumbers} from "./AboutCompany.constants";
 import PartnerBlock from "./PartnerBlock/PartnerBlock";
 
-const AboutCompany = () => {
+const AboutCompany: FunctionComponent = () => {
 
   return (
     <Container>

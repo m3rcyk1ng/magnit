@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import polygon from '../../assets/images/polygon.svg';
-import { theme } from '../../utils/Theme';
+import polygon from '../../../assets/images/polygon.svg';
+import { theme } from '../../../utils/Theme';
 
 export const ProjectContainer = styled.div`
   display: flex;
