@@ -1,4 +1,3 @@
-import React from 'react';
 import { PartnerLogo, BackgroundHexagon, GridContainer, FirstRow } from './PartnerBlock.styles';
 import { PARTNERS_FIRST_ROW } from "./PartnerBlock.constants";
 

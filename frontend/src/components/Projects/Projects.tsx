@@ -1,29 +1,19 @@
-import React, { useEffect, useState } from 'react';
 import { Container } from '../../index.styles';
 import { text } from '../../utils/Text';
-import { projectApi } from '../../utils/ProjectsApi';
-import Project from '../Project/Project';
+import ProjectCard from '../ProjectCard/ProjectCard';
 
-function Projects() {
-  const [projects, setProjects] = useState([]);
+interface IProjects {
+  projects: any[];
+  onSubmit: any;
+}
 
-  useEffect(() => {
-    projectApi
-      .getProjects()
-      .then((projects) => {
-        console.log({projects})
-        setProjects(projects);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+function Projects({ projects, onSubmit }: IProjects) {
 
   return (
     <Container>
       <h2>{text.PROJECT}</h2>
       {projects?.map(({ project, city, name, month, image, street, year, _id }) => (
-        <Project
+        <ProjectCard
           project={project}
           city={city}
           name={name}
@@ -32,6 +22,8 @@ function Projects() {
           street={street}
           year={year}
           key={_id}
+          id={_id}
+          onSubmit={onSubmit}
         />
       ))}
       <button>{'Не забудь сделать меня, я кнопка ещё!'}</button>

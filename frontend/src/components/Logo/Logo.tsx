@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, StyledLogo } from './Logo.styles';
 
 function Logo() {

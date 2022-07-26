@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyledHeader, Nav, ListItem, List, StyledLink } from './Header.styles';
 import Logo from '../Logo/Logo';
 import { navItems } from '../../utils/NavItems';

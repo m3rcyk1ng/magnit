@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container } from '../../index.styles';
 import {
 TextContainer, TextBlock, TextsBlocks, NumberSection, SumTitle, SumDesc
