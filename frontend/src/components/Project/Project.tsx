@@ -6,6 +6,7 @@ interface IProject {
 
 function Project({ currentProject }: IProject) {
   console.log({ currentProject });
+
   return (
     <Container>
 
