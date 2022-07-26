@@ -3,7 +3,6 @@ import { theme } from '../../utils/Theme';
 
 export const ContactsWrapper = styled.div`
   display: flex;
-  margin-top: 6em;
   margin-bottom: 8em;
   border: 1px red solid;
   width: 100%;
