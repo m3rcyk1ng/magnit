@@ -6,6 +6,7 @@ import Projects from '../Projects/Projects';
 import Project from '../Project/Project';
 import { useEffect, useState } from 'react';
 import { projectApi } from '../../utils/ProjectsApi';
+import Contacts from "../Contacts/Contacts";
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -38,7 +39,7 @@ function App() {
           element={<Projects projects={projects} onSubmit={handleFindProjectById} />}
         />
         <Route path="/project" element={<Project currentProject={currentProject} />} />
-        <Route path="/contacts" element={<Project currentProject={currentProject} />} />
+        <Route path="/contacts" element={<Contacts />} />
       </Routes>
       <div style={{ flexGrow: '1' }} />
       <Footer />

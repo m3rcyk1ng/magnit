@@ -1,21 +1,6 @@
 export const text = {
-  NAME: 'Vova Gridnev',
-  ITS_ME: `Hello, I'm`,
-  FRONTEND_DEV: 'Frontend developer',
-  DOWNLOAD_CV: 'Download CV',
-  CONTACT_ME: 'Contact Me',
-  SCROLL_DOWN: 'Scroll Down →',
-  CORGI_ALT: 'CorgiInSpace',
-  TIME_TO_TELL: 'Time to tell',
-  ABOUT_ME: 'About Me',
-  EXPERIENCE: 'Experience',
-  EXPERIENCE_DESC: 'Frontend: 1 year, SysAdm: 5 years',
-  PROJECTS: 'Projects',
-  PROJECTS_DESC: '10+ completed',
-  EDUCATION: 'Education',
-  EDUCATION_DESC: 'Moscow Polytechnic University & Yandex.Practicum',
-  ABOUT_ALT: 'Corgi developer',
   MAGNIT: 'Magnit',
+  MAGNIT_OOO: 'ООО "Магнит"',
   ABOUT_COMPANY: 'О компании',
   TEXT_BLOCK1:
     'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam beatae cupiditate dolor dolorem earum eius expedita harum impedit incidunt magni mollitia necessitatibus officia provident quisquam reprehenderit repudiandae sed sequi tempore tenetur vel voluptas, voluptatum. Beatae fugit rerum sequi voluptates!',
@@ -38,5 +23,7 @@ export const text = {
   EMAIL: 'E-mail:',
   EMAIL_TEXT: 'info@mywd-design.ru',
   PROJECT: 'Проекты',
-  BUTTON_MORE: 'подробнее о проекте',
+  CONTACTS: 'Контакты',
+  BUTTON_MORE: 'Подробнее о проекте',
+  CONTACT: 'Связаться'
 };
