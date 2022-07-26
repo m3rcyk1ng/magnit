@@ -13,6 +13,7 @@ export const ContactsWrapper = styled.div`
 export const ContactsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: 2em;
 `;
 
 export const ContactTextRow = styled.div`
