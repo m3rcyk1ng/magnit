@@ -41,20 +41,17 @@ router.post('/projects', celebrate({
 				.required(),
 			projectTitle: Joi.string()
 				.required(),
-			projectText: Joi.string(),
-			projectText2: Joi.string(),
-			optText: Joi.string(),
-			optText2: Joi.string(),
-			optText3: Joi.string(),
-			optText4: Joi.string(),
-			imageGallery: Joi.string()
-				.pattern(urlRegExp),
-			imageGallery2: Joi.string()
-				.pattern(urlRegExp),
-			imageGallery3: Joi.string()
-				.pattern(urlRegExp),
-			imageGallery4: Joi.string()
-				.pattern(urlRegExp),
+			projectText: Joi.array()
+        .items(Joi.string().required()),
+			optionalBlock: Joi.array()
+        .items({
+					optionalImage: Joi.string()
+						.pattern(urlRegExp),
+					optionalText: Joi.string()
+				}),
+			imageGallery: Joi.array()
+        .items(Joi.string()
+				.pattern(urlRegExp)),
 		}),
 }), createProject);
 

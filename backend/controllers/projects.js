@@ -21,15 +21,8 @@ module.exports.createProject = (req, res, next) => {
     street,
     projectTitle,
     projectText,
-    projectText2,
-    optText,
-    optText2,
-    optText3,
-    optText4,
+    optionalBlock,
     imageGallery,
-    imageGallery2,
-    imageGallery3,
-    imageGallery4,
     projectId,
   } = req.body;
 
@@ -44,15 +37,8 @@ module.exports.createProject = (req, res, next) => {
     street,
     projectTitle,
     projectText,
-    projectText2,
-    optText,
-    optText2,
-    optText3,
-    optText4,
+    optionalBlock,
     imageGallery,
-    imageGallery2,
-    imageGallery3,
-    imageGallery4,
     projectId,
   })
     .then((project) => res.status(200).send({ data: project }))
