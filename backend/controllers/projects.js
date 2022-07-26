@@ -5,7 +5,7 @@ const BadRequestError = require("../errors/bad-request-error");
 
 module.exports.getProjects = (req, res, next) => {
   Project.find({})
-    .then((projects) => res.status(200).send({ data: projects }))
+    .then((projects) => res.status(200).send(projects))
     .catch(next);
 };
 
@@ -41,7 +41,7 @@ module.exports.createProject = (req, res, next) => {
     imageGallery,
     projectId,
   })
-    .then((project) => res.status(200).send({ data: project }))
+    .then((project) => res.status(200).send(project))
     .catch((err) => {
       if (err.name === "ValidationError") {
         next(
@@ -61,7 +61,7 @@ module.exports.updateProject = (req, res, next) => {
   })
     .then((project) => {
       if (project) {
-        res.status(200).send({ data: project });
+        res.status(200).send(project);
       }
       throw new NotFoundError("Проект с указанным _id не найден");
     })

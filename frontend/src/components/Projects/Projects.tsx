@@ -12,7 +12,7 @@ function Projects() {
       .getProjects()
       .then((projects) => {
         console.log({projects})
-        setProjects(projects.data);
+        setProjects(projects);
       })
       .catch((err) => {
         console.log(err);
