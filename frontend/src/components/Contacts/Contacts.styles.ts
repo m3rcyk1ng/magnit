@@ -4,7 +4,6 @@ import { theme } from '../../utils/Theme';
 export const ContactsWrapper = styled.div`
   display: flex;
   margin-bottom: 8em;
-  border: 1px red solid;
   width: 100%;
   justify-content: right;
 `;

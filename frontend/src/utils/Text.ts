@@ -2,19 +2,26 @@ export const text = {
   MAGNIT: 'Magnit',
   MAGNIT_OOO: 'ООО "Магнит"',
   ABOUT_COMPANY: 'О компании',
-  TEXT_BLOCK1:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam beatae cupiditate dolor dolorem earum eius expedita harum impedit incidunt magni mollitia necessitatibus officia provident quisquam reprehenderit repudiandae sed sequi tempore tenetur vel voluptas, voluptatum. Beatae fugit rerum sequi voluptates!',
-  TEXT_BLOCK2:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam beatae cupiditate dolor dolorem earum eius expedita harum impedit incidunt magni mollitia necessitatibus officia',
-  FIRST_BLOCK_NUMBER: '1029',
-  FIRST_BLOCK_NUMBER_DESC: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-  SECOND_BLOCK_NUMBER: '432',
-  SECOND_BLOCK_NUMBER_DESC: 'Lorem ipsum dolor sit amet',
-  THIRD_BLOCK_NUMBER: '6663',
+  TEXT_BLOCK1: 'Строительная компания «Магнит» работает на рынке с 2001 года. За это время мы сумели существенно поднять свой уровень, собрали команду специалистов, которым интересно решать сложные задачи, успели создать сильную материально-техническую базу. \n' +
+    'Все это позволяет нам развиваться, реализовывать даже самые сложные или нестандартные проекты. Мы уже много лет сотрудничаем с девелоперскими, крупными архитектурными компаниями. \n' +
+    'Основная деятельность компании «Магнит» — полный цикл строительства (от котлована до отделочных работ), а также реконструкция гражданских и промышленных зданий.\n',
+  TEXT_BLOCK2: '«Магнит» предоставляет качественные услуги на строительном рынке, имеет штат специалистов необходимых направленностей, а также современное оборудование, материалы. В работе с партнерами и клиентами мы соблюдаем все условия договора, сдаем все объекты вовремя. \n' +
+    'Сопровождение ведется на каждом этапе строительства. Компания «Магнит» поможет решить все вопросы, связанные с проектированием, а также возведением, реконструкцией зданий. \n',
+  FIRST_BLOCK_NUMBER: '21',
+  FIRST_BLOCK_NUMBER_DESC: 'Именно столько лет компания работает на отечественном рынке, воплощает в жизнь проекты различной сложности. Помогает совершенствовать существующие здания. Проводит реконструкции, улучшая внешний вид улиц. ',
+  SECOND_BLOCK_NUMBER: '5',
+  SECOND_BLOCK_NUMBER_DESC: 'Компания «Магнит» поддерживает в работе строительство зданий в пяти направлениях: \n' +
+    '•\tжилые комплексы;\n' +
+    '•\tбизнес-центры;\n' +
+    '•\tгостиничные комплексы;\n' +
+    '•\tпромышленные объекты;\n' +
+    '•\tобъекты социальной инфраструктуры. \n',
+  THIRD_BLOCK_NUMBER: '27',
   THIRD_BLOCK_NUMBER_DESC:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam',
-  FOURTH_BLOCK_NUMBER: '11',
-  FOURTH_BLOCK_NUMBER_DESC: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+    'Профессионалов в команде. \n' +
+    'Мы уверенны, что каждый сотрудник нашей компании находится на своем месте, вносит неоценимый вклад не только в развитие компании, но также в совершенствование страны. ',
+  FOURTH_BLOCK_NUMBER: '200',
+  FOURTH_BLOCK_NUMBER_DESC: 'Более 200 реализованных объектов и свыше 1000 довольных граждан, которые получили в свое пользование новые, комфортабельные квартиры.',
 
   COPYRIGHT: '2022 Строительная компания МАГНИТ. Все права защищены',
   PHONE_NUMBER: '+7 (910) 123-45-67',

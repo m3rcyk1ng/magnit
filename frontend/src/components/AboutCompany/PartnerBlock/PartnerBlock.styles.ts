@@ -9,11 +9,12 @@ export const GridContainer = styled.div `
 
 export const PartnerLogo = styled.img `
   object-fit: cover;
+  max-width: 250px;
 `;
 
 export const FirstRow = styled.div `
-  display: grid;
-	grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
 	justify-content: center;
 `;
 
