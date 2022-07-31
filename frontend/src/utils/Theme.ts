@@ -4,4 +4,5 @@ export const theme = {
   whiteColor: '#FFFFFF',
   whiteSecondary: '#F7F8F9',
   gray: '#F7F8F9',
+  grayText: '#D9D9D9',
 }

@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import AboutCompany from '../AboutCompany/AboutCompany';
 import Projects from '../Projects/Projects';
 import Project from '../Project/Project';
 import { useEffect, useState } from 'react';
 import { projectApi } from '../../utils/ProjectsApi';
 import Contacts from "../Contacts/Contacts";
 import Vacancies from "../Vacancies/Vacancies";
+import MainPage from "../MainPage/MainPage";
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -35,7 +35,7 @@ function App() {
     <div className="App" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header />
       <Routes>
-        <Route path="/" element={<AboutCompany />} />
+        <Route path="/" element={<MainPage />} />
         <Route
           path="/projects"
           element={<Projects projects={projects} onSubmit={handleFindProjectById} />}

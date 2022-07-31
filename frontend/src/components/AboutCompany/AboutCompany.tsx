@@ -25,14 +25,14 @@ const AboutCompany: FunctionComponent = () => {
       <h2>{text.ABOUT_COMPANY}</h2>
       <TextsBlocks>
         <TextContainer>
-          <TextBlock>{text.TEXT_BLOCK1}</TextBlock>
-          <TextBlock>{text.TEXT_BLOCK2}</TextBlock>
+          <TextBlock>{text.TEXT_BLOCK_FIRST}</TextBlock>
+          <TextBlock>{text.TEXT_BLOCK_SECOND}</TextBlock>
         </TextContainer>
         <TextContainer>
           {AboutCompanyNumbers.map((el, i) => (
             <NumberSection key={i}>
               {Counter(Number(el.sum), i)}
-              <SumDesc isShowDescription={isShowDescription}>{el.description}</SumDesc>
+              <SumDesc isShowDescription={isShowDescription} transition={i + 3}>{el.description}</SumDesc>
             </NumberSection>
           ))}
         </TextContainer>

@@ -40,15 +40,15 @@ export const SumTitle = styled.p`
   line-height: 1.2;
 `;
 
-export const SumDesc = styled.p<{ isShowDescription: boolean }>`
+export const SumDesc = styled.p<{ isShowDescription: boolean, transition: number }>`
   font-size: 1.125rem;
   margin-left: 2rem;
   padding-top: 1.85rem;
   white-space: pre-wrap;
   opacity: 0;
-  transition: opacity 1.5s linear 0.75s;
+  transition: opacity ${(props) => props.transition}s linear 0.75s;
   transform: translateY(-100%);
-  animation: visibleTextAnimation 5s forwards;
+  animation: visibleTextAnimation ${(props) => props.transition}s forwards;
   ${(props) => props.isShowDescription && `
     opacity: 1;
   `};
