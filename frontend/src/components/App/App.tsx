@@ -7,6 +7,7 @@ import Project from '../Project/Project';
 import { useEffect, useState } from 'react';
 import { projectApi } from '../../utils/ProjectsApi';
 import Contacts from "../Contacts/Contacts";
+import Vacancies from "../Vacancies/Vacancies";
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -25,6 +26,7 @@ function App() {
   }, []);
 
   const handleFindProjectById = (id: string) => {
+    // @ts-ignore
     const resProject = projects?.filter((project) => project?._id === id);
     setCurrentProject(resProject);
   };
@@ -39,6 +41,7 @@ function App() {
           element={<Projects projects={projects} onSubmit={handleFindProjectById} />}
         />
         <Route path="/project" element={<Project currentProject={currentProject} />} />
+        <Route path="/vacancies" element={<Vacancies />} />
         <Route path="/contacts" element={<Contacts />} />
       </Routes>
       <div style={{ flexGrow: '1' }} />
