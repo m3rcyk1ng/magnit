@@ -1,11 +1,21 @@
 import styled from 'styled-components';
 import { theme } from '../../utils/Theme';
 
-export const ContactsWrapper = styled.div`
+export const ContactsWrapper = styled.div<{transition: boolean}>`
   display: flex;
   margin-bottom: 8em;
   width: 100%;
   justify-content: right;
+  opacity: 0;
+  transform: translateY(150%);
+  animation: animation 1s forwards;
+  ${(props) => props.transition && `
+    opacity: 1;
+  `};
+  @keyframes animation {
+    0% {transform: translateY(150%);}
+    100% {transform: translateY(0);}
+  }
 `;
 
 export const ContactsContainer = styled.div`
