@@ -13,9 +13,8 @@ import {
 } from './ProjectCard.styles';
 import { text } from '../../../utils/Text';
 import { useNavigate } from 'react-router-dom';
-import { IProjectCard } from '../Project.interfaces';
 
-const ProjectCard: FunctionComponent<IProjectCard> = (props) => {
+const ProjectCard: FunctionComponent<any> = (props) => {
   const { month, year, city, project, image, street, name, id, onSubmit } = props;
   const navigate = useNavigate();
 

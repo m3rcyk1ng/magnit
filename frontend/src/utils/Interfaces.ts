@@ -1,3 +1,3 @@
 export interface I {
-  name: string
+  name: string;
 }

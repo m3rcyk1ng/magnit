@@ -19,7 +19,7 @@ const Projects: FunctionComponent<IProjects> = ({ projects, onSubmit }) => {
           street={street}
           year={year}
           key={_id}
-          id={_id || ''}
+          id={_id}
           onSubmit={onSubmit}
         />
       ))}

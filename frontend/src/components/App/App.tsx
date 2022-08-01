@@ -5,9 +5,9 @@ import Projects from '../Projects/Projects';
 import Project from '../Project/Project';
 import { useEffect, useState } from 'react';
 import { projectApi } from '../../utils/ProjectsApi';
-import Contacts from "../Contacts/Contacts";
-import Vacancies from "../Vacancies/Vacancies";
-import MainPage from "../MainPage/MainPage";
+import Contacts from '../Contacts/Contacts';
+import Vacancies from '../Vacancies/Vacancies';
+import MainPage from '../MainPage/MainPage';
 
 function App() {
   const [projects, setProjects] = useState([]);

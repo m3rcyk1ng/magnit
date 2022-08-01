@@ -3,15 +3,25 @@ export interface IProjects {
   onSubmit: any;
 }
 
+export interface IOptionalBlock {
+  optionalImage: string;
+  optionalText: string;
+  _id: string;
+}
+
 export interface IProjectCard {
-  month: string;
-  year: string;
   city: string;
-  project: string;
   image: string;
-  street: string;
+  imageGallery?: string[];
+  month: string;
   name: string;
-  id: string;
-  onSubmit: any;
-  _id?: string | undefined;
+  optionalBlock?: IOptionalBlock[];
+  project: string;
+  projectText?: string[];
+  projectTitle?: string;
+  squareMeters: string;
+  street: string;
+  year: string;
+  __v?: number;
+  _id: string | undefined;
 }
