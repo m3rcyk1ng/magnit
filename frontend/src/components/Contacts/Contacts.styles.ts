@@ -5,7 +5,6 @@ export const ContactsWrapper = styled.div<{transition: boolean}>`
   display: flex;
   margin-bottom: 8em;
   width: 100%;
-  justify-content: right;
   opacity: 0;
   transform: translateY(150%);
   animation: animation 1s forwards;
