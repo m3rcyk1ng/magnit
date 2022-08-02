@@ -35,6 +35,9 @@ router.post('/projects', celebrate({
 			image: Joi.string()
 				.required()
 				.pattern(urlRegExp),
+			url: Joi.string()
+				.required()
+				.pattern(urlRegExp),
 			name: Joi.string()
 				.required(),
 			street: Joi.string()

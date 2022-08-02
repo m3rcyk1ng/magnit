@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect } from 'react';
+import { FunctionComponent } from 'react';
 import { Container } from '../../index.styles';
 import {
   Preview,
@@ -14,14 +14,14 @@ import {
   RowContainer,
   ImagesContainer,
   BlockImage,
+  ButtonBack,
 } from './Project.styles';
-import {} from '../AboutCompany/AboutCompany.styles';
+import { useNavigate } from 'react-router-dom';
+import BackButton from '../../assets/images/back-button.svg';
 
 const Project: FunctionComponent<any> = ({ currentProject }) => {
-  // console.log(currentProject.currentProject?.projectText);
   const {
     name,
-    city,
     image,
     street,
     year,
@@ -30,32 +30,22 @@ const Project: FunctionComponent<any> = ({ currentProject }) => {
     projectText,
     optionalBlock,
     imageGallery,
+    url,
   } = currentProject[0];
 
-  const img1 = imageGallery[0];
+  const navigate = useNavigate();
 
-//   useEffect(() => {
-//     console.log('hello', currentProject.name);
-//     currentProject.map((el: any) => {
-//       console.log('name', el.name);
-//     });
-//   }, [currentProject]);
-// console.log('imageGallery[0]', imageGallery[0])
-
-
-  useEffect(() => {
-    console.log(imageGallery)
-  }, [imageGallery])
   return (
     <>
       <Preview image={image}>
+        <ButtonBack onClick={() => navigate(-1)}><img src={BackButton} alt={'стрелка'}/>назад</ButtonBack>
         <Block>
           <Title>{name}</Title>
           <InfoBlock>
             <p>{street}</p>
             <p>{year}</p>
             <p>{squareMeters}</p>
-            <p>{year}</p>
+            <p>{url}:</p>
           </InfoBlock>
           <Button>Задать вопрос</Button>
         </Block>
@@ -81,14 +71,12 @@ const Project: FunctionComponent<any> = ({ currentProject }) => {
         </TextsBlocks>
       </Container>
       <ImagesContainer>
-        {/*{imageGallery.forEach((el) => (*/}
-        {/*  <BlockImage image={el} />*/}
-        {/*))}*/}
-        <BlockImage className="img1" image={'https://bit.ly/3oNjmdG'} />
-        <BlockImage className="img2" image={'https://bit.ly/3oNjmdG'} />
-        <BlockImage className="img3" image={'https://bit.ly/3oNjmdG'} />
-        <BlockImage className="img4" image={'https://bit.ly/3oNjmdG'} />
+        <BlockImage className="img1" image={imageGallery[0]} />
+        <BlockImage className="img2" image={imageGallery[1]} />
+        <BlockImage className="img3" image={imageGallery[2]} />
+        <BlockImage className="img4" image={imageGallery[3]} />
       </ImagesContainer>
+      <ButtonBack onClick={() => navigate(-1)}>назад к проектам</ButtonBack>
     </>
   );
 };

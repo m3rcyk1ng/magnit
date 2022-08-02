@@ -3,14 +3,18 @@ import { theme } from '../../utils/Theme';
 
 export const Preview = styled.div<{ image: string }>`
   background-image: url(${(props) => props.image});
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
+  height: 100vh;
 `;
 
 export const Block = styled.div`
   width: 660px;
-  height: 1024px;
+  height: 100%;
   padding: 110px 60px;
   background-color: rgba(2, 35, 70, 0.9);
   text-transform: uppercase;
@@ -97,8 +101,9 @@ export const RowContainer = styled.div`
 `;
 
 export const ImagesContainer = styled.div`
+  padding: 0 1.875rem;
   width: 100%;
-	height: 100%;
+  height: 1000px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -108,8 +113,8 @@ export const ImagesContainer = styled.div`
     'img1 img4 img4';
 
   .img1 {
-		width: 100%;
-		height: 100%;
+    width: 100%;
+    height: 100%;
     grid-area: img1;
   }
 
@@ -132,9 +137,36 @@ export const ImagesContainer = styled.div`
   }
 `;
 
-export const BlockImage = styled.div<{image: string}>`
+export const BlockImage = styled.div<{ image: string }>`
   background-image: url(${(props) => props.image});
-	
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 100%;
-`
+`;
+
+export const ButtonBack = styled.button`
+  display: flex;
+  font-size: 1.3125rem;
+  line-height: 1.22;
+  text-transform: uppercase;
+  margin: 3.125rem 1.875rem 7.5rem;
+  background-color: transparent;
+  text-align: left;
+  color: ${theme.backgroundColor};
+  font-weight: 700;
+  transition: opacity 0.1s ease-in;
+
+  img {
+    margin-right: 0.8rem;
+  }
+
+  &:first-child {
+    color: ${theme.whiteColor};
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+`;

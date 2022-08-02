@@ -29,6 +29,13 @@ const projectSchema = new mongoose.Schema({
 	    validator: (url) => isUrl(url),
 	  },
 	},
+	url: {
+		type: String,
+		required: true,
+		validate: {
+			validator: (url) => isUrl(url),
+		},
+	},
 	name: {
 		type: String,
 		required: true,
