@@ -13,8 +13,8 @@ import { text } from '../../../utils/Text';
 import { useNavigate } from 'react-router-dom';
 import Frame from '../../../assets/images/frame.png';
 
-const VacancyCard: FunctionComponent<any> = (props, onSubmit) => {
-  const { image, name, education, experience, salary, id } = props;
+const VacancyCard: FunctionComponent<any> = (props) => {
+  const { image, name, education, experience, salary, id, onSubmit } = props;
   const navigate = useNavigate();
 
   const toPrecision = (num: number | string, delimiter?: boolean) => {
@@ -25,7 +25,7 @@ const VacancyCard: FunctionComponent<any> = (props, onSubmit) => {
 
   const handleNavigate = () => {
     onSubmit(id);
-    navigate('/vacancy/');
+    navigate('/vacancy');
   };
 
   const formattedSalary = (` ${toPrecision(salary, false)} ${text.RUB}`).toUpperCase();

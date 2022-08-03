@@ -16,6 +16,8 @@ function App() {
   const [vacancies, setVacancies] = useState([]);
   const [currentProject, setCurrentProject] = useState([]);
   const [currentVacancy, setCurrentVacancy] = useState([]);
+  const [projectId, setProjectId] = useState('');
+  const [vacancyId, setVacancyId] = useState('');
 
   useEffect(() => {
     projectApi
@@ -43,20 +45,16 @@ function App() {
     // @ts-ignore
     const resProject = projects?.filter((project) => project?._id === id);
     setCurrentProject(resProject);
+    setProjectId(id);
   };
-
-  useEffect(() => {
-    console.log('currentVacancy', currentVacancy);
-  }, [currentVacancy])
 
   const handleFindVacancyById = (id: string) => {
-    console.log('id', id);
     // @ts-ignore
-    const resProject = projects?.filter((vacancy) => vacancy?._id === id);
-    console.log('resProject', resProject);
-    setCurrentVacancy(resProject);
+    const resVacancy = vacancies?.filter((vacancy) => vacancy?._id === id);
+    setCurrentVacancy(resVacancy);
+    setVacancyId(id);
   };
-  console.log('currentVacancy', currentVacancy);
+
   return (
     <div className="App" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header />
@@ -66,9 +64,9 @@ function App() {
           path="/projects"
           element={<Projects projects={projects} onSubmit={handleFindProjectById} />}
         />
-        <Route path="/project" element={<Project currentProject={currentProject} />} />
+        <Route path={`/project/${projectId}`} element={<Project currentProject={currentProject} />} />
         <Route path="/vacancies" element={<Vacancies vacancies={vacancies} onSubmit={handleFindVacancyById} />} />
-        <Route path="/vacancy" element={<Vacancy vacancies={currentVacancy} />} />
+        <Route path={`/vacancy/${vacancyId}`} element={<Vacancy currentVacancy={currentVacancy} />} />
         <Route path="/contacts" element={<Contacts />} />
       </Routes>
       <div style={{ flexGrow: '1' }} />

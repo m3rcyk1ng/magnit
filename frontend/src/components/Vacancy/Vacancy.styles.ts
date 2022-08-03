@@ -8,3 +8,8 @@ export const VacancyContainer = styled.div`
   margin-bottom: 7.5em;
   padding-right: 30px;
 `;
+
+export const Section = styled.section`
+	display: flex;
+	flex-direction: column;
+`

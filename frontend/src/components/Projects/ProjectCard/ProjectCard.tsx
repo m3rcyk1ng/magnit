@@ -18,9 +18,9 @@ const ProjectCard: FunctionComponent<any> = (props) => {
   const { month, year, city, project, image, street, name, id, onSubmit } = props;
   const navigate = useNavigate();
 
-  const handleNavigate = () => {
+  const handleCardClick = () => {
     onSubmit(id);
-    navigate('/project');
+    navigate(`/project/${id}`);
   };
 
   return (
@@ -36,7 +36,7 @@ const ProjectCard: FunctionComponent<any> = (props) => {
           <InfoText>{project}</InfoText>
         </InfoRow>
         <ImageContainer img={image}>
-          <Button onClick={handleNavigate}>{text.BUTTON_MORE}</Button>
+          <Button onClick={handleCardClick}>{text.BUTTON_MORE}</Button>
         </ImageContainer>
       </LeftBlock>
       <RigthBlock>

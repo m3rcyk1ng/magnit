@@ -1,15 +1,17 @@
 import React, { FunctionComponent } from 'react';
 import {
-  VacancyContainer
+  VacancyContainer,
+  Section
 } from './Vacancy.styles';
 import { text } from '../../utils/Text';
 import { useNavigate } from 'react-router-dom';
 import Frame from '../../assets/images/frame.png';
 import { Container } from '../../index.styles';
 
-const Vacancy: FunctionComponent<any> = (props) => {
-  const { image, name, education, experience, salary, onSubmit, id } = props;
-  const navigate = useNavigate();
+const Vacancy: FunctionComponent<any> = ({ currentVacancy }) => {
+
+  console.log({currentVacancy})
+  const { name } = currentVacancy[0];
 
   const toPrecision = (num: number | string, delimiter?: boolean) => {
     const parts = Number(num).toFixed(2).split('.');
@@ -19,8 +21,9 @@ const Vacancy: FunctionComponent<any> = (props) => {
 
   return (
     <Container>
-    <h2>{name.toUpperCase()}</h2>
-
+      <Section>
+        <h2>{name}</h2>
+      </Section>
     </Container>
   );
 }
