@@ -8,17 +8,31 @@ import { projectApi } from '../../utils/ProjectsApi';
 import Contacts from '../Contacts/Contacts';
 import Vacancies from '../Vacancies/Vacancies';
 import MainPage from '../MainPage/MainPage';
+import {vacanciesApi} from "../../utils/VacanciesApi";
+import Vacancy from "../Vacancy/Vacancy";
 
 function App() {
   const [projects, setProjects] = useState([]);
+  const [vacancies, setVacancies] = useState([]);
   const [currentProject, setCurrentProject] = useState([]);
+  const [currentVacancy, setCurrentVacancy] = useState([]);
 
   useEffect(() => {
     projectApi
       .getProjects()
       .then((projects) => {
-        console.log({ projects });
         setProjects(projects);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  useEffect(() => {
+    vacanciesApi
+      .getVacancies()
+      .then((vacancies) => {
+        setVacancies(vacancies);
       })
       .catch((err) => {
         console.log(err);
@@ -31,6 +45,18 @@ function App() {
     setCurrentProject(resProject);
   };
 
+  useEffect(() => {
+    console.log('currentVacancy', currentVacancy);
+  }, [currentVacancy])
+
+  const handleFindVacancyById = (id: string) => {
+    console.log('id', id);
+    // @ts-ignore
+    const resProject = projects?.filter((vacancy) => vacancy?._id === id);
+    console.log('resProject', resProject);
+    setCurrentVacancy(resProject);
+  };
+  console.log('currentVacancy', currentVacancy);
   return (
     <div className="App" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header />
@@ -41,7 +67,8 @@ function App() {
           element={<Projects projects={projects} onSubmit={handleFindProjectById} />}
         />
         <Route path="/project" element={<Project currentProject={currentProject} />} />
-        <Route path="/vacancies" element={<Vacancies />} />
+        <Route path="/vacancies" element={<Vacancies vacancies={vacancies} onSubmit={handleFindVacancyById} />} />
+        <Route path="/vacancy" element={<Vacancy vacancies={currentVacancy} />} />
         <Route path="/contacts" element={<Contacts />} />
       </Routes>
       <div style={{ flexGrow: '1' }} />

@@ -35,5 +35,11 @@ export const text = {
   PROJECT: 'Проекты',
   CONTACTS: 'Контакты',
   BUTTON_MORE: 'Подробнее о проекте',
-  CONTACT: 'Связаться'
+  VACANCY_MORE: 'Подробнее о вакансии',
+  VACANCIES: 'Вакансии',
+  CONTACT: 'Связаться',
+  SALARY: 'Зар. плата',
+  EDUCATION: 'Образование',
+  EXP: 'Опыт работы',
+  RUB: 'Руб'
 };
