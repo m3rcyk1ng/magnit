@@ -5,7 +5,7 @@ export const navItems = [
 	},
 	{
 		title: 'О компании',
-		path: '/about'
+		path: '/#about'
 	},
 	{
 		title: 'О проектах',

@@ -21,7 +21,7 @@ const AboutCompany: FunctionComponent = () => {
   }
 
   return (
-    <Container>
+    <Container id="about">
       <h2>{text.ABOUT_COMPANY}</h2>
       <TextsBlocks>
         <TextContainer>
