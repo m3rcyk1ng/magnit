@@ -1,6 +1,5 @@
 export interface IProjects {
   projects: IProjectCard[];
-  onSubmit: any;
 }
 
 export interface IOptionalBlock {

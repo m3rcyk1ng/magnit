@@ -14,9 +14,7 @@ import Vacancy from "../Vacancy/Vacancy";
 function App() {
   const [projects, setProjects] = useState([]);
   const [vacancies, setVacancies] = useState([]);
-  const [currentProject, setCurrentProject] = useState([]);
   const [currentVacancy, setCurrentVacancy] = useState([]);
-  const [projectId, setProjectId] = useState('');
   const [vacancyId, setVacancyId] = useState('');
 
   useEffect(() => {
@@ -41,13 +39,6 @@ function App() {
       });
   }, []);
 
-  const handleFindProjectById = (id: string) => {
-    // @ts-ignore
-    const resProject = projects?.filter((project) => project?._id === id);
-    setCurrentProject(resProject);
-    setProjectId(id);
-  };
-
   const handleFindVacancyById = (id: string) => {
     // @ts-ignore
     const resVacancy = vacancies?.filter((vacancy) => vacancy?._id === id);
@@ -62,9 +53,9 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route
           path="/projects"
-          element={<Projects projects={projects} onSubmit={handleFindProjectById} />}
+          element={<Projects projects={projects} />}
         />
-        <Route path={`/project/${projectId}`} element={<Project currentProject={currentProject} />} />
+        <Route path={`/projects/:id`} element={<Project projects={projects}/>} />
         <Route path="/vacancies" element={<Vacancies vacancies={vacancies} onSubmit={handleFindVacancyById} />} />
         <Route path={`/vacancy/${vacancyId}`} element={<Vacancy currentVacancy={currentVacancy} />} />
         <Route path="/contacts" element={<Contacts />} />

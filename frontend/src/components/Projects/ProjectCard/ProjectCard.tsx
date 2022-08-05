@@ -15,12 +15,11 @@ import { text } from '../../../utils/Text';
 import { useNavigate } from 'react-router-dom';
 
 const ProjectCard: FunctionComponent<any> = (props) => {
-  const { month, year, city, project, image, street, name, id, onSubmit } = props;
+  const { month, year, city, project, image, street, name, id } = props;
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    onSubmit(id);
-    navigate(`/project/${id}`);
+    navigate(`/projects/${id}`);
   };
 
   return (

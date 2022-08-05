@@ -4,7 +4,7 @@ import { text } from '../../utils/Text';
 import ProjectCard from './ProjectCard/ProjectCard';
 import { IProjects } from "./Project.interfaces";
 
-const Projects: FunctionComponent<IProjects> = ({ projects, onSubmit }) => {
+const Projects: FunctionComponent<IProjects> = ({ projects }) => {
 
   return (
     <Container>
@@ -20,7 +20,6 @@ const Projects: FunctionComponent<IProjects> = ({ projects, onSubmit }) => {
           year={year}
           key={_id}
           id={_id}
-          onSubmit={onSubmit}
         />
       ))}
       <button>{'Не забудь сделать меня, я кнопка ещё!'}</button>

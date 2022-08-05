@@ -16,52 +16,47 @@ import {
   BlockImage,
   ButtonBack,
 } from './Project.styles';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import BackButton from '../../assets/images/back-button.svg';
 
-const Project: FunctionComponent<any> = ({ currentProject }) => {
-  const {
-    name,
-    image,
-    street,
-    year,
-    squareMeters,
-    projectTitle,
-    projectText,
-    optionalBlock,
-    imageGallery,
-    url,
-  } = currentProject[0];
-
+const Project: FunctionComponent<any> = ({ projects }) => {
+  let { id } = useParams();
   const navigate = useNavigate();
+
+  const currentProject = projects?.filter(
+    (project: { _id: string | undefined }) => project._id === id,
+  );
 
   return (
     <>
-      <Preview image={image}>
-        <ButtonBack onClick={() => navigate(-1)}><img src={BackButton} alt={'стрелка'}/>назад</ButtonBack>
+      <Preview image={currentProject[0]?.image}>
+        <ButtonBack onClick={() => navigate(-1)}>
+          <img src={BackButton} alt={'стрелка'} />
+          назад
+        </ButtonBack>
         <Block>
-          <Title>{name}</Title>
+          <Title>{currentProject[0]?.name}</Title>
           <InfoBlock>
-            <p>{street}</p>
-            <p>{year}</p>
-            <p>{squareMeters}</p>
-            <p>{url}:</p>
+            <p>{currentProject[0]?.street}</p>
+            <p>{currentProject[0]?.year}</p>
+            <p>{currentProject[0]?.squareMeters}</p>
+            <p>{currentProject[0]?.rl}:</p>
           </InfoBlock>
           <Button>Задать вопрос</Button>
         </Block>
       </Preview>
       <Container>
-        <h2 style={{ border: 'none', maxWidth: '99%' }}>{projectTitle}</h2>
+        <h2 style={{ border: 'none', maxWidth: '99%' }}>{currentProject[0]?.projectTitle}</h2>
         <TextsBlocks>
           <TextContainer>
-            {projectText.map((text: string) => (
+            {currentProject[0]?.projectText?.map((text: string) => (
               <TextBlock>{text}</TextBlock>
             ))}
           </TextContainer>
         </TextsBlocks>
         <TextsBlocks>
           <RowContainer>
-            {optionalBlock.map(({ optionalImage, optionalText, _id }: any) => (
+            {currentProject[0]?.optionalBlock?.map(({ optionalImage, optionalText, _id }: any) => (
               <Box key={`id-${_id}`}>
                 <Image image={optionalImage} />
                 <p>{optionalText}</p>
@@ -71,10 +66,10 @@ const Project: FunctionComponent<any> = ({ currentProject }) => {
         </TextsBlocks>
       </Container>
       <ImagesContainer>
-        <BlockImage className="img1" image={imageGallery[0]} />
-        <BlockImage className="img2" image={imageGallery[1]} />
-        <BlockImage className="img3" image={imageGallery[2]} />
-        <BlockImage className="img4" image={imageGallery[3]} />
+        <BlockImage className="img1" image={currentProject[0]?.imageGallery[0]} />
+        <BlockImage className="img2" image={currentProject[0]?.imageGallery[1]} />
+        <BlockImage className="img3" image={currentProject[0]?.imageGallery[2]} />
+        <BlockImage className="img4" image={currentProject[0]?.imageGallery[3]} />
       </ImagesContainer>
       <ButtonBack onClick={() => navigate(-1)}>назад к проектам</ButtonBack>
     </>
