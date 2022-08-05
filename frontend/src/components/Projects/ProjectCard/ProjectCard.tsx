@@ -19,7 +19,7 @@ const ProjectCard: FunctionComponent<any> = (props) => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate(`/projects/${id}`);
+    navigate(`/project/${id}`);
   };
 
   return (

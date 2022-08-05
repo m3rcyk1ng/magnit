@@ -55,7 +55,7 @@ function App() {
           path="/projects"
           element={<Projects projects={projects} />}
         />
-        <Route path={`/projects/:id`} element={<Project projects={projects}/>} />
+        <Route path={`/project/:id`} element={<Project projects={projects}/>} />
         <Route path="/vacancies" element={<Vacancies vacancies={vacancies} onSubmit={handleFindVacancyById} />} />
         <Route path={`/vacancy/${vacancyId}`} element={<Vacancy currentVacancy={currentVacancy} />} />
         <Route path="/contacts" element={<Contacts />} />
