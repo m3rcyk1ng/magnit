@@ -23,6 +23,11 @@ export const ContactsContainer = styled.div`
   margin-left: 2em;
 `;
 
+export const LocationWrapper = styled.div`
+  width: 1230px;
+  height: 592px;
+`;
+
 export const ContactTextRow = styled.div`
   display: block;
   margin-bottom: 2em;

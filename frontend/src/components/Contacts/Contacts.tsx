@@ -6,6 +6,7 @@ import {
   ContactTextRow,
   ContactsContainer,
   ContactButton,
+  LocationWrapper,
 } from './Contacts.styles';
 import { CONTACTS } from './Contacts.constants';
 import { Location } from './Location';
@@ -22,7 +23,9 @@ const Contacts: FunctionComponent = () => {
     <Container>
       <h2>{text.CONTACTS}</h2>
       {isLoading ? <Loader /> : <ContactsWrapper transition={!isLoading}>
-        <Location />
+        <LocationWrapper>
+          <Location />
+        </LocationWrapper>
         <ContactsContainer>
           <h3>{text.MAGNIT_OOO}</h3>
           {CONTACTS.map((el, i) => (

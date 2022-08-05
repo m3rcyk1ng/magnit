@@ -9,7 +9,7 @@ const mapState = {
 };
 
 export const Location: FunctionComponent = () => (
-  <YMaps>
+  <YMaps preload>
     <Map defaultState={mapState} width={1230} height={592}>
       <Placemark
         geometry={
