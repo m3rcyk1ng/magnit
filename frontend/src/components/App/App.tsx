@@ -8,8 +8,8 @@ import { projectApi } from '../../utils/ProjectsApi';
 import Contacts from '../Contacts/Contacts';
 import Vacancies from '../Vacancies/Vacancies';
 import MainPage from '../MainPage/MainPage';
-import {vacanciesApi} from "../../utils/VacanciesApi";
-import Vacancy from "../Vacancy/Vacancy";
+import { vacanciesApi } from '../../utils/VacanciesApi';
+import Vacancy from '../Vacancy/Vacancy';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -51,13 +51,16 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/projects" element={<Projects projects={projects} />} />
+        <Route path={`/project/:id`} element={<Project projects={projects} />} />
         <Route
-          path="/projects"
-          element={<Projects projects={projects} />}
+          path="/vacancies"
+          element={<Vacancies vacancies={vacancies} onSubmit={handleFindVacancyById} />}
         />
-        <Route path={`/project/:id`} element={<Project projects={projects}/>} />
-        <Route path="/vacancies" element={<Vacancies vacancies={vacancies} onSubmit={handleFindVacancyById} />} />
-        <Route path={`/vacancy/${vacancyId}`} element={<Vacancy currentVacancy={currentVacancy} />} />
+        <Route
+          path={`/vacancy/${vacancyId}`}
+          element={<Vacancy currentVacancy={currentVacancy} />}
+        />
         <Route path="/contacts" element={<Contacts />} />
       </Routes>
       <div style={{ flexGrow: '1' }} />

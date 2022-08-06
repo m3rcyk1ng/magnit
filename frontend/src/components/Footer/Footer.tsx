@@ -22,12 +22,15 @@ import WhatsappIcon from '../../assets/images/whatsapp-icon.svg';
 import ViberIcon from '../../assets/images/viber-icon.svg';
 import TelegramIcon from '../../assets/images/telegram-icon.svg';
 import IntagramIcon from '../../assets/images/instagram-icon.svg';
+import { Link } from 'react-router-dom';
 
 const Footer: FunctionComponent = () => {
   return (
     <StyledFooter>
       <Container>
-        <Logo />
+        <Link to={'/'}>
+          <Logo />
+        </Link>
         <Nav>
           <List>
             {navItems.map(({ title, path }, i) => (
@@ -58,6 +61,6 @@ const Footer: FunctionComponent = () => {
       </ContactContainer>
     </StyledFooter>
   );
-}
+};
 
 export default Footer;

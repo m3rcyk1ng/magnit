@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { theme } from '../../utils/Theme';
 
+
 export const Preview = styled.div<{ image: string }>`
   background-image: url(${(props) => props.image});
   background-size: cover;
@@ -10,6 +11,24 @@ export const Preview = styled.div<{ image: string }>`
   align-items: flex-start;
   width: 100%;
   height: 100vh;
+  position: relative;
+`;
+
+export const RowImages = styled.div`
+  position: absolute;
+  bottom: 4.75rem;
+  right: 0;
+  display: grid;
+  grid-template-rows: 18.75rem;
+  grid-template-columns: repeat(3, 17.8125rem);
+  gap: 0 1.875rem;
+
+  .row-el {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0.4375rem 2.75rem 0 #02234680;
+  }
 `;
 
 export const Block = styled.div`
@@ -45,6 +64,7 @@ export const Button = styled.div`
   max-width: 200px;
   font-weight: 700;
   font-size: 0.875rem;
+  transition: background-color 0.2s ease-in;
 
   &:hover {
     cursor: pointer;

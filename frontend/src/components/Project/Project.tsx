@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect } from 'react';
 import { Container } from '../../index.styles';
 import {
   Preview,
@@ -15,13 +15,19 @@ import {
   ImagesContainer,
   BlockImage,
   ButtonBack,
+  RowImages,
 } from './Project.styles';
 import { useNavigate, useParams } from 'react-router-dom';
 import BackButton from '../../assets/images/back-button.svg';
+import BackButtonBlue from '../../assets/images/back-button-blue.svg';
 
 const Project: FunctionComponent<any> = ({ projects }) => {
   let { id } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [navigate]);
 
   const currentProject = projects?.filter(
     (project: { _id: string | undefined }) => project._id === id,
@@ -40,10 +46,15 @@ const Project: FunctionComponent<any> = ({ projects }) => {
             <p>{currentProject[0]?.street}</p>
             <p>{currentProject[0]?.year}</p>
             <p>{currentProject[0]?.squareMeters}</p>
-            <p>{currentProject[0]?.rl}:</p>
+            <p>{currentProject[0]?.url}:</p>
           </InfoBlock>
           <Button>Задать вопрос</Button>
         </Block>
+        <RowImages>
+          {currentProject[0]?.imageGallery?.slice(0, 3).map((el: string | undefined) => (
+            <img src={el} alt={'изображение проекта'} className={'row-el'} />
+          ))}
+        </RowImages>
       </Preview>
       <Container>
         <h2 style={{ border: 'none', maxWidth: '99%' }}>{currentProject[0]?.projectTitle}</h2>
@@ -71,7 +82,10 @@ const Project: FunctionComponent<any> = ({ projects }) => {
         <BlockImage className="img3" image={currentProject[0]?.imageGallery[2]} />
         <BlockImage className="img4" image={currentProject[0]?.imageGallery[3]} />
       </ImagesContainer>
-      <ButtonBack onClick={() => navigate(-1)}>назад к проектам</ButtonBack>
+      <ButtonBack onClick={() => navigate(-1)}>
+        <img src={BackButtonBlue} alt={'стрелка'} />
+        назад к проектам
+      </ButtonBack>
     </>
   );
 };
