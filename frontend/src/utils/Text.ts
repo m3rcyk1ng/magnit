@@ -43,6 +43,7 @@ export const text = {
   EXP: 'Опыт работы',
   RUB: 'Руб',
   MORE_PROJECTS: 'Показать ещё',
+  PROJECT_IMAGE: 'Изображение проекта',
   UPDATED: 'Обновление',
   EMPLOYMENT: 'Занятость',
   CONDITIONS: 'Условия',

@@ -4,18 +4,51 @@ import { theme } from '../../../utils/Theme';
 
 export const ProjectContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 5rem;
 
   &:nth-of-type(2n) {
     flex-direction: row-reverse;
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
   }
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 500px) {
+    margin-bottom: 3.125rem;
+  }	
 `;
+
 export const LeftBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: minmax(340px, 1262px);
+  grid-template-rows: min-content minmax(360px, 630px);
+
+  &:nth-of-type(1n) {
+    justify-items: right;
+  }
+
+  @media (max-width: 1400px) {
+    grid-template-columns: minmax(340px, 1062px);
+	}
+
+  @media (max-width: 1200px) {
+    justify-items: center;
+
+    &:nth-of-type(1n) {
+      justify-items: center;
+    }
+  }
+
+  @media (max-width: 690px) {
+    grid-template-rows: min-content minmax(360px, 1fr);
+  }
 `;
 
 export const RigthBlock = styled.div`
@@ -23,13 +56,20 @@ export const RigthBlock = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+
+  @media (max-width: 1200px) {
+    margin-top: 1.25rem;
+  }
 `;
 
 export const InfoRow = styled.div`
   display: flex;
   margin-bottom: 2rem;
   align-items: center;
+
+  @media (max-width: 500px) {
+    margin-bottom: 0.625rem;
+  }
 `;
 
 export const InfoText = styled.p`
@@ -40,14 +80,20 @@ export const InfoText = styled.p`
   &:last-of-type {
     margin-right: 0;
   }
+
+  @media (max-width: 500px) {
+    font-size: 0.75rem;
+  }
 `;
 
 export const ImageContainer = styled.div<{ img: string }>`
-  width: 962px;
-  height: 530px;
+  width: 100%;
+  height: 100%;
   position: relative;
   background-image: url(${(props) => props.img});
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,11 +133,22 @@ export const ProjectName = styled.h3`
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 1.8rem;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.625rem;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 1.3125rem;
+    margin-bottom: 1.25rem;
+  }
 `;
 
 export const StreetText = styled.p`
   font-size: 1rem;
   text-transform: uppercase;
+  text-align: center;
 `;
 
 export const Polygon = styled.div`

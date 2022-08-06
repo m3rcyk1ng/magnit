@@ -6,6 +6,7 @@ export const StyledHeader = styled.header<{mainPage: boolean}>`
   justify-content: space-between;
 	background-color: ${(props) => ( props.mainPage ? '#022346CC' : '#FFFFFF')};
 	padding: ${(props) => ( props.mainPage ? '20px 30px' : '5px 30px')};
+	width: 100%;
 `;
 
 export const Nav = styled.nav`

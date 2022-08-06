@@ -104,3 +104,16 @@ img {
 .grey-text {
   color: var(--greyColorText);
 }
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.625rem;
+    }
+}
+
+@media (max-width: 500px) {
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+}

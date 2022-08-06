@@ -10,6 +10,7 @@ export const StyledFooter = styled.footer`
   justify-content: space-between;
   color: #fff;
   flex-shrink: 0;
+  width: 100%;
 
   svg {
     .part-one {

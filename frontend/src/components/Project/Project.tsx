@@ -21,6 +21,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import BackButton from '../../assets/images/back-button.svg';
 import BackButtonBlue from '../../assets/images/back-button-blue.svg';
 import { IProjects } from "../Projects/Project.interfaces";
+import {text} from "../../utils/Text";
 
 const Project: FunctionComponent<IProjects> = ({ projects }) => {
   let { id } = useParams();
@@ -53,7 +54,7 @@ const Project: FunctionComponent<IProjects> = ({ projects }) => {
         </Block>
         <RowImages>
           {currentProject[0]?.imageGallery?.slice(0, 3).map((el: string | undefined) => (
-            <img src={el} alt={'изображение проекта'} className={'row-el'} />
+            <img src={el} alt={text.PROJECT_IMAGE} className={'row-el'} />
           ))}
         </RowImages>
       </Preview>
