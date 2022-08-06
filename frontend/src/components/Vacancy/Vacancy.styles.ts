@@ -14,7 +14,7 @@ export const VacancyTitle = styled.h2 `
 
 export const VacancyInfoText = styled.span`
   display: flex;
-  margin-bottom: 1em;
+  margin-bottom: 0.75em;
   align-items: center;
 `;
 
