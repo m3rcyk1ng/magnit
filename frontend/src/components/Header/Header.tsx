@@ -16,9 +16,9 @@ const Header: FunctionComponent = () => {
       </Link>
       <Nav>
         <List>
-          {navItems.map(({ title, path }, i) => (
+          {navItems.map(({ title, path, hash }, i) => (
             <ListItem key={i}>
-              <StyledLink mainPage={mainPage} to={path}>
+              <StyledLink mainPage={mainPage} to={{pathname: path, hash: hash}}>
                 {title}
               </StyledLink>
             </ListItem>
