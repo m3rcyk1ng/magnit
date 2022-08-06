@@ -84,8 +84,8 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
         <p>{description}</p>
         <VacancyConditionsContainer>
           <h3 style={{marginBottom: '20px'}}>{text.CONDITIONS}:</h3>
-          {conditions?.map((el) => (
-            <VacancyConditionsRow>
+          {conditions?.map((el, i) => (
+            <VacancyConditionsRow key={i}>
               <Polygon />
               <p>{el}</p>
             </VacancyConditionsRow>

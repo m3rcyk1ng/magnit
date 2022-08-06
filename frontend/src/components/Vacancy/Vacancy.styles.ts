@@ -10,6 +10,7 @@ export const Section = styled.section`
 export const VacancyTitle = styled.h2 `
   margin-top: 1rem;
   margin-bottom: 2.5rem;
+	text-transform: capitalize;
 `
 
 export const VacancyInfoText = styled.span`
@@ -42,7 +43,7 @@ export const VacancyInfoBlock = styled.div `
 export const VacancyTextBlockContainer = styled.div `
   display: flex;
   flex-direction: column;
-  margin-left: 0.5em;
+  margin-left: 0.75em;
 `;
 
 export const VacancyText = styled.span `
