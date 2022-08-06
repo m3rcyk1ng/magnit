@@ -61,7 +61,7 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
       value: education,
     },
   ]
-  console.log('conditions', conditions);
+
   return (
     <Container>
       <Section>
