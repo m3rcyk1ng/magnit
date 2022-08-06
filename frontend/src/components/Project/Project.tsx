@@ -20,8 +20,9 @@ import {
 import { useNavigate, useParams } from 'react-router-dom';
 import BackButton from '../../assets/images/back-button.svg';
 import BackButtonBlue from '../../assets/images/back-button-blue.svg';
+import { IProjects } from "../Projects/Project.interfaces";
 
-const Project: FunctionComponent<any> = ({ projects }) => {
+const Project: FunctionComponent<IProjects> = ({ projects }) => {
   let { id } = useParams();
   const navigate = useNavigate();
 
@@ -38,7 +39,7 @@ const Project: FunctionComponent<any> = ({ projects }) => {
       <Preview image={currentProject[0]?.image}>
         <ButtonBack onClick={() => navigate(-1)}>
           <img src={BackButton} alt={'стрелка'} />
-          назад
+          {'назад'}
         </ButtonBack>
         <Block>
           <Title>{currentProject[0]?.name}</Title>

@@ -48,7 +48,7 @@ export const Title = styled.h3`
 export const InfoBlock = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 100px 0 118px;
+  margin: 100px 0 80px;
 
   p {
     font-size: 1rem;
@@ -176,13 +176,13 @@ export const ButtonBack = styled.button`
   color: ${theme.backgroundColor};
   font-weight: 700;
   transition: opacity 0.1s ease-in;
-
   img {
     margin-right: 0.8rem;
   }
 
   &:first-child {
     color: ${theme.whiteColor};
+    filter: drop-shadow(0.15em 0 0.5em ${theme.backgroundColor});
   }
 
   &:hover {

@@ -11,7 +11,7 @@ export interface IOptionalBlock {
 export interface IProjectCard {
   city: string;
   image: string;
-  imageGallery?: string[];
+  imageGallery: string[];
   month: string;
   name: string;
   optionalBlock?: IOptionalBlock[];
@@ -23,4 +23,5 @@ export interface IProjectCard {
   year: string;
   __v?: number;
   _id: string | undefined;
+  url?: string;
 }
