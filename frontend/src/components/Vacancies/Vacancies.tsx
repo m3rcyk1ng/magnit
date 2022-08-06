@@ -5,7 +5,7 @@ import { VacancyContainer } from './Vacancies.styles';
 import VacancyCard from './VacancyCard/VacancyCard';
 import { IVacancies } from './Vacancy.interfaces';
 
-const Vacancies: FunctionComponent<IVacancies> = ({ vacancies, onSubmit }) => {
+const Vacancies: FunctionComponent<IVacancies> = ({ vacancies }) => {
   return (
     <Container>
       <h2>{text.VACANCIES}</h2>
@@ -19,7 +19,6 @@ const Vacancies: FunctionComponent<IVacancies> = ({ vacancies, onSubmit }) => {
             education={education}
             experience={experience}
             salary={salary}
-            onSubmit={onSubmit}
           />
         ))}
       </VacancyContainer>

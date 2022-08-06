@@ -6,7 +6,6 @@ import { IProjects } from "./Project.interfaces";
 import { Button } from './Projects.styles';
 
 const Projects: FunctionComponent<IProjects> = ({ projects }) => {
-  console.log('projects', projects);
   const [moreButton, setMoreButton] = useState(false);
   const [amountShowProjects , setAmountShowProjects] = useState(5);
 

@@ -12,25 +12,15 @@ import {
 import { text } from '../../../utils/Text';
 import { useNavigate } from 'react-router-dom';
 import Frame from '../../../assets/images/frame.png';
+import { toPrecision } from "../../../utils/Functions";
 
 const VacancyCard: FunctionComponent<any> = (props) => {
-  const { image, name, education, experience, salary, id, onSubmit } = props;
+  const { image, name, education, experience, salary, id } = props;
   const navigate = useNavigate();
 
-  const toPrecision = (num: number | string, delimiter?: boolean) => {
-    const parts = Number(num).toFixed(2).split('.');
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-    return delimiter === false ? parts[0] : parts.join(',');
+  const handleCardClick = () => {
+    navigate(`/vacancy/${id}`);
   };
-
-  const handleNavigate = () => {
-    onSubmit(id);
-    navigate('/vacancy');
-  };
-
-  const formattedSalary = (` ${toPrecision(salary, false)} ${text.RUB}`).toUpperCase();
-  const formattedEducation = ` ${education.toUpperCase()}`;
-  const formattedExp = ` ${experience.toUpperCase()}`
 
   return (
     <VacancyCardWrapper>
@@ -39,20 +29,20 @@ const VacancyCard: FunctionComponent<any> = (props) => {
         <VacancyImageFrame frame={Frame}/>
       </VacancyImageCont>
       <VacancyInfoCont>
-        <VacancyTitle>{name.toUpperCase()}</VacancyTitle>
+        <VacancyTitle>{name}</VacancyTitle>
         <VacancyInfoText>
-          <p>{(text.SALARY + ':' ).toUpperCase()}</p>
-        <VacancyTextBold>{formattedSalary}</VacancyTextBold>
+          <p style={{textTransform: 'uppercase'}}>{(text.SALARY + ':' )}</p>
+        <VacancyTextBold>{(` ${toPrecision(salary, false)} ${text.RUB}`)}</VacancyTextBold>
         </VacancyInfoText>
         <VacancyInfoText>
-          <p>{(text.EDUCATION + ':' ).toUpperCase()}</p>
-          <VacancyTextBold>{formattedEducation}</VacancyTextBold>
+          <p style={{textTransform: 'uppercase'}}>{(text.EDUCATION + ':' )}</p>
+          <VacancyTextBold>{education}</VacancyTextBold>
         </VacancyInfoText>
         <VacancyInfoText>
-          <p>{(text.EXP + ':' ).toUpperCase()}</p>
-          <VacancyTextBold>{formattedExp}</VacancyTextBold>
+          <p style={{textTransform: 'uppercase'}}>{(text.EXP + ':' )}</p>
+          <VacancyTextBold>{experience}</VacancyTextBold>
         </VacancyInfoText>
-        <VacancyButton onClick={handleNavigate}>{text.VACANCY_MORE}</VacancyButton>
+        <VacancyButton onClick={handleCardClick}>{text.VACANCY_MORE}</VacancyButton>
       </VacancyInfoCont>
     </VacancyCardWrapper>
   );

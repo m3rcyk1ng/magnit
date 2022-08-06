@@ -1,6 +1,5 @@
 export interface IVacancies {
   vacancies: IVacancyCard[];
-  onSubmit: any;
 }
 
 export interface IVacancyCard {

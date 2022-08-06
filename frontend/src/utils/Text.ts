@@ -42,5 +42,10 @@ export const text = {
   EDUCATION: 'Образование',
   EXP: 'Опыт работы',
   RUB: 'Руб',
-  MORE_PROJECTS: 'Показать ещё'
+  MORE_PROJECTS: 'Показать ещё',
+  UPDATED: 'Обновление',
+  EMPLOYMENT: 'Занятость',
+  CONDITIONS: 'Условия',
+  RESPOND_VACANCY: 'Откликнуться на вакансию',
+  SHOW_NUMBER: 'Показать номер телефона'
 };

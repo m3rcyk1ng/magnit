@@ -14,8 +14,6 @@ import Vacancy from '../Vacancy/Vacancy';
 function App() {
   const [projects, setProjects] = useState([]);
   const [vacancies, setVacancies] = useState([]);
-  const [currentVacancy, setCurrentVacancy] = useState([]);
-  const [vacancyId, setVacancyId] = useState('');
 
   useEffect(() => {
     projectApi
@@ -39,13 +37,6 @@ function App() {
       });
   }, []);
 
-  const handleFindVacancyById = (id: string) => {
-    // @ts-ignore
-    const resVacancy = vacancies?.filter((vacancy) => vacancy?._id === id);
-    setCurrentVacancy(resVacancy);
-    setVacancyId(id);
-  };
-
   return (
     <div className="App" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header />
@@ -55,11 +46,11 @@ function App() {
         <Route path={`/project/:id`} element={<Project projects={projects} />} />
         <Route
           path="/vacancies"
-          element={<Vacancies vacancies={vacancies} onSubmit={handleFindVacancyById} />}
+          element={<Vacancies vacancies={vacancies} />}
         />
         <Route
-          path={`/vacancy/${vacancyId}`}
-          element={<Vacancy currentVacancy={currentVacancy} />}
+          path={`/vacancy/:id`}
+          element={<Vacancy vacancies={vacancies} />}
         />
         <Route path="/contacts" element={<Contacts />} />
       </Routes>

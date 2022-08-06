@@ -55,6 +55,7 @@ export const VacancyTextBold = styled.span`
   font-weight: bold;
   white-space: pre-wrap;
   line-height: 2;
+  text-transform: uppercase;
 `;
 
 export const VacancyButton = styled.button`
