@@ -41,5 +41,6 @@ export const text = {
   SALARY: 'Зар. плата',
   EDUCATION: 'Образование',
   EXP: 'Опыт работы',
-  RUB: 'Руб'
+  RUB: 'Руб',
+  MORE_PROJECTS: 'Показать ещё'
 };
