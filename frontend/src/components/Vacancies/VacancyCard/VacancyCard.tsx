@@ -36,11 +36,11 @@ const VacancyCard: FunctionComponent<any> = (props) => {
         </VacancyInfoText>
         <VacancyInfoText>
           <p style={{textTransform: 'uppercase'}}>{(text.EDUCATION + ':' )}</p>
-          <VacancyTextBold>{education}</VacancyTextBold>
+          <VacancyTextBold>{` ${education}`}</VacancyTextBold>
         </VacancyInfoText>
         <VacancyInfoText>
           <p style={{textTransform: 'uppercase'}}>{(text.EXP + ':' )}</p>
-          <VacancyTextBold>{experience}</VacancyTextBold>
+          <VacancyTextBold>{` ${experience}`}</VacancyTextBold>
         </VacancyInfoText>
         <VacancyButton onClick={handleCardClick}>{text.VACANCY_MORE}</VacancyButton>
       </VacancyInfoCont>

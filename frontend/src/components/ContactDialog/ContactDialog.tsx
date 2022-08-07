@@ -27,7 +27,6 @@ const ContactDialog: FunctionComponent = () => {
         <ContactDialogInput placeholder={text.TOPIC}/>
       </ContactDialogContainer>
     </ContactDialogWrapper>
-
   );
 }
 
