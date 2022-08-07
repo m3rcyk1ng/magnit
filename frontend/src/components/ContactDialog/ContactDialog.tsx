@@ -13,11 +13,7 @@ import {
 } from './ContactDialog.styles';
 import { text } from '../../utils/Text';
 import ContactImageBg from '../../assets/images/contactbg.png';
-
-export interface IContactDialog {
-  isOpen: boolean;
-  onClose: () => void;
-}
+import { IContactDialog } from './ContactDialog.interfaces';
 
 const ContactDialog: FunctionComponent<IContactDialog> = ({ isOpen, onClose }) => {
   return (

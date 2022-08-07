@@ -7,6 +7,8 @@ import {
   ContactsContainer,
   ContactButton,
   LocationWrapper,
+  ContactsTitle,
+  ContactsMainTitle
 } from './Contacts.styles';
 import { CONTACTS } from './Contacts.constants';
 import { Location } from './Location';
@@ -26,7 +28,7 @@ const Contacts: FunctionComponent = () => {
   return (
     <>
       <Container>
-        <h2>{text.CONTACTS}</h2>
+        <ContactsMainTitle>{text.CONTACTS}</ContactsMainTitle>
         {isLoading ? (
           <Loader />
         ) : (
@@ -35,7 +37,7 @@ const Contacts: FunctionComponent = () => {
               <Location />
             </LocationWrapper>
             <ContactsContainer>
-              <h3>{text.MAGNIT_OOO}</h3>
+              <ContactsTitle>{text.MAGNIT_OOO}</ContactsTitle>
               {CONTACTS.map((el, i) => (
                 <ContactTextRow key={i}>{el}</ContactTextRow>
               ))}
