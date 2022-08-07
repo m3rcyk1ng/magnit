@@ -38,9 +38,8 @@ export const SliderWrapper = styled.div`
   	left: 0;
   	top: 0;
   	bottom: 0;
-  	width: 100%;
 	white-space: nowrap;
-  	transition: all 0.4s ease-out;
+  	transition: left 0.4s ease-out;
 `;
 
 export const SliderControls = styled.div`
@@ -75,7 +74,7 @@ export const SliderTextSwitcher = styled.button`
 	position: relative;
   	margin: 0 10px 0 40px;
   	font-size: 16px;
-  	color: ${props => props.color || '#D9D9D9'};;
+  	color: ${props => props.color || '#D9D9D9'};
 	transition: all 0.3s linear;
 	&:hover {
 		opacity: 0.8;
