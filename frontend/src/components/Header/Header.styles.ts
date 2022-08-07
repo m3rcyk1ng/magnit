@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 
 export const StyledHeader = styled.header<{mainPage: boolean}>`
   display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
   justify-content: space-between;
 	background-color: ${(props) => ( props.mainPage ? '#022346CC' : '#FFFFFF')};
 	padding: ${(props) => ( props.mainPage ? '20px 30px' : '5px 30px')};

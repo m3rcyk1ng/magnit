@@ -1,64 +1,112 @@
-import { FunctionComponent } from 'react';
+import {FunctionComponent, useCallback, useEffect, useRef, useState} from 'react';
 import {
-  SliderContainer,
+    ImageItem,
+    SliderContainer,
+    SliderControls,
+    SliderSwitchLeft,
+    SliderSwitchRight,
+    SliderTextSwitcher,
+    SliderTextSwitcherWrapper,
+    SliderWrapper,
 } from './Slider.styles';
+import {MainHeaderPhotos} from "../MainHeader.constants";
 
-const ImageSlider: FunctionComponent = () => {
+const ImageSlider: FunctionComponent<{ parentWidth: number | null; parentHeight: number | null; }> = ({
+  parentWidth,
+  parentHeight,
+}) => {
+    const [sliderIndex, setSliderIndex] = useState(0);
+    const [isVertical, setIsVertical] = useState<Array<boolean>>(MainHeaderPhotos.map(() => false));
+    const imageRefList = useRef<Array<HTMLImageElement | null>>([]);
+    const sliderPosition = useCallback(() => {
+        if (sliderIndex === 0 || !parentWidth) {
+            return 0;
+        }
+        return -(sliderIndex * parentWidth) + 'px';
+    }, [parentWidth, sliderIndex])
 
-  return (
-      <SliderContainer>
-        {'А я Вам сейчас покажу откуда...'}
-        {'___________________________111____________________\n' +
-          '____________11________________111_________________\n' +
-          '_________1§1____________________1_11111___________\n' +
-          '_______1§1________________________11§§§§1_________\n' +
-          '______§1____________________________1§¶¶¶§________\n' +
-          '_____¶1___________________________1__1§§§¶§_______\n' +
-          '___1¶1111_____________________________1§11§1______\n' +
-          '___§¶1_11_____________________________111__1______\n' +
-          '___¶1_111____________________________11111_§1_____\n' +
-          '__§¶1_111_1__________________________111§§111§____\n' +
-          '_1§§_11111_______________________11_1111§1§11§____\n' +
-          '_§¶§111111_________________________1111§111§§§§___\n' +
-          '_¶¶§111111________________________1_111§§§§§§§§___\n' +
-          '_§¶¶§§1111____________________________1§¶¶¶§¶¶¶§1_\n' +
-          '1§¶¶§11111_________________1§§¶¶§11___11§¶¶§¶¶¶1__\n' +
-          '_¶¶¶§11___1__11_______11¶¶¶¶¶¶¶§¶§¶§11111¶¶§¶¶§¶¶_\n' +
-          '_¶¶¶1_1§§§11§111111111§¶¶¶¶¶§§§§§1§¶§§111§¶§§¶§1¶_\n' +
-          '_¶¶¶1¶¶¶¶¶¶¶¶¶¶¶¶§§111§¶¶¶¶¶¶¶¶¶¶¶¶§§§1111¶§1§11§_\n' +
-          '_¶¶¶§¶¶§¶¶¶¶¶¶¶¶¶¶§1_1§¶¶¶¶¶_§¶¶¶§¶¶¶11111¶1_¶§1__\n' +
-          '__¶§§¶¶¶¶§¶¶¶§¶¶¶¶¶1__1§§§§§§11§1111____111§_1§§__\n' +
-          '__1§1¶¶¶¶¶§¶¶¶¶¶¶§¶1__1111111111111_____111111§11_\n' +
-          '___§1§§§§§§§§§§§§§¶1__11111_11111_____11111§¶§_1__\n' +
-          '___1111§§§1§§§§§§§§1_____1111______111111111111___\n' +
-          '____11111§§§1§§§§§§1___111§111______11§111§1§1____\n' +
-          '___1§§§111111§1§¶11___11_11¶§1__1111111111111¶¶___\n' +
-          '____1¶§§§111§11§§§1______§§§¶§111111§11111111¶¶___\n' +
-          '_____¶¶¶§§§§§§§¶¶¶¶§111§¶¶¶§1§§§111111§1§1§§§§¶___\n' +
-          '______¶¶¶¶§§§§§§§¶¶¶¶¶¶¶¶¶¶§111§11111111§§§11§¶___\n' +
-          '______§¶¶¶¶¶¶§§§¶¶¶¶¶¶¶¶¶¶¶¶¶¶§1§§11111111§§§§1___\n' +
-          '______§¶¶¶¶¶¶§§¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶§11111111§1§§¶§1___\n' +
-          '_______¶¶¶¶¶§§§¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶§1111§1111§¶¶§____\n' +
-          '_______§¶¶¶§§§¶¶¶¶¶¶¶¶¶¶¶¶¶§¶¶§§§11§§§111§¶¶¶§__§_\n' +
-          '_______1¶¶§§§§¶¶¶¶¶¶¶¶§§§¶¶§§§1§1§§§§§1§§§¶¶¶____¶\n' +
-          '________§¶¶¶§1§¶¶¶¶¶¶¶¶¶¶¶¶§§§1111§§§11§¶¶¶¶1____§\n' +
-          '_________§¶¶¶§§§¶¶¶¶§¶¶¶§§111111111§§§§¶¶¶¶1______\n' +
-          '__________1¶¶¶¶§§¶§§§§111111111111§§¶¶¶¶¶§________\n' +
-          '____________¶¶¶§§§§§111111111111§§§¶¶¶¶¶§_________\n' +
-          '_____________¶¶¶§§§§§§§11§1§§§§§§¶¶¶¶¶¶__________§\n' +
-          '______________§¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶§¶¶¶§§§___________¶\n' +
-          '____________¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶§§§§_____________¶\n' +
-          '___________§¶___§¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1_____________¶¶\n' +
-          '_________1¶¶¶_____¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_______________¶¶\n' +
-          '_____1¶¶¶¶¶¶¶_______¶¶¶¶¶¶¶¶¶¶¶1_______________¶¶¶\n' +
-          '__§¶¶¶¶¶¶¶¶¶¶_________¶¶¶¶¶¶¶¶_________________¶¶¶\n' +
-          '¶¶¶¶¶¶¶¶¶¶¶¶¶____________¶¶¶__________________¶¶¶¶\n' +
-          '¶¶¶¶¶¶¶¶¶¶¶¶¶1__________¶¶¶¶¶¶________________¶¶¶¶\n' +
-          '¶¶¶¶¶¶¶¶¶¶¶¶¶1________¶¶¶¶¶¶¶¶¶¶¶1___________¶¶¶¶¶\n' +
-          '¶¶¶¶¶¶¶¶¶¶¶¶¶1______¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶__________¶¶¶¶¶\n' +
-          '¶¶¶¶¶¶¶¶¶¶¶¶¶1______1¶¶¶¶¶¶¶¶¶¶¶¶¶__________¶¶¶¶¶¶'}
-      </SliderContainer>
-  );
+    useEffect(() => {
+        imageRefList.current.forEach((imageCurrent, imageIndex) => {
+            const imageClientWidth = imageCurrent?.clientWidth;
+            const imageClientHeight = imageCurrent?.clientHeight;
+            if (parentWidth && imageClientWidth) {
+                if (imageClientWidth < parentWidth) {
+                    setIsVertical((prevState) => {
+                        const newValue = [...prevState];
+                        newValue[imageIndex] = false;
+                        return newValue;
+                    });
+                }
+            }
+            if (parentHeight && imageClientHeight) {
+                if (imageClientHeight < parentHeight) {
+                    setIsVertical((prevState) => {
+                        const newValue = [...prevState];
+                        newValue[imageIndex] = true;
+                        return newValue;
+                    });
+                }
+            }
+        });
+
+    }, [parentWidth, parentHeight])
+
+    function handleTextSwitchClick(slideIndex: number) {
+        setSliderIndex(slideIndex);
+    }
+
+    function handleButtonSwitchClick(direction: string) {
+        setSliderIndex((prevState) => {
+            const maxArrLength = MainHeaderPhotos.length - 1;
+            if (direction === 'left') {
+                return prevState === 0 ? maxArrLength : prevState - 1
+            }
+            return prevState === maxArrLength ? 0 : prevState + 1
+        });
+    }
+
+    const renderImageSlide = (imageItem: string, imageIndex: number) => {
+        return (
+            <ImageItem>
+                <img
+                    style={isVertical[imageIndex] ? { height: '100%' } : { width: '100%' }}
+                    ref={el => (imageRefList.current[imageIndex] = el)}
+                    key={`image-${imageIndex}`}
+                    src={imageItem}
+                    alt={`slider-${imageIndex}`}
+                />
+            </ImageItem>
+        )
+    };
+
+    const renderImageSwitcher = (imageItem: string, imageIndex: number) => {
+        const numericValue = imageIndex + 1 < 10 ? `0${imageIndex + 1}` : imageIndex + 1;
+        return (
+            <SliderTextSwitcher
+                color={imageIndex === sliderIndex ? 'white' : undefined}
+                onClick={() => handleTextSwitchClick(imageIndex)}
+            >
+                {numericValue}
+            </SliderTextSwitcher>
+        )
+    };
+
+    return (
+        <SliderContainer>
+            <SliderWrapper style={{ left: sliderPosition() }}>
+                {MainHeaderPhotos.map(renderImageSlide)}
+            </SliderWrapper>
+            <SliderControls>
+                <>
+                    <SliderSwitchLeft onClick={() => handleButtonSwitchClick('left')} />
+                    <SliderTextSwitcherWrapper>
+                        {MainHeaderPhotos.map(renderImageSwitcher)}
+                    </SliderTextSwitcherWrapper>
+                    <SliderSwitchRight onClick={() => handleButtonSwitchClick('right')} />
+                </>
+            </SliderControls>
+        </SliderContainer>
+    );
 };
 
 export default ImageSlider;
