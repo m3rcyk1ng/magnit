@@ -93,7 +93,7 @@ const ImageSlider: FunctionComponent<{ parentWidth: number | null; parentHeight:
 
     return (
         <SliderContainer>
-            <SliderWrapper style={{ left: sliderPosition(), width: parentWidth || '100%' }}>
+            <SliderWrapper style={{ left: sliderPosition(), width: parentWidth || '100%', height: parentHeight || '100%' }}>
                 {MainHeaderPhotos.map(renderImageSlide)}
             </SliderWrapper>
             <SliderControls>
