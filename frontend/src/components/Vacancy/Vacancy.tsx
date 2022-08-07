@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useEffect} from 'react';
+import React, {FunctionComponent, useEffect, useState} from 'react';
 import {
   Section,
   VacancyInfoText,
@@ -15,21 +15,30 @@ import {
   VacancyConditionsRow,
   VacancyButtons,
   VacancyRespondButton,
-  VacancyShowNumberButton
+  VacancyShowNumberButton,
+  ButtonBack,
+  ShowNumberDialog,
+  ShowNumberDialogText,
+  ShowNumberDialogTitle,
+  ShowNumberDialogNumber,
+  ShowNumberCloseButton,
+  ShowNumberOverlay
 } from './Vacancy.styles';
-import { text } from '../../utils/Text';
+import {text} from '../../utils/Text';
 import {useNavigate, useParams} from 'react-router-dom';
-import { Container } from '../../index.styles';
+import {Container} from '../../index.styles';
 import {IVacancies} from "../Vacancies/Vacancy.interfaces";
 import {toPrecision} from "../../utils/Functions";
 import UpdateIcon from "../../assets/images/update.svg";
 import EmploymentIcon from "../../assets/images/employment.svg";
 import ExperienceIcon from "../../assets/images/experience.svg";
 import EducationIcon from "../../assets/images/education.svg";
+import BackButtonBlue from "../../assets/images/back-button-blue.svg";
 
-const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
-  let { id } = useParams();
+const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
+  let {id} = useParams();
   const navigate = useNavigate();
+  const [isShowNumberDialog, setIsShowNumberDialog] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -39,12 +48,22 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
     (project: { _id: string | undefined }) => project._id === id,
   );
 
-  const { name, salary, experience, education, updatedBy, conditions, description, phoneNumber, workload } = currentVacancy[0] || {};
+  const {
+    name,
+    salary,
+    experience,
+    education,
+    updatedBy,
+    conditions,
+    description,
+    phoneNumber,
+    workload
+  } = currentVacancy[0] || {};
   const vacancyBlock = [{
-      icon: UpdateIcon,
-      title: text.UPDATED,
-      value: updatedBy,
-    },
+    icon: UpdateIcon,
+    title: text.UPDATED,
+    value: updatedBy,
+  },
     {
       icon: EmploymentIcon,
       title: text.EMPLOYMENT,
@@ -62,41 +81,62 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
     },
   ]
 
+  const renderShowNumberDialog = () => {
+    return (
+      <ShowNumberOverlay isPopupOpen={isShowNumberDialog}>
+        <ShowNumberDialog isPopupOpen={isShowNumberDialog}>
+          <ShowNumberDialogTitle>{text.PLACEMENT}</ShowNumberDialogTitle>
+          <ShowNumberDialogText>{text.PLACEMENT_DESC}</ShowNumberDialogText>
+          <ShowNumberDialogNumber>{text.NUMBER}</ShowNumberDialogNumber>
+          <ShowNumberCloseButton onClick={() => setIsShowNumberDialog(false)}>{text.CLOSE}</ShowNumberCloseButton>
+        </ShowNumberDialog>
+      </ShowNumberOverlay>
+    )
+  }
+
   return (
-    <Container>
-      <Section>
-        <VacancyTitle>{name}</VacancyTitle>
-        <VacancyInfoText>
-          <p style={{textTransform: 'uppercase'}}>{(text.SALARY + ':' )}</p>
-          <VacancyTextBold>{(` ${toPrecision(salary, false)} ${text.RUB}`)}</VacancyTextBold>
-        </VacancyInfoText>
-        <VacancyBlocksRow>
-          {vacancyBlock.map((el) =>(
+    <>
+      <Container>
+        <Section>
+          <ButtonBack onClick={() => navigate(-1)}>
+            <img src={BackButtonBlue} alt={text.ARROW}/>
+            {text.BACK}
+          </ButtonBack>
+          <VacancyTitle>{name}</VacancyTitle>
+          <VacancyInfoText>
+            <p style={{textTransform: 'uppercase'}}>{(text.SALARY + ':')}</p>
+            <VacancyTextBold>{(` ${toPrecision(salary, false)} ${text.RUB}`)}</VacancyTextBold>
+          </VacancyInfoText>
+          <VacancyBlocksRow>
+            {vacancyBlock.map((el) => (
               <VacancyInfoBlock>
-                <Icon image={el.icon} />
-              <VacancyTextBlockContainer>
-                <VacancyText>{el.title}</VacancyText>
-                <VacancyValue>{el.value}</VacancyValue>
-              </VacancyTextBlockContainer>
-            </VacancyInfoBlock>
-              ))}
-        </VacancyBlocksRow>
-        <p>{description}</p>
-        <VacancyConditionsContainer>
-          <h3 style={{marginBottom: '20px'}}>{text.CONDITIONS}:</h3>
-          {conditions?.map((el, i) => (
-            <VacancyConditionsRow key={i}>
-              <Polygon />
-              <p>{el}</p>
-            </VacancyConditionsRow>
-          ))}
-        </VacancyConditionsContainer>
-        <VacancyButtons>
-          <VacancyRespondButton>{text.RESPOND_VACANCY}</VacancyRespondButton>
-          <VacancyShowNumberButton>{text.SHOW_NUMBER}</VacancyShowNumberButton>
-        </VacancyButtons>
-      </Section>
-    </Container>
+                <Icon image={el.icon}/>
+                <VacancyTextBlockContainer>
+                  <VacancyText>{el.title}</VacancyText>
+                  <VacancyValue>{el.value}</VacancyValue>
+                </VacancyTextBlockContainer>
+              </VacancyInfoBlock>
+            ))}
+          </VacancyBlocksRow>
+          <p>{description}</p>
+          <VacancyConditionsContainer>
+            <h3 style={{marginBottom: '20px'}}>{text.CONDITIONS}:</h3>
+            {conditions?.map((el, i) => (
+              <VacancyConditionsRow key={i}>
+                <Polygon/>
+                <p>{el}</p>
+              </VacancyConditionsRow>
+            ))}
+          </VacancyConditionsContainer>
+          <VacancyButtons>
+            <VacancyRespondButton>{text.RESPOND_VACANCY}</VacancyRespondButton>
+            <VacancyShowNumberButton
+              onClick={() => setIsShowNumberDialog(true)}>{text.SHOW_NUMBER}</VacancyShowNumberButton>
+          </VacancyButtons>
+        </Section>
+      </Container>
+      {renderShowNumberDialog()}
+    </>
   );
 }
 

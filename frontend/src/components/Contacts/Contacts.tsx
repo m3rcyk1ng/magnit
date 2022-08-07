@@ -1,4 +1,4 @@
-import {FunctionComponent, useEffect, useState} from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { Container } from '../../index.styles';
 import { text } from '../../utils/Text';
 import {
@@ -10,31 +10,42 @@ import {
 } from './Contacts.styles';
 import { CONTACTS } from './Contacts.constants';
 import { Location } from './Location';
-import Loader from "../Loader/Loader";
+import Loader from '../Loader/Loader';
+import ContactDialog from '../ContactDialog/ContactDialog';
 
 const Contacts: FunctionComponent = () => {
-  const [isLoading , setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setTimeout(setIsLoading, 1500, false)
-  }, [])
+    setTimeout(setIsLoading, 1500, false);
+  }, []);
+
+  const handleTogglePopup = () => setIsOpen(!isOpen);
 
   return (
-    <Container>
-      <h2>{text.CONTACTS}</h2>
-      {isLoading ? <Loader /> : <ContactsWrapper transition={!isLoading}>
-        <LocationWrapper>
-          <Location />
-        </LocationWrapper>
-        <ContactsContainer>
-          <h3>{text.MAGNIT_OOO}</h3>
-          {CONTACTS.map((el, i) => (
-            <ContactTextRow key={i}>{el}</ContactTextRow>
-          ))}
-          <ContactButton>{text.CONTACT}</ContactButton>
-        </ContactsContainer>
-      </ContactsWrapper>}
-    </Container>
+    <>
+      <Container>
+        <h2>{text.CONTACTS}</h2>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <ContactsWrapper transition={!isLoading}>
+            <LocationWrapper>
+              <Location />
+            </LocationWrapper>
+            <ContactsContainer>
+              <h3>{text.MAGNIT_OOO}</h3>
+              {CONTACTS.map((el, i) => (
+                <ContactTextRow key={i}>{el}</ContactTextRow>
+              ))}
+              <ContactButton onClick={handleTogglePopup}>{text.CONTACT}</ContactButton>
+            </ContactsContainer>
+          </ContactsWrapper>
+        )}
+      </Container>
+      <ContactDialog isOpen={isOpen} onClose={handleTogglePopup} />
+    </>
   );
 };
 
