@@ -58,7 +58,6 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
     updatedBy,
     conditions,
     description,
-    phoneNumber,
     workload
   } = currentVacancy[0] || {};
   const vacancyBlock = [{

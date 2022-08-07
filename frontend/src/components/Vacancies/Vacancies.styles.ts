@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const VacancyContainer = styled.div`
   display: grid;
-  gap: 7em 12em;
+  gap: 7em 7em;
   grid-template-columns: repeat(2, calc(50vw - 30px - 7em));
   grid-template-rows: repeat(2, min-content);
   margin-bottom: 7.5em;

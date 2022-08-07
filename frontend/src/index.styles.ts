@@ -6,10 +6,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   
-  //& > h1, h2, h5 {
-  //  text-align: left;
-  //}
-  
   @media screen and (max-width: 1024px) {
     width: var(--container-width-md);
   }
