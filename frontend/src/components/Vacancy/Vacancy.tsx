@@ -34,11 +34,13 @@ import EmploymentIcon from "../../assets/images/employment.svg";
 import ExperienceIcon from "../../assets/images/experience.svg";
 import EducationIcon from "../../assets/images/education.svg";
 import BackButtonBlue from "../../assets/images/back-button-blue.svg";
+import ContactDialog from "../ContactDialog/ContactDialog";
 
 const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
   let {id} = useParams();
   const navigate = useNavigate();
   const [isShowNumberDialog, setIsShowNumberDialog] = useState(false);
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -80,6 +82,10 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
       value: education,
     },
   ]
+
+  const renderContactDialog = () => {
+    return <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)} />
+  }
 
   const renderShowNumberDialog = () => {
     return (
@@ -129,12 +135,13 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
             ))}
           </VacancyConditionsContainer>
           <VacancyButtons>
-            <VacancyRespondButton>{text.RESPOND_VACANCY}</VacancyRespondButton>
+            <VacancyRespondButton onClick={() => setIsContactDialogOpen(true)}>{text.RESPOND_VACANCY}</VacancyRespondButton>
             <VacancyShowNumberButton
               onClick={() => setIsShowNumberDialog(true)}>{text.SHOW_NUMBER}</VacancyShowNumberButton>
           </VacancyButtons>
         </Section>
       </Container>
+      {renderContactDialog()}
       {renderShowNumberDialog()}
     </>
   );

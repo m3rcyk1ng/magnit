@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect } from 'react';
+import React, {FunctionComponent, useEffect, useState} from 'react';
 import { Container } from '../../index.styles';
 import {
   Preview,
@@ -16,17 +16,19 @@ import {
   BlockImage,
   ButtonBack,
   RowImages,
+  ProjectTitle
 } from './Project.styles';
 import { useNavigate, useParams } from 'react-router-dom';
 import BackButton from '../../assets/images/back-button.svg';
 import BackButtonBlue from '../../assets/images/back-button-blue.svg';
 import { IProjects } from "../Projects/Project.interfaces";
-import {text} from "../../utils/Text";
+import { text } from "../../utils/Text";
+import ContactDialog from "../ContactDialog/ContactDialog";
 
 const Project: FunctionComponent<IProjects> = ({ projects }) => {
   let { id } = useParams();
   const navigate = useNavigate();
-
+  const [isContactDialogOpen , setIsContactDialogOpen] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [navigate]);
@@ -34,6 +36,10 @@ const Project: FunctionComponent<IProjects> = ({ projects }) => {
   const currentProject = projects?.filter(
     (project: { _id: string | undefined }) => project._id === id,
   );
+
+  const renderContactDialog = () => {
+    return <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)} />
+  }
 
   return (
     <>
@@ -50,7 +56,7 @@ const Project: FunctionComponent<IProjects> = ({ projects }) => {
             <p>{currentProject[0]?.squareMeters}</p>
             <p>{currentProject[0]?.url}:</p>
           </InfoBlock>
-          <Button>Задать вопрос</Button>
+          <Button onClick={() => setIsContactDialogOpen(true)}>{text.ASK_QUESTION}</Button>
         </Block>
         <RowImages>
           {currentProject[0]?.imageGallery?.slice(0, 3).map((el: string | undefined) => (
@@ -59,7 +65,7 @@ const Project: FunctionComponent<IProjects> = ({ projects }) => {
         </RowImages>
       </Preview>
       <Container>
-        <h2 style={{ border: 'none', maxWidth: '99%' }}>{currentProject[0]?.projectTitle}</h2>
+        <ProjectTitle style={{ border: 'none', maxWidth: '99%' }}>{currentProject[0]?.projectTitle}</ProjectTitle>
         <TextsBlocks>
           <TextContainer>
             {currentProject[0]?.projectText?.map((text: string) => (
@@ -88,6 +94,7 @@ const Project: FunctionComponent<IProjects> = ({ projects }) => {
         <img src={BackButtonBlue} alt={text.ARROW} />
         назад к проектам
       </ButtonBack>
+      {renderContactDialog()}
     </>
   );
 };

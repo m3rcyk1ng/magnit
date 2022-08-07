@@ -20,7 +20,7 @@ export const ContactDialogWrapper = styled.div<{ isOpen: boolean }>`
 
 export const ContactForm = styled.form<{ ContactImageBg: string }>`
   width: 45rem;
-  height: 32rem;
+  height: 33rem;
   background-color: ${theme.whiteColor};
   display: flex;
   flex-direction: column;
