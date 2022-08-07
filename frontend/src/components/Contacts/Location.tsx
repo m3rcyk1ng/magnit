@@ -1,4 +1,4 @@
-import {FunctionComponent, useEffect, useState} from 'react';
+import { FunctionComponent } from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import placeMark from '../../assets/images/magnitPlace.svg'
 
