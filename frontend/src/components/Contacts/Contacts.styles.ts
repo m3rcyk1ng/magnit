@@ -30,6 +30,9 @@ export const ContactsContainer = styled.div`
   @media (max-width: 1600px) {
     margin-left: 1em;
   }
+  @media (max-width: 600px) {
+    margin-left: 0;
+  }
 `;
 
 
@@ -56,7 +59,7 @@ export const LocationWrapper = styled.div`
     height: 320px;
   }
   @media (max-width: 360px) {
-    width: 300px;
+    width: 320px;
   }
 `;
 
