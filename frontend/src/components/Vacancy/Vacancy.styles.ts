@@ -148,3 +148,80 @@ export const ButtonBack = styled.button`
     opacity: 0.8;
   }
 `;
+
+export const ShowNumberOverlay = styled.div<{ isPopupOpen: boolean }>`
+  visibility: ${(props) => (props.isPopupOpen ? 'visible' : 'hidden')};
+  opacity: ${(props) => (props.isPopupOpen ? 1 : 0)};
+  transition: visibility 0s, opacity 0.15s linear;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: 2.5rem;
+`;
+
+export const ShowNumberDialog = styled.div<{ isPopupOpen: boolean }>`
+  transform: ${(props) => (props.isPopupOpen ? 'scale(1)' : 'scale(0)')};
+  transition: all 0.15s ease-in-out;
+  width: 32rem;
+  background-color: ${theme.whiteColor};
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 799px) {
+    width: 450px;
+    height: 490px;
+    padding: 30px 20px;
+  }
+  @media (max-width: 439px) {
+    width: 300px;
+    height: 370px;
+    padding: 20px 10px;
+  }
+`;
+
+export const ShowNumberDialogTitle = styled.h3 `
+  text-transform: uppercase;
+  margin: 0 auto 2rem;
+`
+
+export const ShowNumberDialogText = styled.p `
+  text-align: center;
+  margin: 0 auto 1rem;
+`
+export const ShowNumberDialogNumber = styled.h3 `
+  text-align: center;
+  margin: 0 auto 2rem;
+`
+
+export const ShowNumberCloseButton = styled.button`
+  padding: 1rem 0.5rem;
+  border: 2px solid ${theme.backgroundColor};
+  width: 40%;
+  margin: 0 auto;
+  background-color: ${theme.whiteColor};
+  color: ${theme.backgroundColor};
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease-in;
+  transition-duration: .3s;
+  transition-property: transform;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: ${theme.backgroundColor};
+    color: ${theme.whiteColor};
+  }
+`;
