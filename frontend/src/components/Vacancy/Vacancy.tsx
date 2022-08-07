@@ -15,7 +15,8 @@ import {
   VacancyConditionsRow,
   VacancyButtons,
   VacancyRespondButton,
-  VacancyShowNumberButton
+  VacancyShowNumberButton,
+  ButtonBack
 } from './Vacancy.styles';
 import { text } from '../../utils/Text';
 import {useNavigate, useParams} from 'react-router-dom';
@@ -26,6 +27,7 @@ import UpdateIcon from "../../assets/images/update.svg";
 import EmploymentIcon from "../../assets/images/employment.svg";
 import ExperienceIcon from "../../assets/images/experience.svg";
 import EducationIcon from "../../assets/images/education.svg";
+import BackButtonBlue from "../../assets/images/back-button-blue.svg";
 
 const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
   let { id } = useParams();
@@ -65,6 +67,10 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
   return (
     <Container>
       <Section>
+        <ButtonBack onClick={() => navigate(-1)}>
+          <img src={BackButtonBlue} alt={text.ARROW} />
+          {text.BACK}
+        </ButtonBack>
         <VacancyTitle>{name}</VacancyTitle>
         <VacancyInfoText>
           <p style={{textTransform: 'uppercase'}}>{(text.SALARY + ':' )}</p>

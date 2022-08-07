@@ -48,5 +48,8 @@ export const text = {
   EMPLOYMENT: 'Занятость',
   CONDITIONS: 'Условия',
   RESPOND_VACANCY: 'Откликнуться на вакансию',
-  SHOW_NUMBER: 'Показать номер телефона'
+  SHOW_NUMBER: 'Показать номер телефона',
+  BACK: 'Назад',
+  ARROW: 'Стрелка',
+  PARTNERS: 'Партнёры',
 };

@@ -39,8 +39,8 @@ const Project: FunctionComponent<IProjects> = ({ projects }) => {
     <>
       <Preview image={currentProject[0]?.image}>
         <ButtonBack onClick={() => navigate(-1)}>
-          <img src={BackButton} alt={'стрелка'} />
-          {'назад'}
+          <img src={BackButton} alt={text.ARROW} />
+          {text.BACK}
         </ButtonBack>
         <Block>
           <Title>{currentProject[0]?.name}</Title>
@@ -85,7 +85,7 @@ const Project: FunctionComponent<IProjects> = ({ projects }) => {
         <BlockImage className="img4" image={currentProject[0]?.imageGallery[3]} />
       </ImagesContainer>
       <ButtonBack onClick={() => navigate(-1)}>
-        <img src={BackButtonBlue} alt={'стрелка'} />
+        <img src={BackButtonBlue} alt={text.ARROW} />
         назад к проектам
       </ButtonBack>
     </>

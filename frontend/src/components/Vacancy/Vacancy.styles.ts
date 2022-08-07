@@ -125,3 +125,26 @@ export const VacancyShowNumberButton = styled.div`
     color: ${theme.whiteColor};
   }
 `;
+
+export const ButtonBack = styled.button`
+  display: flex;
+  font-size: 1.3125rem;
+  line-height: 1.22;
+  text-transform: uppercase;
+  margin: 0 1rem 4rem;
+  background-color: transparent;
+  text-align: left;
+  color: ${theme.backgroundColor};
+  font-weight: 700;
+  transition: opacity 0.1s ease-in;
+  img {
+    fill: #022346;
+    margin-right: 0.8rem;
+    filter: drop-shadow(0.15em 0 0.5em ${theme.backgroundColor});
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+`;

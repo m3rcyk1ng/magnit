@@ -37,6 +37,7 @@ const AboutCompany: FunctionComponent = () => {
           ))}
         </TextContainer>
       </TextsBlocks>
+      <h2>{text.PARTNERS}</h2>
       <PartnerBlock />
     </Container>
   )
