@@ -25,7 +25,10 @@ const AboutCompany: FunctionComponent = () => {
       <h2>{text.ABOUT_COMPANY}</h2>
       <TextsBlocks>
         <TextContainer>
-          <TextBlock>{text.TEXT_BLOCK_FIRST}</TextBlock>
+          <TextBlock>
+          {text.TEXT_BLOCK_FIRST}
+          <p>{text.TEXT_BLOCK_FIRST_02}</p>
+          </TextBlock>
           <TextBlock>{text.TEXT_BLOCK_SECOND}</TextBlock>
         </TextContainer>
         <TextContainer>
