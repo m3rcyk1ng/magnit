@@ -5,7 +5,7 @@ import closeButton from '../../assets/images/close-button.svg';
 export const ContactDialogWrapper = styled.div<{ isOpen: boolean }>`
   visibility: ${(props) => (props.isOpen ? 'visible' : 'hidden')};
   opacity: ${(props) => (props.isOpen ? 1 : 0)};
-  transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0.15s, opacity 0.35s linear;
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
   display: flex;
