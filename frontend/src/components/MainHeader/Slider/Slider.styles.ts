@@ -1,8 +1,7 @@
-import styled, {css, StyledComponent} from "styled-components";
+import styled, { css } from "styled-components";
 import Hex from '../../../assets/images/hex.svg';
 import LeftArrow from '../../../assets/images/leftArrow.svg';
 import RightArrow from '../../../assets/images/rightArrow.svg';
-import {theme} from "../../../utils/Theme";
 
 const switchBasic = css`
   border: none;
@@ -39,7 +38,7 @@ export const SliderWrapper = styled.div`
   top: 0;
   bottom: 0;
   white-space: nowrap;
-  transition: left 0.4s ease-out;
+  transition: left 0.8s ease-out;
 `;
 
 export const SliderControls = styled.div`
