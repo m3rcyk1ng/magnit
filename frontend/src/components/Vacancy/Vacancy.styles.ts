@@ -260,11 +260,13 @@ export const ShowNumberDialog = styled.div<{ isPopupOpen: boolean }>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
   @media (max-width: 799px) {
     width: 450px;
     height: 490px;
     padding: 30px 20px;
   }
+  
   @media (max-width: 439px) {
     width: 300px;
     height: 370px;
