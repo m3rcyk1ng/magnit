@@ -11,12 +11,29 @@ export const VacancyTitle = styled.h2 `
   margin-top: 1rem;
   margin-bottom: 2.5rem;
 	text-transform: capitalize;
+
+  @media (max-width: 1100px) {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 1.5rem;
+  }
 `
 
 export const VacancyInfoText = styled.span`
   display: flex;
   margin-bottom: 0.75em;
   align-items: center;
+
+  @media (max-width: 600px) {
+    margin: 1rem auto;
+  }
 `;
 
 export const VacancyTextBold = styled.span`
@@ -31,6 +48,21 @@ export const VacancyBlocksRow = styled.div `
   gap: 0 70px;
   grid-template-columns: repeat(4, max-content);
   grid-template-rows: repeat(1, min-content);
+
+  @media (max-width: 1100px) {
+    gap: 0 50px;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: repeat(2, min-content);
+  }
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(1, max-content);
+    grid-template-rows: repeat(4, min-content);
+  }
 `;
 
 export const VacancyInfoBlock = styled.div `
@@ -73,6 +105,10 @@ export const VacancyConditionsContainer = styled.div `
   display: flex;
   flex-direction: column;
   margin: 2.5rem 0;
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
 `
 
 export const Polygon = styled.div`
@@ -81,6 +117,16 @@ export const Polygon = styled.div`
   width: 0.75rem;
   height: 0.75rem;
   margin-right: 1rem;
+
+  @media (max-width: 800px) {
+    display: flex;
+    margin-top: 0.5625rem;
+    align-self: start;
+  }
+
+  @media (max-width: 600px) {
+    min-width: 15px;
+  }
 `;
 
 export const VacancyConditionsRow = styled.div `
@@ -94,10 +140,25 @@ export const VacancyButtons = styled.div `
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10rem;
+
+  @media (max-width: 1100px) {
+    margin-bottom: 5rem;
+  }
+
+  @media (max-width: 760px) {
+    width: 35rem;
+  }
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    height: 7rem;
+    align-items: start;
+    width: 95%;
+  }
 `
 
 export const VacancyRespondButton = styled.div`
-  padding: 18px 30px;
+  padding: 1.125rem 1.875rem;
   background-color: ${theme.backgroundColor};
   color: ${theme.whiteColor};
   text-transform: uppercase;
@@ -109,10 +170,20 @@ export const VacancyRespondButton = styled.div`
     background-color: ${theme.secondaryBlue};
     color: ${theme.whiteColor};
   }
+
+  @media (max-width: 760px) {
+    padding: 1rem 1.125rem;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 export const VacancyShowNumberButton = styled.div`
-  padding: 18px 30px;
+  padding: 1.125rem 1.875rem;
   outline: 2px solid ${theme.backgroundColor};
   color: ${theme.backgroundColor};
   text-transform: uppercase;
@@ -123,6 +194,16 @@ export const VacancyShowNumberButton = styled.div`
     cursor: pointer;
     background-color: ${theme.backgroundColor};
     color: ${theme.whiteColor};
+  }
+
+  @media (max-width: 760px) {
+    padding: 1rem 1.25rem;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+    text-align: center;
   }
 `;
 

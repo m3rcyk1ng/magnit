@@ -58,8 +58,11 @@ export const LocationWrapper = styled.div`
     width: 340px;
     height: 320px;
   }
-  @media (max-width: 360px) {
-    width: 320px;
+  @media (max-width: 400px) {
+    width: 310px;
+  }
+  @media (max-width: 350px) {
+    width: 280px;
   }
 `;
 

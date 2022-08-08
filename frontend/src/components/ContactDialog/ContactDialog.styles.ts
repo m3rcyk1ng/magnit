@@ -20,7 +20,7 @@ export const ContactDialogWrapper = styled.div<{ isOpen: boolean }>`
 
 export const ContactForm = styled.form<{ ContactImageBg: string }>`
   width: 45rem;
-  height: 33rem;
+  min-height: 33rem;
   background-color: ${theme.whiteColor};
   display: flex;
   flex-direction: column;
@@ -52,7 +52,8 @@ export const ContactDialogInput = styled.input`
   padding: 0.5rem;
   margin-bottom: 1rem;
 	width: 100%;
-
+  font-family: inherit;
+  
   &:first-child {
     margin-right: 1.5rem;
   }
@@ -69,6 +70,7 @@ export const ContactDialogPersonCont = styled.div`
 
 export const ContactInputsRow = styled.div`
 	display: flex;
+  width: 100%;
 `
 
 export const CloseButton = styled.div`
