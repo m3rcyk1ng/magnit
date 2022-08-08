@@ -28,7 +28,7 @@ const Footer: FunctionComponent = () => {
   return (
     <StyledFooter>
       <Container>
-        <Link to={'/'}>
+        <Link to={'/'} style={{ maxWidth: 'max-content' }}>
           <Logo />
         </Link>
         <Nav>

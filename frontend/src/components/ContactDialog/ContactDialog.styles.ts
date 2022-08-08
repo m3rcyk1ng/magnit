@@ -32,6 +32,10 @@ export const ContactForm = styled.form<{ ContactImageBg: string }>`
   background-image: url(${(props) => props.ContactImageBg});
   background-repeat: no-repeat;
   background-position: bottom right 4rem;
+	
+	p {
+    max-width: 27rem;
+  }
 `;
 
 export const ContactDialogTitle = styled.h3`
@@ -39,39 +43,44 @@ export const ContactDialogTitle = styled.h3`
   margin: 0 auto 2rem;
 `;
 
-export const ContactDialogContainer = styled.div`
-  justify-items: start;
-  align-items: start;
-  text-align: center;
-  width: 60%;
-`;
+export const ContactDialogFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.2rem;
+  width: 24.5rem;
 
-export const ContactDialogInput = styled.input`
-  border: 2px ${theme.grayText} solid;
-  border-radius: 10px;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-	width: 100%;
-  font-family: inherit;
-  
-  &:first-child {
-    margin-right: 1.5rem;
+  input {
+    border: 2px ${theme.grayText} solid;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    font-family: 'Montserrat', serif;
+
+    ::placeholder {
+    }
+  }
+
+  textarea {
+    border: 2px ${theme.grayText} solid;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-bottom: 1.75rem;
+    width: 100%;
+    font-family: 'Montserrat', serif;
   }
 `;
 
-export const ContactDialogPersonCont = styled.div`
-  display: flex;
-	flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: 2rem;
-	width: 24.5rem;
-`;
-
 export const ContactInputsRow = styled.div`
-	display: flex;
-  width: 100%;
-`
+  display: flex;
+	width: 100%;
+
+  input:first-of-type {
+    margin-right: 1.5rem;
+  }
+`;
 
 export const CloseButton = styled.div`
   background-image: url(${closeButton});

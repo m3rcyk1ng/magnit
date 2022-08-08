@@ -9,7 +9,7 @@ export const StyledHeader = styled.header<{mainPage: boolean}>`
   right: 0;
   z-index: 1;
   justify-content: space-between;
-	background-color: ${(props) => ( props.mainPage ? '#022346CC' : '#FFFFFF')};
+	background-color: ${(props) => ( props.mainPage ? 'transparent' : '#FFFFFF')};
 	padding: ${(props) => ( props.mainPage ? '20px 30px' : '5px 30px')};
 	width: 100%;
 `;

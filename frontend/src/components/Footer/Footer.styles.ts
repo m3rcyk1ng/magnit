@@ -13,8 +13,8 @@ export const StyledFooter = styled.footer`
   width: 100%;
 
   svg {
-    .part-one {
-      fill: #FFFFFF;
+    .part-one, .part-two {
+      fill: #FFFFFF !important;
     }
   }
 `;

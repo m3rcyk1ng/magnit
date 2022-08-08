@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../../utils/Theme';
 
-
 export const Preview = styled.div<{ image: string }>`
   background-image: url(${(props) => props.image});
   background-size: cover;
@@ -63,13 +62,19 @@ export const Block = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgb(2,35,70);
-    background: linear-gradient(0deg, rgba(2,35,70,1) 0%, rgba(2,35,70,1) 25%, rgba(2,35,70,0.5466561624649859) 90%, rgba(0,0,0,0) 100%);
+    background: rgb(2, 35, 70);
+    background: linear-gradient(
+      0deg,
+      rgba(2, 35, 70, 1) 0%,
+      rgba(2, 35, 70, 1) 25%,
+      rgba(2, 35, 70, 0.5466561624649859) 90%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 
   @media (max-width: 500px) {
     top: 55%;
-    background: ${theme.backgroundColor}
+    background: ${theme.backgroundColor};
   }
 
   @media (max-width: 440px) {
@@ -117,7 +122,7 @@ export const InfoBlock = styled.div`
   @media (max-width: 1100px) {
     margin: 2.5rem 0 1.5rem;
   }
-  
+
   p {
     font-size: 1rem;
     text-transform: uppercase;
@@ -136,12 +141,12 @@ export const Button = styled.div`
   font-weight: 700;
   font-size: 0.875rem;
   transition: background-color 0.2s ease-in;
-  
+
   @media (max-width: 560px) {
     font-size: 0.6125rem;
     max-width: max-content;
   }
-  
+
   &:hover {
     cursor: pointer;
     background-color: ${theme.whiteColor};
@@ -167,7 +172,7 @@ export const TextBlock = styled.div`
   @media (max-width: 600px) {
     font-size: 1rem;
   }
-  
+
   &:last-child {
     margin-right: 0;
   }
@@ -179,7 +184,7 @@ export const TextContainer = styled.div`
   margin-bottom: 6.25rem;
   margin-right: auto;
   width: 100%;
-  
+
   @media (max-width: 720px) {
     flex-direction: column;
   }
@@ -189,7 +194,7 @@ export const TextsBlocks = styled.div`
   display: flex;
   flex-direction: column;
   align-self: end;
-  
+
   @media (max-width: 850px) {
     align-self: center;
   }
@@ -231,18 +236,17 @@ export const Image = styled.div<{ image: string }>`
 export const RowContainer = styled.div`
   display: flex;
   margin-bottom: 7.5rem;
-  
+
   @media (max-width: 760px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 16px 16px;
     grid-template-areas:
-    ". ."
-    ". .";
+      '. .'
+      '. .';
   }
 `;
-
 
 export const ImagesContainer = styled.div`
   padding: 0 1.875rem;
@@ -260,9 +264,9 @@ export const ImagesContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 1rem 1rem;
-    grid-template-areas: 
-    'img1 img2'
-    'img3 img4';
+    grid-template-areas:
+      'img1 img2'
+      'img3 img4';
   }
 
   @media (max-width: 700px) {
@@ -270,7 +274,7 @@ export const ImagesContainer = styled.div`
     flex-direction: column;
     //height: min-content;
   }
-  
+
   .img1 {
     width: 100%;
     height: 100%;
@@ -303,8 +307,7 @@ export const BlockImage = styled.div<{ image: string }>`
   width: 100%;
   height: 100%;
   @media (max-width: 700px) {
-    background-size: contain;
-    border: 1px red solid;
+    background-size: cover;
   }
 `;
 
@@ -320,6 +323,7 @@ export const ButtonBack = styled.button`
   font-weight: 700;
   transition: opacity 0.1s ease-in;
   align-self: start;
+
   img {
     margin-right: 0.8rem;
   }
@@ -332,5 +336,21 @@ export const ButtonBack = styled.button`
   &:hover {
     cursor: pointer;
     opacity: 0.8;
+  }
+
+  @media (max-width: 740px) {
+    font-size: 1rem;
+
+    img {
+      width: 0.625rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.95rem;
+		
+    img {
+      width: 0.5625rem;
+    }
   }
 `;

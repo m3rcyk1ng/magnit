@@ -2,39 +2,45 @@ import { FunctionComponent } from 'react';
 import {
   ContactDialogTitle,
   ContactDialogWrapper,
-  ContactDialogContainer,
-  ContactDialogInput,
-  ContactDialogPersonCont,
   ContactForm,
   CloseButton,
   ContactInputsRow,
-  ContactDialogTextarea,
   ContactDialogButtonSend,
+  ContactDialogFormContainer,
 } from './ContactDialog.styles';
 import { text } from '../../utils/Text';
 import ContactImageBg from '../../assets/images/contactbg.png';
 import { IContactDialog } from './ContactDialog.interfaces';
+import { FormProvider, useForm, Controller } from 'react-hook-form';
 
 const ContactDialog: FunctionComponent<IContactDialog> = ({ isOpen, onClose }) => {
+  const formMethods = useForm();
+  const { watch, setValue, handleSubmit, control, formState, reset } = formMethods;
+
+  const handleFormSubmit = () => {
+    console.log('success');
+    onClose();
+  };
+
   return (
     <ContactDialogWrapper isOpen={isOpen}>
-      <ContactForm ContactImageBg={ContactImageBg}>
-        <ContactDialogTitle>{text.CONTACT_US}</ContactDialogTitle>
-        <ContactDialogContainer>
+      <FormProvider {...formMethods}>
+        <ContactForm ContactImageBg={ContactImageBg} noValidate onSubmit={handleSubmit(handleFormSubmit)}>
+          <ContactDialogTitle>{text.CONTACT_US}</ContactDialogTitle>
           <p>{text.CONTACT_DESCRIPTION}</p>
-          <ContactDialogPersonCont>
-            <ContactDialogInput name={'name'} placeholder={text.NAME} />
+          <ContactDialogFormContainer>
+            <input name={'name'} placeholder={text.NAME} />
             <ContactInputsRow>
-              <ContactDialogInput name={'email'} placeholder={text.EMAIL} />
-              <ContactDialogInput name={'email'} placeholder={text.PHONE} />
+              <input name={'email'} placeholder={text.EMAIL} />
+              <input name={'email'} placeholder={text.PHONE} />
             </ContactInputsRow>
-          </ContactDialogPersonCont>
-          <ContactDialogInput placeholder={text.TOPIC} />
-          <ContactDialogTextarea placeholder={text.YOUR_MESSAGE} rows={4}/>
-        </ContactDialogContainer>
-        <ContactDialogButtonSend>{text.SEND}</ContactDialogButtonSend>
-        <CloseButton onClick={onClose} />
-      </ContactForm>
+            <input placeholder={text.TOPIC} />
+            <textarea placeholder={text.YOUR_MESSAGE} rows={4} />
+            <ContactDialogButtonSend type={'submit'}>{text.SEND}</ContactDialogButtonSend>
+          </ContactDialogFormContainer>
+          <CloseButton onClick={onClose} />
+        </ContactForm>
+      </FormProvider>
     </ContactDialogWrapper>
   );
 };
