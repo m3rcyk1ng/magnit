@@ -7,7 +7,6 @@ export const ProjectContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5rem;
-
   &:nth-of-type(2n) {
     flex-direction: row-reverse;
 
@@ -51,7 +50,7 @@ export const LeftBlock = styled.div`
   }
 `;
 
-export const RigthBlock = styled.div`
+export const RightBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,10 +96,11 @@ export const ImageContainer = styled.div<{ img: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  border-radius: 25px;
+  
   button {
     opacity: 0;
-    transition: opacity 0.2s linear;
+    transition: opacity 0.4s linear;
     z-index: 1;
   }
 
@@ -119,7 +119,8 @@ export const ImageContainer = styled.div<{ img: string }>`
     height: 100%;
     background-image: linear-gradient(30deg, #4fa6d9, #022346);
     opacity: 0;
-    transition: opacity 0.2s linear;
+    transition: opacity 0.4s linear;
+    border-radius: 25px;
   }
 
   &:hover::after {

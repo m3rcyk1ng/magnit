@@ -5,7 +5,7 @@ import {
   InfoRow,
   InfoText,
   ImageContainer,
-  RigthBlock,
+  RightBlock,
   ProjectName,
   StreetText,
   Polygon,
@@ -38,10 +38,10 @@ const ProjectCard: FunctionComponent<any> = (props) => {
           <Button onClick={handleCardClick}>{text.BUTTON_MORE}</Button>
         </ImageContainer>
       </LeftBlock>
-      <RigthBlock>
+      <RightBlock>
         <ProjectName>{name}</ProjectName>
         <StreetText>{street}</StreetText>
-      </RigthBlock>
+      </RightBlock>
     </ProjectContainer>
   );
 }

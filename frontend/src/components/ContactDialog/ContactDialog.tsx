@@ -7,6 +7,8 @@ import {
   ContactInputsRow,
   ContactDialogButtonSend,
   ContactDialogFormContainer,
+  ContactDialogInput,
+  ContactDialogTextarea,
 } from './ContactDialog.styles';
 import { text } from '../../utils/Text';
 import ContactImageBg from '../../assets/images/contactbg.png';
@@ -29,13 +31,13 @@ const ContactDialog: FunctionComponent<IContactDialog> = ({ isOpen, onClose }) =
           <ContactDialogTitle>{text.CONTACT_US}</ContactDialogTitle>
           <p>{text.CONTACT_DESCRIPTION}</p>
           <ContactDialogFormContainer>
-            <input name={'name'} placeholder={text.NAME} />
+            <ContactDialogInput name={'name'} placeholder={text.NAME} autoComplete={'off'} />
             <ContactInputsRow>
-              <input name={'email'} placeholder={text.EMAIL} />
-              <input name={'email'} placeholder={text.PHONE} />
+              <ContactDialogInput name={'email'} placeholder={text.EMAIL} autoComplete={'off'} />
+              <ContactDialogInput name={'email'} placeholder={text.PHONE} autoComplete={'off'} />
             </ContactInputsRow>
-            <input placeholder={text.TOPIC} />
-            <textarea placeholder={text.YOUR_MESSAGE} rows={4} />
+            <ContactDialogInput placeholder={text.TOPIC} />
+            <ContactDialogTextarea placeholder={text.YOUR_MESSAGE} rows={4} />
             <ContactDialogButtonSend type={'submit'}>{text.SEND}</ContactDialogButtonSend>
           </ContactDialogFormContainer>
           <CloseButton onClick={onClose} />

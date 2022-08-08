@@ -26,7 +26,7 @@ export const ContactForm = styled.form<{ ContactImageBg: string }>`
   flex-direction: column;
   border-radius: 15px;
   filter: drop-shadow(10px 10px 20px rgba(21, 20, 20, 0.54));
-  border: 2px ${theme.secondaryBlue} solid;
+  border: 2px ${theme.backgroundColor} solid;
   padding: 2rem 2rem;
   position: relative;
   background-image: url(${(props) => props.ContactImageBg});
@@ -50,33 +50,28 @@ export const ContactDialogFormContainer = styled.div`
   justify-content: center;
   margin-top: 1.2rem;
   width: 24.5rem;
+`;
 
-  input {
-    border: 2px ${theme.grayText} solid;
-    border-radius: 10px;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    width: 100%;
-    font-family: 'Montserrat', serif;
-
-    ::placeholder {
-    }
+export const ContactDialogInput = styled.input`
+  border: 2px ${theme.grayText} solid;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-family: 'Montserrat', serif;
+  &:hover {
+    border: 2px ${theme.secondaryBlue} solid;
+    transition: 0.3s ease-in;
   }
 
-  textarea {
-    border: 2px ${theme.grayText} solid;
-    border-radius: 10px;
-    padding: 0.5rem;
-    margin-bottom: 1.75rem;
-    width: 100%;
-    font-family: 'Montserrat', serif;
+  &:focus {
+    border: 2px ${theme.secondaryBlue} solid;
   }
 `;
 
 export const ContactInputsRow = styled.div`
   display: flex;
 	width: 100%;
-
   input:first-of-type {
     margin-right: 1.5rem;
   }
@@ -101,9 +96,17 @@ export const ContactDialogTextarea = styled.textarea`
   border: 2px ${theme.grayText} solid;
   border-radius: 10px;
   padding: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.75rem;
   width: 100%;
-  font-family: inherit;
+  font-family: 'Montserrat', serif;
+  &:focus,
+  &:focus-visible {
+    box-shadow: 0 0 0 2px ${theme.secondaryBlue};
+  }
+  &:hover {
+    transition: 0.2s ease-in;
+    box-shadow: 0 0 0 2px ${theme.secondaryBlue};
+  }
 `
 
 export const ContactDialogButtonSend = styled.button`
