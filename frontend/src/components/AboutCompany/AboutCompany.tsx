@@ -6,9 +6,15 @@ TextContainer, TextBlock, TextsBlocks, NumberSection, SumTitle, SumDesc
 import { text } from '../../utils/Text';
 import {AboutCompanyNumbers} from './AboutCompany.constants';
 import PartnerBlock from './PartnerBlock/PartnerBlock';
+import {useNavigate} from "react-router-dom";
 
 const AboutCompany: FunctionComponent = () => {
   const [isShowDescription , setShowDescription] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [navigate]);
 
   function Counter(val: number, i: number) {
     const [currVal, setCurrVal] = useState(0);
@@ -27,7 +33,7 @@ const AboutCompany: FunctionComponent = () => {
         <TextContainer>
           <TextBlock>
           {text.TEXT_BLOCK_FIRST}
-          <p>{text.TEXT_BLOCK_FIRST_02}</p>
+          <p style={{paddingTop: '0.75rem'}}>{text.TEXT_BLOCK_FIRST_02}</p>
           </TextBlock>
           <TextBlock>{text.TEXT_BLOCK_SECOND}</TextBlock>
         </TextContainer>

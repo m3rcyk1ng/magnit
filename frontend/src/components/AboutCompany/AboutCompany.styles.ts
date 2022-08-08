@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {theme} from "../../utils/Theme";
 
 export const TextsBlocks = styled.div`
   display: flex;
@@ -30,7 +31,7 @@ export const NumberSection = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 16.5rem;
-  border-left: 1px solid var(--mainColor);
+  border-left: 1px solid ${theme.backgroundColor};
 `;
 
 export const SumTitle = styled.p`
