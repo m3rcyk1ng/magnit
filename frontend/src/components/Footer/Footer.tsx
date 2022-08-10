@@ -9,8 +9,6 @@ import {
   Copyright,
   ContactContainer,
   Number,
-  LinksContainer,
-  SocialLink,
   ColumnContainer,
   Title,
   Paragraph,
@@ -18,13 +16,20 @@ import {
 import { navItems } from '../../utils/NavItems';
 import { text } from '../../utils/Text';
 import Logo from '../Logo/Logo';
-import WhatsappIcon from '../../assets/images/whatsapp-icon.svg';
-import ViberIcon from '../../assets/images/viber-icon.svg';
-import TelegramIcon from '../../assets/images/telegram-icon.svg';
-import IntagramIcon from '../../assets/images/instagram-icon.svg';
 import { Link } from 'react-router-dom';
 
 const Footer: FunctionComponent = () => {
+
+  const width  = window.innerWidth || document.documentElement.clientWidth ||
+    document.body.clientWidth;
+  const height = window.innerHeight|| document.documentElement.clientHeight||
+    document.body.clientHeight;
+
+  console.log(width, height);
+
+
+  const mobile = width <= 500;
+
   return (
     <StyledFooter>
       <Container>
@@ -40,16 +45,12 @@ const Footer: FunctionComponent = () => {
             ))}
           </List>
         </Nav>
-        <Copyright>&#169; {text.COPYRIGHT}</Copyright>
+        {!mobile && <Copyright>&#169; {text.COPYRIGHT}</Copyright>}
       </Container>
       <ContactContainer>
         <Number>{text.PHONE_NUMBER}</Number>
-        <LinksContainer>
-          <SocialLink src={WhatsappIcon} />
-          <SocialLink src={IntagramIcon} />
-          <SocialLink src={TelegramIcon} />
-          <SocialLink src={ViberIcon} />
-        </LinksContainer>
+        <Paragraph />
+        {/*<Paragraph>{'(С 09:00 до 18:00)'}</Paragraph>*/}
         <ColumnContainer>
           <Title>{text.ADDRESS}</Title>
           <Paragraph>{text.ADDRESS_TEXT}</Paragraph>
@@ -59,6 +60,7 @@ const Footer: FunctionComponent = () => {
           <Paragraph>{text.EMAIL_TEXT}</Paragraph>
         </ColumnContainer>
       </ContactContainer>
+      {mobile && <Copyright>&#169; {text.COPYRIGHT}</Copyright>}
     </StyledFooter>
   );
 };
