@@ -19,14 +19,8 @@ import Logo from '../Logo/Logo';
 import { Link } from 'react-router-dom';
 
 const Footer: FunctionComponent = () => {
-
   const width  = window.innerWidth || document.documentElement.clientWidth ||
     document.body.clientWidth;
-  const height = window.innerHeight|| document.documentElement.clientHeight||
-    document.body.clientHeight;
-
-  console.log(width, height);
-
 
   const mobile = width <= 500;
 
