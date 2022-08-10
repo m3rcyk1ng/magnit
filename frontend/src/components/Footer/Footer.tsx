@@ -50,7 +50,6 @@ const Footer: FunctionComponent = () => {
       <ContactContainer>
         <Number>{text.PHONE_NUMBER}</Number>
         <Paragraph />
-        {/*<Paragraph>{'(С 09:00 до 18:00)'}</Paragraph>*/}
         <ColumnContainer>
           <Title>{text.ADDRESS}</Title>
           <Paragraph>{text.ADDRESS_TEXT}</Paragraph>

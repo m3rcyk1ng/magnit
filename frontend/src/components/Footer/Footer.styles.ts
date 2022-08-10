@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import {theme} from '../../utils/Theme';
-import {Link} from 'react-router-dom';
+import { theme } from '../../utils/Theme';
+import { Link } from 'react-router-dom';
 
 export const StyledFooter = styled.footer`
   background-color: ${theme.backgroundColor};
@@ -134,7 +134,7 @@ export const Number = styled.p`
   @media (max-width: 1130px) {
     font-size: 1.25rem;
   }
-	
+
   @media (max-width: 500px) {
     text-align: center;
     font-size: 1.25rem;
@@ -145,16 +145,6 @@ export const Number = styled.p`
 export const LinksContainer = styled.div`
   display: flex;
   align-items: center;
-`;
-
-export const SocialLink = styled.img`
-  width: 30px;
-  height: 30px;
-  margin-right: 8px;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
 `;
 
 export const ColumnContainer = styled.div`
