@@ -96,7 +96,6 @@ export const ImageContainer = styled.div<{ img: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 25px;
   
   button {
     opacity: 0;
@@ -120,7 +119,6 @@ export const ImageContainer = styled.div<{ img: string }>`
     background-image: linear-gradient(30deg, #4fa6d9, #022346);
     opacity: 0;
     transition: opacity 0.4s linear;
-    border-radius: 25px;
   }
 
   &:hover::after {

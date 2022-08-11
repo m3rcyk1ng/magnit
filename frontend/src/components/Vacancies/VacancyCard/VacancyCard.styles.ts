@@ -128,6 +128,9 @@ export const VacancyButton = styled.button`
 
   &:hover {
     cursor: pointer;
+    background-color: ${theme.backgroundColor};
+    color: ${theme.whiteColor};
+    transition: 0.3s ease-in;
   }
 
   @media (max-width: 1475px) {

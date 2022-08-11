@@ -1,9 +1,7 @@
 import {FunctionComponent, useEffect, useState} from 'react';
-import { Container } from '../../index.styles';
-import {
-TextContainer, TextBlock, TextsBlocks, NumberSection, SumTitle, SumDesc
-} from './AboutCompany.styles';
-import { text } from '../../utils/Text';
+import {Container} from '../../index.styles';
+import {NumberSection, SumDesc, SumTitle, TextBlock, TextContainer, TextsBlocks} from './AboutCompany.styles';
+import {text} from '../../utils/Text';
 import {AboutCompanyNumbers} from './AboutCompany.constants';
 import PartnerBlock from './PartnerBlock/PartnerBlock';
 import {useNavigate} from "react-router-dom";
@@ -11,6 +9,23 @@ import {useNavigate} from "react-router-dom";
 const AboutCompany: FunctionComponent = () => {
   const [isShowDescription , setShowDescription] = useState(false);
   const navigate = useNavigate();
+  // const [yPosition , setYPosition] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const isCounterStart = scrollPosition >= 1300;
+  console.log('isCounterStart', isCounterStart);
+  console.log('scrollPosition', scrollPosition);
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
