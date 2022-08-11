@@ -32,7 +32,6 @@ export const ContactForm = styled.form<{ ContactImageBg: string }>`
   background-image: url(${(props) => props.ContactImageBg});
   background-repeat: no-repeat;
   background-position: bottom right 4rem;
-	
 	p {
     max-width: 27rem;
   }
@@ -99,6 +98,9 @@ export const ContactDialogTextarea = styled.textarea`
   margin-bottom: 1.75rem;
   width: 100%;
   font-family: 'Montserrat', serif;
+  resize: vertical;
+  max-height: 28rem;
+  overflow-y: auto;
   &:focus,
   &:focus-visible {
     box-shadow: 0 0 0 2px ${theme.secondaryBlue};
