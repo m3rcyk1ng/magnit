@@ -21,6 +21,7 @@ export const TextBlock = styled.div`
   max-width: 37.5rem;
   margin-right: 12rem;
   font-size: 1.125rem;
+  text-align: justify;
 
   &:last-child {
     margin-right: 0;

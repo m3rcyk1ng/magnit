@@ -194,7 +194,8 @@ export const TextsBlocks = styled.div`
   display: flex;
   flex-direction: column;
   align-self: end;
-
+  text-align: justify;
+  
   @media (max-width: 850px) {
     align-self: center;
   }
