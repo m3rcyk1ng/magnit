@@ -61,5 +61,6 @@ export const text = {
   PLACEMENT: 'Трудоустройство',
   PLACEMENT_DESC: 'Вы можете связаться с нашим отделом трудоустройства по номеру:',
   NUMBER: '+7 (999) 999-99-99',
-  ASK_QUESTION: 'Задать вопрос'
+  ASK_QUESTION: 'Задать вопрос',
+  SCROLL_DOWN: 'Scrolling Down →',
 };

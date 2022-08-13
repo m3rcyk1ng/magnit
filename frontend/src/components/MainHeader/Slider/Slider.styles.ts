@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import Hex from '../../../assets/images/hex.svg';
 import LeftArrow from '../../../assets/images/leftArrow.svg';
 import RightArrow from '../../../assets/images/rightArrow.svg';
+import {theme} from "../../../utils/Theme";
 
 const switchBasic = css`
   border: none;
@@ -98,5 +99,32 @@ export const SliderTextSwitcher = styled.button`
     &:after {
       display: none;
     }
+  }
+`;
+
+export const ScrollDown = styled.a `
+  @keyframes up-down {
+    0% {
+      top: 50%;
+    }
+    50% {
+      top: 52%;
+    }
+    100% {
+      top: 50%;
+    }
+  }
+  position: absolute;
+  color: ${theme.whiteColor};
+  right: 1rem;
+  top: 50%;
+  transform: rotate(90deg);
+  font-weight: 400;
+  font-size: 1rem;
+  animation: up-down 6s ease infinite;
+  z-index: 10;
+  transform-origin: top right;
+  &:hover {
+    cursor: pointer;
   }
 `;

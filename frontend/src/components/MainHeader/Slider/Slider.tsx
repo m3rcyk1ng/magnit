@@ -8,8 +8,10 @@ import {
   SliderTextSwitcher,
   SliderTextSwitcherWrapper,
   SliderWrapper,
+  ScrollDown,
 } from './Slider.styles';
-import {MainHeaderPhotos} from "../MainHeader.constants";
+import { MainHeaderPhotos } from "../MainHeader.constants";
+import { text } from "../../../utils/Text";
 
 const ImageSlider: FunctionComponent<{ parentWidth: number | null; parentHeight: number | null; }> = ({
    parentWidth,
@@ -93,6 +95,7 @@ const ImageSlider: FunctionComponent<{ parentWidth: number | null; parentHeight:
 
   return (
     <SliderContainer>
+      <ScrollDown href={'#about'}>{text.SCROLL_DOWN}</ScrollDown>
       <SliderWrapper style={{left: sliderPosition(), width: parentWidth || '100%', height: parentHeight || '100%'}}>
         {MainHeaderPhotos.map(renderImageSlide)}
       </SliderWrapper>
