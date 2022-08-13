@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledBurger = styled.button<{ isOpenMenu: boolean }>`
-  display: block;
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   width: ${(props) => (props.isOpenMenu ? '39px' : '40px')};
