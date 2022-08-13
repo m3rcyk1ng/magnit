@@ -4,11 +4,14 @@ import { Container } from '../../index.styles';
 import { VacancyContainer, VacanciesTitle } from './Vacancies.styles';
 import VacancyCard from './VacancyCard/VacancyCard';
 import { IVacancies } from './Vacancy.interfaces';
+import { Slide } from 'react-awesome-reveal';
 
 const Vacancies: FunctionComponent<IVacancies> = ({ vacancies }) => {
   return (
     <Container>
-      <VacanciesTitle>{text.VACANCIES}</VacanciesTitle>
+      <Slide duration={1600} triggerOnce>
+        <VacanciesTitle>{text.VACANCIES}</VacanciesTitle>
+      </Slide>
       <VacancyContainer>
         {vacancies?.map(({ _id, image, name, education, experience, salary }) => (
           <VacancyCard

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import {theme} from "../../utils/Theme";
 
 export const StyledHeader = styled.header<{ mainPage: boolean }>`
   display: flex;
@@ -9,7 +10,7 @@ export const StyledHeader = styled.header<{ mainPage: boolean }>`
   right: 0;
   z-index: 1;
   justify-content: space-between;
-  background-color: ${(props) => (props.mainPage ? 'transparent' : '#FFFFFF')};
+  background-color: ${(props) => (props.mainPage ? 'transparent' : `${theme.whiteColor}`)};
   padding: ${(props) => (props.mainPage ? '20px 30px' : '5px 30px')};
   width: 100%;
 
@@ -42,7 +43,7 @@ export const List = styled.ul<{ isOpenMenu: boolean; mainPage: boolean }>`
     display: ${(props) => (props.isOpenMenu ? 'flex' : 'none')};
     flex-direction: column;
     justify-content: center;
-    background: ${(props) => (props.mainPage ? '#022346' : '#FFFFFF')};
+    background: ${(props) => (props.mainPage ? `${theme.backgroundColor}` : `${theme.whiteColor}`)};
     transform: ${(props) => (props.isOpenMenu ? 'translateX(0)' : 'translateX(-100%)')};
     width: 100%;
     height: 100vh;
@@ -72,13 +73,55 @@ export const ListItem = styled.li`
   }
 `;
 
+export const StyledLinkCompany = styled.a<{ mainPage: boolean }>`
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 500;
+  color: ${(props) => (props.mainPage ? `${theme.whiteColor}` : `${theme.backgroundColor}`)};
+  position: relative;
+  text-decoration: none;
+  padding-top: 2px;
+  
+  @media (max-width: 1130px) {
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 899px) {
+    font-size: 1.5rem;
+  }
+
+  &:visited {
+    text-decoration: none;
+  }
+  
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    margin: -5px 0;
+    background-color: ${(props) => (props.mainPage ? `${theme.whiteColor}` : `${theme.backgroundColor}`)};
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.4s ease-in-out 0s;
+  }
+
+  &:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+`;
+
 export const StyledLink = styled(Link)<{ mainPage: boolean }>`
   margin: 0;
   text-transform: uppercase;
   font-size: 1rem;
   line-height: 1;
   font-weight: 500;
-  color: ${(props) => (props.mainPage ? '#FFFFFF' : '#022346')};
+  color: ${(props) => (props.mainPage ? `${theme.whiteColor}` : `${theme.backgroundColor}`)};
   position: relative;
   text-decoration: none;
 
@@ -97,7 +140,7 @@ export const StyledLink = styled(Link)<{ mainPage: boolean }>`
     height: 2px;
     bottom: 0;
     margin: -5px 0;
-    background-color: ${(props) => (props.mainPage ? '#FFFFFF' : '#022346')};
+    background-color: ${(props) => (props.mainPage ? `${theme.whiteColor}` : `${theme.backgroundColor}`)};
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.4s ease-in-out 0s;

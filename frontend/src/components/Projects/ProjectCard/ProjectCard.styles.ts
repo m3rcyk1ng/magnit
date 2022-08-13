@@ -28,6 +28,7 @@ export const LeftBlock = styled.div`
   display: grid;
   grid-template-columns: minmax(340px, 1262px);
   grid-template-rows: min-content minmax(360px, 630px);
+  animation: 2s ease-in-out 0s 1 slideInFromRight;
 
   &:nth-of-type(1n) {
     justify-items: right;
@@ -55,7 +56,8 @@ export const RightBlock = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  animation: 2s ease-in-out 0s 1 slideInFromLeft;
+  
   @media (max-width: 1200px) {
     margin-top: 1.25rem;
   }
@@ -65,6 +67,7 @@ export const InfoRow = styled.div`
   display: flex;
   margin-bottom: 2rem;
   align-items: center;
+  animation: 2s ease-in-out 0s 1 slideInFromBottom;
 
   @media (max-width: 500px) {
     margin-bottom: 0.625rem;

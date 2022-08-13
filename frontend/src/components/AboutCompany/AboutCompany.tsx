@@ -12,8 +12,8 @@ const AboutCompany: FunctionComponent = () => {
   // const [yPosition , setYPosition] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
   const isCounterStart = scrollPosition >= 1300;
-  console.log('isCounterStart', isCounterStart);
-  console.log('scrollPosition', scrollPosition);
+  // console.log('isCounterStart', isCounterStart);
+  // console.log('scrollPosition', scrollPosition);
   const handleScroll = () => {
     const position = window.scrollY;
     setScrollPosition(position);

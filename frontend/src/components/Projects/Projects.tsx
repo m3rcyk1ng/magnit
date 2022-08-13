@@ -7,7 +7,7 @@ import { Button } from './Projects.styles';
 
 const Projects: FunctionComponent<IProjects> = ({ projects }) => {
   const [moreButton, setMoreButton] = useState(false);
-  const [amountShowProjects , setAmountShowProjects] = useState(5);
+  const [amountShowProjects , setAmountShowProjects] = useState(2);
 
   useEffect(() => {
     if (projects.length <= amountShowProjects) {
