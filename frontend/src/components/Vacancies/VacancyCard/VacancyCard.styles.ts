@@ -66,7 +66,6 @@ export const VacancyImageFrame = styled.div<{frame: string}>`
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
 `;
 
 export const VacancyInfoCont = styled.div`
