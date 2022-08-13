@@ -29,7 +29,7 @@ const Vacancies: FunctionComponent<IVacancies> = ({ vacancies }) => {
 
   return (
     <Container>
-      <Slide duration={1600} triggerOnce>
+      <Slide duration={1600} triggerOnce direction={'down'}>
         <VacanciesTitle>{text.VACANCIES}</VacanciesTitle>
       </Slide>
       <VacancyContainer>
