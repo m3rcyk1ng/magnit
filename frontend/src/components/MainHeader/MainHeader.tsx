@@ -1,4 +1,4 @@
-import {FunctionComponent, useEffect, useLayoutEffect, useRef, useState} from 'react';
+import {FunctionComponent, useLayoutEffect, useRef, useState} from 'react';
 import {
   MainContainer
 } from './MainHeader.styles';
