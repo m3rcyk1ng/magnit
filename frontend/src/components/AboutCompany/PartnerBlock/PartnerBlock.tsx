@@ -1,19 +1,22 @@
 import { FunctionComponent } from 'react';
 import { PartnerLogo, BackgroundHexagon, GridContainer, FirstRow } from './PartnerBlock.styles';
 import { PARTNERS_FIRST_ROW } from './PartnerBlock.constants';
+import { Fade } from 'react-awesome-reveal';
 
 const PartnerBlock: FunctionComponent = () => {
 
   return (
     <GridContainer>
       <FirstRow>
-      {PARTNERS_FIRST_ROW.map(({name, image, href}, index) => (
+        <Fade duration={2000} delay={1500} triggerOnce cascade direction={'right'}>
+        {PARTNERS_FIRST_ROW.map(({name, image, href}, index) => (
         <a key={index} href={href} target='_blank'>
           <BackgroundHexagon>
           <PartnerLogo src={image}/>
           </BackgroundHexagon>
         </a>
       ))}
+        </Fade>
       </FirstRow>
     </GridContainer>
   )

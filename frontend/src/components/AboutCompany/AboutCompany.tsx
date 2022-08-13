@@ -4,7 +4,8 @@ import {NumberSection, SumDesc, SumTitle, TextBlock, TextContainer, TextsBlocks}
 import {text} from '../../utils/Text';
 import {AboutCompanyNumbers} from './AboutCompany.constants';
 import PartnerBlock from './PartnerBlock/PartnerBlock';
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import {Fade, Slide} from 'react-awesome-reveal';
 
 const AboutCompany: FunctionComponent = () => {
   const [isShowDescription , setShowDescription] = useState(false);
@@ -43,8 +44,11 @@ const AboutCompany: FunctionComponent = () => {
 
   return (
     <Container id="about">
-      <h2>{text.ABOUT_COMPANY}</h2>
+      <Slide duration={2000} triggerOnce direction={'left'}>
+        <h2>{text.ABOUT_COMPANY}</h2>
+      </Slide>
       <TextsBlocks>
+        <Fade duration={2000} delay={1000} cascade triggerOnce direction={'up'}>
         <TextContainer>
           <TextBlock>
           {text.TEXT_BLOCK_FIRST}
@@ -52,6 +56,8 @@ const AboutCompany: FunctionComponent = () => {
           </TextBlock>
           <TextBlock>{text.TEXT_BLOCK_SECOND}</TextBlock>
         </TextContainer>
+        </Fade>
+        <Fade duration={2000} delay={1000} cascade triggerOnce direction={'up'}>
         <TextContainer>
           {AboutCompanyNumbers.map((el, i) => (
             <NumberSection key={i}>
@@ -60,9 +66,12 @@ const AboutCompany: FunctionComponent = () => {
             </NumberSection>
           ))}
         </TextContainer>
+        </Fade>
       </TextsBlocks>
-      <h2>{text.PARTNERS}</h2>
-      <PartnerBlock />
+      <Slide duration={2000} triggerOnce direction={'left'}>
+        <h2>{text.PARTNERS}</h2>
+      </Slide>
+        <PartnerBlock />
     </Container>
   )
 }
