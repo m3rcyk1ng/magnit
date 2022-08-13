@@ -273,7 +273,6 @@ export const ImagesContainer = styled.div`
   @media (max-width: 700px) {
     display: flex;
     flex-direction: column;
-    //height: min-content;
   }
 
   .img1 {

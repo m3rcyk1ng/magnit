@@ -8,7 +8,7 @@ import { Slide } from 'react-awesome-reveal';
 
 const Projects: FunctionComponent<IProjects> = ({ projects }) => {
   const [moreButton, setMoreButton] = useState(false);
-  const [amountShowProjects , setAmountShowProjects] = useState(2);
+  const [amountShowProjects , setAmountShowProjects] = useState(5);
 
   useEffect(() => {
     if (projects.length <= amountShowProjects) {
