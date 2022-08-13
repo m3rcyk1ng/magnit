@@ -25,14 +25,14 @@ const VacancyCard: FunctionComponent<any> = (props) => {
 
   return (
     <VacancyCardWrapper>
-      <Fade delay={3600} duration={2000}>
+      <Fade delay={3600} duration={2000} triggerOnce>
       <VacancyImageCont>
         <VacancyImage img={image}/>
         <VacancyImageFrame frame={Frame}/>
       </VacancyImageCont>
       </Fade>
       <VacancyInfoCont>
-        <Fade cascade delay={1600}>
+        <Fade cascade delay={1600} triggerOnce direction={'down'} duration={700}>
         <VacancyTitle>{name}</VacancyTitle>
           <VacancyInfoText>
             <p style={{textTransform: 'uppercase'}}>{(text.SALARY + ':' )}</p>

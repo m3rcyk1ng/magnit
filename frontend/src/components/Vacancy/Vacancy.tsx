@@ -35,6 +35,7 @@ import ExperienceIcon from "../../assets/images/experience.svg";
 import EducationIcon from "../../assets/images/education.svg";
 import BackButtonBlue from "../../assets/images/back-button-blue.svg";
 import ContactDialog from "../ContactDialog/ContactDialog";
+import { Fade, Slide } from 'react-awesome-reveal';
 
 const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
   let {id} = useParams();
@@ -83,7 +84,7 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
   ]
 
   const renderContactDialog = () => {
-    return <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)} />
+    return <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)}/>
   }
 
   const renderShowNumberDialog = () => {
@@ -103,40 +104,59 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
     <>
       <Container>
         <Section>
-          <ButtonBack onClick={() => navigate(-1)}>
-            <img src={BackButtonBlue} alt={text.ARROW}/>
-            {text.BACK}
-          </ButtonBack>
-          <VacancyTitle>{name}</VacancyTitle>
+          <Fade duration={1500}>
+            <ButtonBack onClick={() => navigate(-1)}>
+              <img src={BackButtonBlue} alt={text.ARROW}/>
+              {text.BACK}
+            </ButtonBack>
+          </Fade>
+          <Slide duration={3000} triggerOnce>
+            <VacancyTitle>{name}</VacancyTitle>
+          </Slide>
           <VacancyInfoText>
-            <p style={{textTransform: 'uppercase'}}>{(text.SALARY + ':')}</p>
-            <VacancyTextBold>{(` ${toPrecision(salary, false)} ${text.RUB}`)}</VacancyTextBold>
+            <Fade duration={2000} cascade delay={2000} direction={'right'}>
+              <p style={{textTransform: 'uppercase'}}>{(text.SALARY + ':')}</p>
+              <VacancyTextBold>{(` ${toPrecision(salary, false)} ${text.RUB}`)}</VacancyTextBold>
+            </Fade>
           </VacancyInfoText>
           <VacancyBlocksRow>
             {vacancyBlock.map((el) => (
               <VacancyInfoBlock>
-                <Icon image={el.icon}/>
-                <VacancyTextBlockContainer>
-                  <VacancyText>{el.title}</VacancyText>
-                  <VacancyValue>{el.value}</VacancyValue>
-                </VacancyTextBlockContainer>
+                <Fade duration={2000} cascade delay={2000} direction={'right'}>
+                  <Icon image={el.icon}/>
+                  <VacancyTextBlockContainer>
+                    <VacancyText>{el.title}</VacancyText>
+                    <VacancyValue>{el.value}</VacancyValue>
+                  </VacancyTextBlockContainer>
+                </Fade>
               </VacancyInfoBlock>
             ))}
           </VacancyBlocksRow>
-          <p>{description}</p>
-          <VacancyConditionsContainer>
-            <h3 style={{marginBottom: '20px'}}>{text.CONDITIONS}:</h3>
-            {conditions?.map((el, i) => (
-              <VacancyConditionsRow key={i}>
-                <Polygon/>
-                <p>{el}</p>
-              </VacancyConditionsRow>
-            ))}
-          </VacancyConditionsContainer>
+          <Fade cascade delay={3500}>
+            <p>{description}</p>
+            <VacancyConditionsContainer>
+              <h3 style={{marginBottom: '20px'}}>{text.CONDITIONS}:</h3>
+              {conditions?.map((el, i) => (
+                <Fade duration={2000} cascade delay={2000} direction={'up'}>
+                <VacancyConditionsRow key={i}>
+                  <Polygon/>
+                  <p>{el}</p>
+                </VacancyConditionsRow>
+                </Fade>
+              ))}
+            </VacancyConditionsContainer>
+          </Fade>
           <VacancyButtons>
-            <VacancyRespondButton onClick={() => setIsContactDialogOpen(true)}>{text.RESPOND_VACANCY}</VacancyRespondButton>
-            <VacancyShowNumberButton
-              onClick={() => setIsShowNumberDialog(true)}>{text.SHOW_NUMBER}</VacancyShowNumberButton>
+            <Fade direction={'up'} delay={4000} duration={2000}>
+              <VacancyRespondButton onClick={() => setIsContactDialogOpen(true)}>
+                {text.RESPOND_VACANCY}
+              </VacancyRespondButton>
+            </Fade>
+            <Fade direction={'up'} delay={5000} duration={3000}>
+            <VacancyShowNumberButton onClick={() => setIsShowNumberDialog(true)}>
+              {text.SHOW_NUMBER}
+            </VacancyShowNumberButton>
+            </Fade>
           </VacancyButtons>
         </Section>
       </Container>

@@ -41,7 +41,7 @@ const Projects: FunctionComponent<IProjects> = ({ projects }) => {
           id={_id}
         />
       ))}
-      {moreButton && <Button onClick={handleShowMoreClick}>{text.MORE_PROJECTS}</Button>}
+      {moreButton && <Button onClick={handleShowMoreClick}>{text.MORE_BUTTON}</Button>}
     </Container>
   );
 }

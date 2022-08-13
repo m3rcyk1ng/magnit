@@ -5,22 +5,20 @@ export const ContactsWrapper = styled.div<{transition: boolean}>`
   display: flex;
   margin-bottom: 8em;
   width: 100%;
-  opacity: 0;
-  transform: translateY(150%);
-  animation: animation 1s forwards;
-  ${(props) => props.transition && `
-    opacity: 1;
-  `};
-  @keyframes animation {
-    0% {transform: translateY(150%);}
-    100% {transform: translateY(0);}
-  }
-  @media (max-width: 1100px) {
-    flex-direction: column-reverse;
-  }
-  @media (max-width: 600px) {
-    margin-bottom: 2em;
-  }
+  //opacity: 0;
+  //transform: translateY(150%);
+  //animation: animation 1s forwards;
+
+  // @keyframes animation {
+  //   0% {transform: translateY(150%);}
+  //   100% {transform: translateY(0);}
+  // }
+   @media (max-width: 1100px) {
+     flex-direction: column-reverse;
+   }
+   @media (max-width: 600px) {
+     margin-bottom: 2em;
+   }
 `;
 
 export const ContactsContainer = styled.div`
@@ -114,7 +112,11 @@ export const ContactButton = styled.button`
 
   &:hover {
     cursor: pointer;
+    background-color: ${theme.backgroundColor};
+    color: ${theme.whiteColor};
+    transition: 0.3s ease-in;
   }
+  
   @media (max-width: 1600px) {
     margin-top: 2em;
   }

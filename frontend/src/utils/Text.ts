@@ -40,7 +40,7 @@ export const text = {
   EDUCATION: 'Образование',
   EXP: 'Опыт работы',
   RUB: 'Руб',
-  MORE_PROJECTS: 'Показать ещё',
+  MORE_BUTTON: 'Показать ещё',
   PROJECT_IMAGE: 'Изображение проекта',
   UPDATED: 'Обновление',
   EMPLOYMENT: 'Занятость',
