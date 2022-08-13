@@ -32,9 +32,31 @@ export const ContactForm = styled.form<{ ContactImageBg: string }>`
   background-image: url(${(props) => props.ContactImageBg});
   background-repeat: no-repeat;
   background-position: bottom right 4rem;
-	p {
+
+  p {
     max-width: 27rem;
   }
+`;
+
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 3rem;
+  margin-bottom: 1rem;
+  width: 100%;
+
+  span {
+    color: red;
+    font-size: 0.75rem;
+    padding-top: 0.3125rem;
+    padding-left: 0.1875rem;
+    transition: all 0.2s ease-in;
+  }
+`;
+
+export const TextareaContainer = styled(InputContainer)`
+  height: 100%;
+	min-height: 6.5rem;
 `;
 
 export const ContactDialogTitle = styled.h3`
@@ -48,16 +70,16 @@ export const ContactDialogFormContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 1.2rem;
-  width: 24.5rem;
+  width: 27.5rem;
 `;
 
 export const ContactDialogInput = styled.input`
   border: 2px ${theme.grayText} solid;
   border-radius: 10px;
   padding: 0.5rem;
-  margin-bottom: 1rem;
   width: 100%;
   font-family: 'Montserrat', serif;
+
   &:hover {
     border: 2px ${theme.secondaryBlue} solid;
     transition: 0.3s ease-in;
@@ -70,8 +92,9 @@ export const ContactDialogInput = styled.input`
 
 export const ContactInputsRow = styled.div`
   display: flex;
-	width: 100%;
-  input:first-of-type {
+  width: 100%;
+
+  div:nth-child(1) {
     margin-right: 1.5rem;
   }
 `;
@@ -95,28 +118,31 @@ export const ContactDialogTextarea = styled.textarea`
   border: 2px ${theme.grayText} solid;
   border-radius: 10px;
   padding: 0.5rem;
-  margin-bottom: 1.75rem;
   width: 100%;
   font-family: 'Montserrat', serif;
   resize: vertical;
   max-height: 28rem;
   overflow-y: auto;
+
   &:focus,
   &:focus-visible {
     box-shadow: 0 0 0 2px ${theme.secondaryBlue};
+    border-color: transparent;
   }
+
   &:hover {
     transition: 0.2s ease-in;
+    border-color: transparent;
     box-shadow: 0 0 0 2px ${theme.secondaryBlue};
   }
-`
+`;
 
 export const ContactDialogButtonSend = styled.button`
   padding: 1rem;
-	max-width: 18.75rem;
+  max-width: 18.75rem;
   border-radius: 10px;
   text-transform: uppercase;
-	color: ${theme.whiteColor};
-	font-size: 0.875rem;
+  color: ${theme.whiteColor};
+  font-size: 0.875rem;
   background-color: ${theme.backgroundColor};
-`
+`;
