@@ -5,7 +5,7 @@ import { VacancyContainer, VacanciesTitle } from './Vacancies.styles';
 import VacancyCard from './VacancyCard/VacancyCard';
 import { IVacancies } from './Vacancy.interfaces';
 import { Slide } from 'react-awesome-reveal';
-import {Button} from "../Projects/Projects.styles";
+import { Button } from "../Projects/Projects.styles";
 
 const Vacancies: FunctionComponent<IVacancies> = ({ vacancies }) => {
   const [moreButton, setMoreButton] = useState(false);

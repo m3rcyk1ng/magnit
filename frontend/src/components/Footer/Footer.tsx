@@ -19,7 +19,7 @@ import Logo from '../Logo/Logo';
 import { Link } from 'react-router-dom';
 
 const Footer: FunctionComponent = () => {
-  const width  = window.innerWidth || document.documentElement.clientWidth ||
+  const width = window.innerWidth || document.documentElement.clientWidth ||
     document.body.clientWidth;
 
   const mobile = width <= 500;
@@ -27,12 +27,12 @@ const Footer: FunctionComponent = () => {
   return (
     <StyledFooter>
       <Container>
-        <Link to={'/'} style={{ maxWidth: 'max-content' }}>
-          <Logo />
+        <Link to={'/'} style={{maxWidth: 'max-content'}}>
+          <Logo/>
         </Link>
         <Nav>
           <List>
-            {navItems.map(({ title, path }, i) => (
+            {navItems.map(({title, path}, i) => (
               <ListItem key={i}>
                 <StyledLink to={path}>{title}</StyledLink>
               </ListItem>
@@ -43,7 +43,7 @@ const Footer: FunctionComponent = () => {
       </Container>
       <ContactContainer>
         <Number>{text.PHONE_NUMBER}</Number>
-        <Paragraph />
+        <Paragraph/>
         <ColumnContainer>
           <Title>{text.ADDRESS}</Title>
           <Paragraph>{text.ADDRESS_TEXT}</Paragraph>

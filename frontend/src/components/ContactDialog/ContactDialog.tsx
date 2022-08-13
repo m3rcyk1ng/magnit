@@ -44,15 +44,12 @@ const ContactDialog: FunctionComponent<IContactDialog> = ({ isOpen, onClose }) =
     reset,
   } = formMethods;
 
-  console.log(errors);
-
   const handleClose = () => {
     reset();
     onClose();
   };
 
   const handleFormSubmit = (data: IForm) => {
-    console.log('success', data);
     handleClose();
   };
 

@@ -4,6 +4,7 @@ import { text } from '../../utils/Text';
 import ProjectCard from './ProjectCard/ProjectCard';
 import { IProjects } from "./Project.interfaces";
 import { Button } from './Projects.styles';
+import { Slide } from 'react-awesome-reveal';
 
 const Projects: FunctionComponent<IProjects> = ({ projects }) => {
   const [moreButton, setMoreButton] = useState(false);
@@ -27,7 +28,9 @@ const Projects: FunctionComponent<IProjects> = ({ projects }) => {
 
   return (
     <Container>
-      <h2>{text.PROJECT}</h2>
+      <Slide duration={1600} triggerOnce direction={'down'}>
+        <h2>{text.PROJECT}</h2>
+      </Slide>
       {projects?.slice(0, amountShowProjects).map(({ project, city, name, month, image, street, year, _id }) => (
         <ProjectCard
           project={project}

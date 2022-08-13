@@ -20,6 +20,10 @@ const Contacts: FunctionComponent = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [isStartLoading , setStartLoading] = useState(false);
+  const width = window.innerWidth || document.documentElement.clientWidth ||
+    document.body.clientWidth;
+
+  const mobile = width <= 800;
 
   useEffect(() => {
     if (isStartLoading) {
@@ -32,10 +36,10 @@ const Contacts: FunctionComponent = () => {
   return (
     <>
       <Container>
-        <Slide duration={1500} onVisibilityChange={() => setTimeout(setStartLoading, 1500, true)} triggerOnce>
+        <Slide duration={1500} onVisibilityChange={() => setTimeout(setStartLoading, 1500, true)} triggerOnce direction={'left'}>
           <ContactsMainTitle>{text.CONTACTS}</ContactsMainTitle>
         </Slide>
-        {isStartLoading ? (
+        {!mobile && isStartLoading ? (
           <Loader />
         ) : null }
         {isLoading ? <div /> : (

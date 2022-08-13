@@ -5,14 +5,6 @@ export const ContactsWrapper = styled.div<{transition: boolean}>`
   display: flex;
   margin-bottom: 8em;
   width: 100%;
-  //opacity: 0;
-  //transform: translateY(150%);
-  //animation: animation 1s forwards;
-
-  // @keyframes animation {
-  //   0% {transform: translateY(150%);}
-  //   100% {transform: translateY(0);}
-  // }
    @media (max-width: 1100px) {
      flex-direction: column-reverse;
    }
