@@ -24,8 +24,8 @@ const ProjectCard: FunctionComponent<any> = (props) => {
   };
 
   return (
-    <Fade duration={2000} delay={1000} triggerOnce cascade direction={'up'}>
     <ProjectContainer>
+      <Fade duration={2000} delay={1000} triggerOnce cascade direction={'up'}>
       <LeftBlock>
         <Slide direction={'up'} duration={2000} triggerOnce delay={3000}>
         <InfoRow>
@@ -48,8 +48,8 @@ const ProjectCard: FunctionComponent<any> = (props) => {
           <StreetText>{street}</StreetText>
         </Fade>
       </RightBlock>
+      </Fade>
     </ProjectContainer>
-    </Fade>
   );
 }
 
