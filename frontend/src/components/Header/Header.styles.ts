@@ -8,7 +8,7 @@ export const StyledHeader = styled.header<{ mainPage: boolean }>`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 3;
   justify-content: space-between;
   background-color: ${(props) => (props.mainPage ? 'transparent' : `${theme.whiteColor}`)};
   padding: ${(props) => (props.mainPage ? '20px 30px' : '5px 30px')};

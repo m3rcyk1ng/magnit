@@ -50,6 +50,7 @@ export const SliderControls = styled.div`
   padding: 36px 16px;
   display: flex;
   align-items: center;
+  z-index: 3;
 `;
 
 export const SliderSwitchLeft = styled.button`
