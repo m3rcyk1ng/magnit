@@ -8,8 +8,12 @@ import {
   InfoContainer,
   InfoTitle,
   InfoDescription,
+  PhoneNumber,
+  BlockRow,
+  LanguageSwitcher
 } from './MainHeader.styles';
 import ImageSlider from './Slider/Slider';
+import {text} from "../../utils/Text";
 
 const MainHeader: FunctionComponent = () => {
   const mainContainerRef = useRef<HTMLDivElement | null>(null);
@@ -39,11 +43,13 @@ const MainHeader: FunctionComponent = () => {
     <>
       <MainContainer ref={mainContainerRef}>
         <Block>
-          <BlockTitle>There will be good heading here</BlockTitle>
-          <BlockText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. At purus, nulla posuere massa
-            quam neque. Vitae dui molestie integer scelerisque vitae.
-          </BlockText>
+          <div>
+            <BlockTitle>There will be good heading here</BlockTitle>
+            <BlockText>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. At purus, nulla posuere massa
+              quam neque. Vitae dui molestie integer scelerisque vitae.
+            </BlockText>
+          </div>
           <InfoRow>
             <InfoContainer>
               <InfoTitle>1029</InfoTitle>
@@ -58,6 +64,13 @@ const MainHeader: FunctionComponent = () => {
               <InfoDescription>Lorem ipsum</InfoDescription>
             </InfoContainer>
           </InfoRow>
+          <BlockRow>
+            <PhoneNumber>{text.PHONE_NUMBER}</PhoneNumber>
+            <LanguageSwitcher>
+              <button>RU</button>
+              <button>EN</button>
+            </LanguageSwitcher>
+          </BlockRow>
         </Block>
         <ImageSlider parentWidth={parentWidth} parentHeight={parentHeight} />
       </MainContainer>
