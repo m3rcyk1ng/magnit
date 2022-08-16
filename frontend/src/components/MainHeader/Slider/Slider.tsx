@@ -13,9 +13,10 @@ import {
 import { MainHeaderPhotos } from "../MainHeader.constants";
 import { text } from "../../../utils/Text";
 
-const ImageSlider: FunctionComponent<{ parentWidth: number | null; parentHeight: number | null; }> = ({
+const ImageSlider: FunctionComponent<{ parentWidth: number | null; parentHeight: number | null; getSliderIndex: (index?: number) => void }> = ({
    parentWidth,
-   parentHeight
+   parentHeight,
+   getSliderIndex
    }) => {
   const [sliderIndex, setSliderIndex] = useState(0);
   const [isVertical, setIsVertical] = useState<Array<boolean>>(MainHeaderPhotos.map(() => false));
@@ -50,11 +51,11 @@ const ImageSlider: FunctionComponent<{ parentWidth: number | null; parentHeight:
         }
       }
     });
-
   }, [parentWidth, parentHeight])
 
   function handleTextSwitchClick(slideIndex: number) {
     setSliderIndex(slideIndex);
+    getSliderIndex(slideIndex);
   }
 
   function handleButtonSwitchClick(direction: string) {

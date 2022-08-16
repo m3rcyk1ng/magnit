@@ -8,7 +8,7 @@ const PartnerBlock: FunctionComponent = () => {
   return (
     <GridContainer>
       <FirstRow>
-        <Fade duration={2000} delay={1500} triggerOnce cascade direction={'right'}>
+        <Fade duration={1000} delay={1000} triggerOnce cascade direction={'right'}>
         {PARTNERS_FIRST_ROW.map(({name, image, href}, index) => (
         <a key={index} href={href} target='_blank'>
           <BackgroundHexagon>

@@ -51,7 +51,7 @@ const AboutCompany: FunctionComponent = () => {
         <Fade duration={2000} delay={1000} cascade triggerOnce direction={'up'}>
         <TextContainer>
           <TextBlock>
-          {text.TEXT_BLOCK_FIRST}
+          {/*{text.TEXT_BLOCK_FIRST}*/}
           <p style={{paddingTop: '0.75rem'}}>{text.TEXT_BLOCK_FIRST_02}</p>
           </TextBlock>
           <TextBlock>{text.TEXT_BLOCK_SECOND}</TextBlock>

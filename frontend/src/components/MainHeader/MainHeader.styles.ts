@@ -71,6 +71,7 @@ export const BlockTitle = styled.h3`
   color: ${theme.whiteColor};
   text-transform: initial;
   margin-bottom: 1.875rem;
+  transition: all 0.5s ease-in;
 `;
 
 export const BlockText = styled.p`
