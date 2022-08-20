@@ -16,51 +16,32 @@ export const MainContainer = styled.div`
 export const Block = styled.div`
   position: absolute;
   top: 0;
-  width: 788px;
+  width: 41%;
   height: 100%;
-  padding: 18.125rem 3.75rem 1.875rem 1.875rem;
+  padding: 1.875rem;
   background-color: rgba(2, 35, 70, 0.8);
   text-transform: uppercase;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   color: ${theme.whiteColor};
 
-  @media (max-width: 1100px) {
-    width: 300px;
-    padding: 3rem;
+  @media (max-width: 1600px) {
+    width: 35%;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 980px) {
     position: absolute;
     width: 100%;
-    height: 20rem;
-    top: 50%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgb(2, 35, 70);
-    background: linear-gradient(
-      0deg,
-      rgba(2, 35, 70, 1) 0%,
-      rgba(2, 35, 70, 1) 25%,
-      rgba(2, 35, 70, 0.5466561624649859) 90%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  }
-
-  @media (max-width: 500px) {
-    top: 55%;
-    background: ${theme.backgroundColor};
-  }
-
-  @media (max-width: 440px) {
-    top: 45%;
-  }
-
-  @media (max-width: 350px) {
-    top: 35%;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(2, 35, 70, 0.8) 0%, rgba(2, 35, 70, 0.384) 92.38%, rgba(0,0,0,0) 100%);
+    backdrop-filter: blur(8px);
   }
 `;
 
@@ -72,17 +53,50 @@ export const BlockTitle = styled.h3`
   text-transform: initial;
   margin-bottom: 1.875rem;
   transition: all 0.5s ease-in;
+
+  @media (max-width: 1600px) {
+    font-size: 3.75rem;
+  }
+
+  @media (max-width: 1300px) {
+    font-size: 3.125rem;
+  }
+
+  @media (max-width: 1150px) {
+    font-size: 2.725rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 2.125rem;
+  }
 `;
 
 export const BlockText = styled.p`
   text-transform: initial;
   font-size: 1.125rem;
   line-height: 1.75;
+
+  @media (max-width: 1150px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.875rem;
+  }
 `;
 
 export const BlockRow = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 250px;
+
+  @media (max-width: 1300px) {
+    margin-top: 200px;
+  }
+
+  @media (max-width: 980px) {
+    display: none;
+  }
 `;
 
 export const PhoneNumber = styled.p`
@@ -90,6 +104,10 @@ export const PhoneNumber = styled.p`
   font-size: 1.3125rem;
   line-height: 1.22;
   font-weight: 700;
+
+  @media (max-width: 1150px) {
+    font-size: 18px;
+  }
 `;
 
 export const InfoRow = styled.div`
@@ -122,12 +140,16 @@ export const LanguageSwitcher = styled.div`
     border: none;
     background-color: transparent;
     color: ${theme.whiteColor};
-		font-size: 21px;
+    font-size: 21px;
     line-height: 1.22;
-		
-		&:first-of-type {
+
+    &:first-of-type {
       margin-right: 20px;
       font-weight: 700;
-		}
+    }
+
+    @media (max-width: 1150px) {
+      font-size: 18px;
+    }
   }
 `;

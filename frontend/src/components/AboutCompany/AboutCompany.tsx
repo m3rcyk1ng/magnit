@@ -1,14 +1,22 @@
-import {FunctionComponent, useEffect, useState} from 'react';
-import {Container} from '../../index.styles';
-import {NumberSection, SumDesc, SumTitle, TextBlock, TextContainer, TextsBlocks} from './AboutCompany.styles';
-import {text} from '../../utils/Text';
-import {AboutCompanyNumbers} from './AboutCompany.constants';
+import { FunctionComponent, useEffect, useState } from 'react';
+import { Container } from '../../index.styles';
+import {
+  NumberSection,
+  SumDesc,
+  SumTitle,
+  TextBlock,
+  TextContainer,
+  TextsBlocks,
+  GridContainer,
+} from './AboutCompany.styles';
+import { text } from '../../utils/Text';
+import { AboutCompanyNumbers } from './AboutCompany.constants';
 import PartnerBlock from './PartnerBlock/PartnerBlock';
-import { useNavigate } from "react-router-dom";
-import {Fade, Slide} from 'react-awesome-reveal';
+import { useNavigate } from 'react-router-dom';
+import { Fade, Slide } from 'react-awesome-reveal';
 
 const AboutCompany: FunctionComponent = () => {
-  const [isShowDescription , setShowDescription] = useState(false);
+  const [isShowDescription, setShowDescription] = useState(false);
   const navigate = useNavigate();
   // const [yPosition , setYPosition] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -21,10 +29,10 @@ const AboutCompany: FunctionComponent = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -34,7 +42,7 @@ const AboutCompany: FunctionComponent = () => {
 
   function Counter(val: number, i: number) {
     const [currVal, setCurrVal] = useState(0);
-    const step = 10 / val * 250;
+    const step = (10 / val) * 250;
     useEffect(() => {
       currVal !== val && setTimeout(setCurrVal, step, currVal + 1);
       if (currVal === val) setShowDescription(true);
@@ -49,31 +57,33 @@ const AboutCompany: FunctionComponent = () => {
       </Slide>
       <TextsBlocks>
         <Fade duration={2000} delay={1000} cascade triggerOnce direction={'up'}>
-        <TextContainer>
-          <TextBlock>
-          {/*{text.TEXT_BLOCK_FIRST}*/}
-          <p style={{paddingTop: '0.75rem'}}>{text.TEXT_BLOCK_FIRST_02}</p>
-          </TextBlock>
-          <TextBlock>{text.TEXT_BLOCK_SECOND}</TextBlock>
-        </TextContainer>
+          <TextContainer>
+            <TextBlock>
+              {/*{text.TEXT_BLOCK_FIRST}*/}
+              <p style={{ paddingTop: '0.75rem' }}>{text.TEXT_BLOCK_FIRST_02}</p>
+            </TextBlock>
+            <TextBlock>{text.TEXT_BLOCK_SECOND}</TextBlock>
+          </TextContainer>
         </Fade>
         <Fade duration={2000} delay={1000} cascade triggerOnce direction={'up'}>
-        <TextContainer>
-          {AboutCompanyNumbers.map((el, i) => (
-            <NumberSection key={i}>
-              {Counter(Number(el.sum), i)}
-              <SumDesc isShowDescription={isShowDescription} transition={i + 3}>{el.description}</SumDesc>
-            </NumberSection>
-          ))}
-        </TextContainer>
+          <GridContainer>
+            {AboutCompanyNumbers.map((el, i) => (
+              <NumberSection key={i}>
+                {Counter(Number(el.sum), i)}
+                <SumDesc isShowDescription={isShowDescription} transition={i + 3}>
+                  {el.description}
+                </SumDesc>
+              </NumberSection>
+            ))}
+          </GridContainer>
         </Fade>
       </TextsBlocks>
       <Slide duration={2000} triggerOnce direction={'left'}>
         <h2>{text.PARTNERS}</h2>
       </Slide>
-        <PartnerBlock />
+      <PartnerBlock />
     </Container>
-  )
-}
+  );
+};
 
 export default AboutCompany;

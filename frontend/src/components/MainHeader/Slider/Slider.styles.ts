@@ -128,4 +128,8 @@ export const ScrollDown = styled.a `
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: 980px) {
+    display: none;
+  }
 `;
