@@ -56,14 +56,19 @@ export const ProjectOverlay = styled.div`
   right: 0;
   height: 7.5rem;
   padding: 1.875rem;
-  background-color: rgba(217, 217, 217, 0.7);
+  background-color: rgba(217, 217, 217, 0.6);
   backdrop-filter: blur(9px);
   z-index: 2;
   display: flex;
   color: ${theme.whiteColor};
   justify-content: space-between;
   align-items: center;
-
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(217, 217, 217, 0.4);
+    transition: 0.5s;
+  }
+  
   @media (max-width: 1300px) {
     padding: 1.25rem;
     height: 5.5rem;
