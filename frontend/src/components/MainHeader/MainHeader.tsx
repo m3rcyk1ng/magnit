@@ -24,6 +24,25 @@ const MainHeader: FunctionComponent = () => {
   const [parentHeight, setParentHeight] = useState<number | null>(null);
   const [sliderIndex, setSliderIndex] = useState(0);
   const [projectOverlay, setProjectOverlay] = useState({title: '', address: '', id: ''});
+
+  useEffect(() => {
+    PROJECT_OVERLAY.map(({title, address, id}, index) => {
+      if (index === sliderIndex) {
+        setProjectOverlay({title: title, address: address, id: id})
+      }
+    })
+  }, [sliderIndex]);
+
+  useLayoutEffect(() => {
+    window.addEventListener('resize', setParentSizes);
+    setParentSizes();
+    return () => window.removeEventListener('resize', setParentSizes);
+  });
+
+  function getSliderIndex(index: number) {
+    setSliderIndex(index);
+  }
+
   function setParentSizes() {
     if (mainContainerRef) {
       const clientWidth = mainContainerRef?.current?.clientWidth;
@@ -37,10 +56,6 @@ const MainHeader: FunctionComponent = () => {
     }
   }
 
-  function getSliderIndex(index: number) {
-    setSliderIndex(index);
-  }
-
   const renderSliderTitle = (index: number) => {
     if (index === 0) return text.HEADER_TITLE04;
     if (index === 1) return text.HEADER_TITLE01;
@@ -48,20 +63,6 @@ const MainHeader: FunctionComponent = () => {
     if (index === 3) return text.HEADER_TITLE03;
     return text.HEADER_TITLE04;
   }
-
-  useLayoutEffect(() => {
-    window.addEventListener('resize', setParentSizes);
-    setParentSizes();
-    return () => window.removeEventListener('resize', setParentSizes);
-  });
-
-  useEffect(() => {
-    PROJECT_OVERLAY.map(({title, address, id}, index) => {
-      if (index === sliderIndex) {
-        setProjectOverlay({title: title, address: address, id: id})
-      }
-    })
-  }, [sliderIndex]);
 
   return (
     <>
@@ -72,19 +73,19 @@ const MainHeader: FunctionComponent = () => {
               <BlockTitle>{renderSliderTitle(sliderIndex)}</BlockTitle>
             </Slide>
             <Fade delay={1100} duration={1200} triggerOnce cascade direction={'up'}>
-            <BlockText>
-              {text.TEXT_BLOCK_FIRST}
-            </BlockText>
+              <BlockText>
+                {text.TEXT_BLOCK_FIRST}
+              </BlockText>
             </Fade>
           </div>
           <Fade duration={1200} direction={'up'} cascade delay={1300} triggerOnce>
-          <BlockRow>
-            <PhoneNumber>{text.PHONE_NUMBER}</PhoneNumber>
-            <LanguageSwitcher>
-              <button>RU</button>
-              <button>EN</button>
-            </LanguageSwitcher>
-          </BlockRow>
+            <BlockRow>
+              <PhoneNumber>{text.PHONE_NUMBER}</PhoneNumber>
+              <LanguageSwitcher>
+                <button>RU</button>
+                <button>EN</button>
+              </LanguageSwitcher>
+            </BlockRow>
           </Fade>
         </Block>
         <ProjectOverlay>
@@ -96,7 +97,8 @@ const MainHeader: FunctionComponent = () => {
             <ProjectOverlayButton img={BackButton}/>
           </>
         </ProjectOverlay>
-        <ImageSlider parentWidth={parentWidth} parentHeight={parentHeight} getSliderIndex={(index) => getSliderIndex(index || 0)} />
+        <ImageSlider parentWidth={parentWidth} parentHeight={parentHeight}
+                     getSliderIndex={(index) => getSliderIndex(index || 0)}/>
       </MainContainer>
     </>
   );

@@ -1,17 +1,17 @@
-import {FunctionComponent, useEffect, useState} from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { StyledHeader, Nav, ListItem, List, StyledLink, StyledLinkCompany } from './Header.styles';
 import Logo from '../Logo/Logo';
 import { navItems } from '../../utils/NavItems';
 import { Link, useLocation } from 'react-router-dom';
-import Burger from "../Burger/Burger";
+import Burger from '../Burger/Burger';
 import { NavHashLink } from 'react-router-hash-link';
 
 const Header: FunctionComponent = () => {
   const { pathname } = useLocation();
   const projectDetailPage = pathname.includes('/project/');
-  const [mainPage , setMainPage] = useState(true);
+  const [mainPage, setMainPage] = useState(true);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-  const [color , setColor] = useState('#FFF');
+  const [color, setColor] = useState('#FFF');
 
   useEffect(() => {
     if (pathname === '/') {
@@ -34,26 +34,26 @@ const Header: FunctionComponent = () => {
   return !projectDetailPage ? (
     <StyledHeader mainPage={mainPage}>
       <Link to={'/'}>
-        <Logo />
+        <Logo/>
       </Link>
       <Nav isOpenMenu={isOpenMenu}>
         <List isOpenMenu={isOpenMenu} mainPage={mainPage} onClick={handleBurgerClick}>
-          {navItems.map(({ title, path, hash }, i) => (
+          {navItems.map(({title, path, hash}, i) => (
             <ListItem key={i}>
               {hash ?
                 <StyledLinkCompany mainPage={mainPage}>
-                    <NavHashLink color={'FFF'} to={`${path}${hash}`} style={{color}}>{title}</NavHashLink>
+                  <NavHashLink color={'FFF'} to={`${path}${hash}`} style={{color}}>{title}</NavHashLink>
                 </StyledLinkCompany>
                 :
                 <StyledLink mainPage={mainPage} to={{pathname: path, hash: hash}}>
-                {title}
-              </StyledLink>
+                  {title}
+                </StyledLink>
               }
             </ListItem>
           ))}
         </List>
       </Nav>
-      <Burger isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
+      <Burger isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu}/>
     </StyledHeader>
   ) : null;
 };

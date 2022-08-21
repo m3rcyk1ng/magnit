@@ -2,7 +2,7 @@ import { Container } from './Logo.styles';
 import { useLocation } from 'react-router-dom';
 
 function Logo() {
-  const { pathname } = useLocation();
+  const {pathname} = useLocation();
   const mainPage = pathname === '/';
 
   return (
@@ -13,7 +13,7 @@ function Logo() {
         viewBox="0 0 53 60"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        style={{ marginRight: '10px' }}
+        style={{marginRight: '10px'}}
       >
         <path
           fillRule="evenodd"
@@ -31,9 +31,9 @@ function Logo() {
             y2="60"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#25A8DF" />
-            <stop offset="0.56" stopColor="#075884" />
-            <stop offset="1" stopColor="#001F48" />
+            <stop stopColor="#25A8DF"/>
+            <stop offset="0.56" stopColor="#075884"/>
+            <stop offset="1" stopColor="#001F48"/>
           </linearGradient>
         </defs>
       </svg>

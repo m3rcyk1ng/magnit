@@ -40,25 +40,25 @@ function App() {
   return (
     <div
       className="App"
-      style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+      style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center'}}
     >
-      <Header />
+      <Header/>
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/projects" element={<Projects projects={projects} />} />
-        <Route path={`/project/:id`} element={<Project projects={projects} />} />
+        <Route path="/" element={<MainPage/>}/>
+        <Route path="/projects" element={<Projects projects={projects}/>}/>
+        <Route path={`/project/:id`} element={<Project projects={projects}/>}/>
         <Route
           path="/vacancies"
-          element={<Vacancies vacancies={vacancies} />}
+          element={<Vacancies vacancies={vacancies}/>}
         />
         <Route
           path={`/vacancy/:id`}
-          element={<Vacancy vacancies={vacancies} />}
+          element={<Vacancy vacancies={vacancies}/>}
         />
-        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/contacts" element={<Contacts/>}/>
       </Routes>
-      <div style={{ flexGrow: '1' }} />
-      <Footer />
+      <div style={{flexGrow: '1'}}/>
+      <Footer/>
     </div>
   );
 }

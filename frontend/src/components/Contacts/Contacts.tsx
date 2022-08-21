@@ -19,7 +19,7 @@ import { Fade, Slide } from 'react-awesome-reveal';
 const Contacts: FunctionComponent = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
-  const [isStartLoading , setStartLoading] = useState(false);
+  const [isStartLoading, setStartLoading] = useState(false);
   const width = window.innerWidth || document.documentElement.clientWidth ||
     document.body.clientWidth;
 
@@ -36,32 +36,33 @@ const Contacts: FunctionComponent = () => {
   return (
     <>
       <Container>
-        <Slide duration={1500} onVisibilityChange={() => setTimeout(setStartLoading, 1500, true)} triggerOnce direction={'left'}>
+        <Slide duration={1500} onVisibilityChange={() => setTimeout(setStartLoading, 1500, true)} triggerOnce
+               direction={'left'}>
           <ContactsMainTitle>{text.CONTACTS}</ContactsMainTitle>
         </Slide>
         {!mobile && isStartLoading ? (
-          <Loader />
-        ) : null }
-        {isLoading ? <div /> : (
+          <Loader/>
+        ) : null}
+        {isLoading ? <div/> : (
           <ContactsWrapper transition={!isLoading}>
             <Fade delay={1000} duration={2000} direction={'up'}>
-            <LocationWrapper>
-              <Location />
-            </LocationWrapper>
+              <LocationWrapper>
+                <Location/>
+              </LocationWrapper>
             </Fade>
             <Fade duration={1000} cascade delay={2000} direction={'up'}>
-            <ContactsContainer>
-              <ContactsTitle>{text.MAGNIT_OOO}</ContactsTitle>
-              {CONTACTS.map((el, i) => (
-                <ContactTextRow key={i}>{el}</ContactTextRow>
-              ))}
-              <ContactButton onClick={handleTogglePopup}>{text.CONTACT}</ContactButton>
-            </ContactsContainer>
+              <ContactsContainer>
+                <ContactsTitle>{text.MAGNIT_OOO}</ContactsTitle>
+                {CONTACTS.map((el, i) => (
+                  <ContactTextRow key={i}>{el}</ContactTextRow>
+                ))}
+                <ContactButton onClick={handleTogglePopup}>{text.CONTACT}</ContactButton>
+              </ContactsContainer>
             </Fade>
           </ContactsWrapper>
         )}
       </Container>
-      <ContactDialog isOpen={isOpen} onClose={handleTogglePopup} />
+      <ContactDialog isOpen={isOpen} onClose={handleTogglePopup}/>
     </>
   );
 };

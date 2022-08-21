@@ -1,4 +1,4 @@
-import {FunctionComponent, useCallback, useEffect, useRef, useState} from 'react';
+import { FunctionComponent, useCallback, useEffect, useRef, useState } from 'react';
 import {
   ImageItem,
   SliderContainer,
@@ -10,14 +10,14 @@ import {
   SliderWrapper,
   ScrollDown,
 } from './Slider.styles';
-import { MainHeaderPhotos } from "../MainHeader.constants";
-import { text } from "../../../utils/Text";
+import { MainHeaderPhotos } from '../MainHeader.constants';
+import { text } from '../../../utils/Text';
 
 const ImageSlider: FunctionComponent<{ parentWidth: number | null; parentHeight: number | null; getSliderIndex: (index?: number) => void }> = ({
-   parentWidth,
-   parentHeight,
-   getSliderIndex
-   }) => {
+  parentWidth,
+  parentHeight,
+  getSliderIndex
+  }) => {
   const [sliderIndex, setSliderIndex] = useState(0);
   const [isVertical, setIsVertical] = useState<Array<boolean>>(MainHeaderPhotos.map(() => false));
   const imageRefList = useRef<Array<HTMLImageElement | null>>([]);
