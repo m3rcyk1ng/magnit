@@ -1,4 +1,4 @@
-import { FunctionComponent, useLayoutEffect, useRef, useState } from 'react';
+import {FunctionComponent, useEffect, useLayoutEffect, useRef, useState} from 'react';
 import {
   MainContainer,
   Block,
@@ -6,18 +6,24 @@ import {
   BlockText,
   PhoneNumber,
   BlockRow,
-  LanguageSwitcher
+  LanguageSwitcher,
+  ProjectOverlay,
+  ProjectOverlayTitle,
+  ProjectOverlayAddress,
+  ProjectOverlayButton
 } from './MainHeader.styles';
 import ImageSlider from './Slider/Slider';
-import { text } from "../../utils/Text";
+import BackButton from '../../assets/images/back-button.svg';
+import { text } from '../../utils/Text';
 import { Slide, Fade } from 'react-awesome-reveal';
+import { PROJECT_OVERLAY } from './MainHeader.constants';
 
 const MainHeader: FunctionComponent = () => {
   const mainContainerRef = useRef<HTMLDivElement | null>(null);
   const [parentWidth, setParentWidth] = useState<number | null>(null);
   const [parentHeight, setParentHeight] = useState<number | null>(null);
   const [sliderIndex, setSliderIndex] = useState(0);
-
+  const [projectOverlay, setProjectOverlay] = useState({title: '', address: '', id: ''});
   function setParentSizes() {
     if (mainContainerRef) {
       const clientWidth = mainContainerRef?.current?.clientWidth;
@@ -49,6 +55,14 @@ const MainHeader: FunctionComponent = () => {
     return () => window.removeEventListener('resize', setParentSizes);
   });
 
+  useEffect(() => {
+    PROJECT_OVERLAY.map(({title, address, id}, index) => {
+      if (index === sliderIndex) {
+        setProjectOverlay({title: title, address: address, id: id})
+      }
+    })
+  }, [sliderIndex]);
+
   return (
     <>
       <MainContainer ref={mainContainerRef}>
@@ -73,6 +87,15 @@ const MainHeader: FunctionComponent = () => {
           </BlockRow>
           </Fade>
         </Block>
+        <ProjectOverlay>
+          <>
+            <div style={{display: 'flex', flexDirection: 'column'}}>
+              <ProjectOverlayTitle>{projectOverlay.title}</ProjectOverlayTitle>
+              <ProjectOverlayAddress>{projectOverlay.address}</ProjectOverlayAddress>
+            </div>
+            <ProjectOverlayButton img={BackButton}/>
+          </>
+        </ProjectOverlay>
         <ImageSlider parentWidth={parentWidth} parentHeight={parentHeight} getSliderIndex={(index) => getSliderIndex(index || 0)} />
       </MainContainer>
     </>

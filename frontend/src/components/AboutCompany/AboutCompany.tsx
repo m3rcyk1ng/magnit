@@ -65,16 +65,16 @@ const AboutCompany: FunctionComponent = () => {
           </TextContainer>
         </Fade>
         <Fade duration={1300} delay={600} cascade triggerOnce direction={'right'}>
-          <GridContainer>
-            {AboutCompanyNumbers.map((el, i) => (
-              <NumberSection key={i}>
-                {Counter(Number(el.sum), i)}
-                <SumDesc isShowDescription={isShowDescription} transition={i + 3}>
-                  {el.description}
-                </SumDesc>
-              </NumberSection>
-            ))}
-          </GridContainer>
+            <GridContainer>
+              {AboutCompanyNumbers.map((el, i) => (
+                <NumberSection key={i}>
+                  {Counter(Number(el.sum), i)}
+                  <SumDesc isShowDescription={isShowDescription} transition={i + 3}>
+                    {el.description}
+                  </SumDesc>
+                </NumberSection>
+              ))}
+            </GridContainer>
         </Fade>
       </TextsBlocks>
       <Slide duration={1300} triggerOnce direction={'left'}>

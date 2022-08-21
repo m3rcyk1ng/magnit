@@ -17,3 +17,10 @@ export const MainHeaderPhotos = [
   ThirdPhoto,
   FourthPhoto
 ]
+
+export const PROJECT_OVERLAY = [
+  {title: 'VESPER TVERSKAYA', address: 'УЛ. 1-Я ТВЕРСКАЯ-ЯМСКАЯ, 2', id: '62e95b185d3fc22b9ad8bf26'},
+  {title: 'VESPER NE TVERSKAYA', address: 'УЛ. 2-Я ТВЕРСКАЯ-ЯМСКАЯ, 2', id: '62e95b6e5d3fc22b9ad8bf2e'},
+  {title: 'VESPER POD TVERSKOY', address: 'УЛ. 3-Я ТВЕРСКАЯ-ЯМСКАЯ', id: '62e95b835d3fc22b9ad8bf34'},
+  {title: 'VESPER ZA TVERSKOY', address: 'УЛ. 4-Я ТВЕРСКАЯ-ЯМСКАЯ', id: '62e95bb15d3fc22b9ad8bf3a'}
+]
