@@ -40,7 +40,12 @@ export const Block = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(180deg, rgba(2, 35, 70, 0.8) 0%, rgba(2, 35, 70, 0.384) 92.38%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(2, 35, 70, 0.8) 0%,
+      rgba(2, 35, 70, 0.384) 92.38%,
+      rgba(0, 0, 0, 0) 100%
+    );
     backdrop-filter: blur(8px);
   }
 `;
@@ -49,31 +54,31 @@ export const ProjectOverlay = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 25rem;
-  height: 6rem;
+  height: 7.5rem;
   padding: 1.875rem;
   background-color: rgba(217, 217, 217, 0.7);
+  backdrop-filter: blur(9px);
   z-index: 2;
   display: flex;
-  justify-content: center;
   color: ${theme.whiteColor};
+  justify-content: space-between;
+  align-items: center;
 
-  //@media (max-width: 1600px) {
-  //  width: 35%;
-  //}
-  //
-  //@media (max-width: 980px) {
-  //  position: absolute;
-  //  width: 100%;
-  //  height: 60%;
-  //  display: flex;
-  //  flex-direction: column;
-  //  align-items: center;
-  //  justify-content: center;
-  //  text-align: center;
-  //  background: linear-gradient(180deg, rgba(2, 35, 70, 0.8) 0%, rgba(2, 35, 70, 0.384) 92.38%, rgba(0, 0, 0, 0) 100%);
-  //  backdrop-filter: blur(8px);
-  //}
+  @media (max-width: 1300px) {
+    padding: 1.25rem;
+    height: 5.5rem;
+  }
+
+  @media (max-width: 980px) {
+    width: 90%;
+    bottom: 85px;
+    right: 5%;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0.625rem;
+    height: 3.9375rem;
+  }
 `;
 
 export const BlockTitle = styled.h3`
@@ -164,25 +169,63 @@ export const LanguageSwitcher = styled.div`
 `;
 
 export const ProjectOverlayTitle = styled.p`
-  font-weight: 700; 
+  font-weight: 700;
   font-size: 24px;
   line-height: 1.25;
+
+  @media (max-width: 1300px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 export const ProjectOverlayAddress = styled.p`
   font-size: 16px;
+  line-height: 1;
+  margin-top: 10px;
+
+  @media (max-width: 1300px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 
 export const ProjectOverlayButton = styled.div<{ img: string }>`
   background-repeat: no-repeat;
-  background-size: cover;
   background-image: url(${(props) => props.img});
+  background-position: left center;
+  background-size: 20px;
   align-items: center;
   object-fit: cover;
-  width: 2.5rem;
-  height: 1.5rem;
-  padding-left: 3rem;
-  border-left: 2px solid ${theme.whiteColor};
+  height: 100%;
+  padding-left: 66px;
+  border-right: 2px solid ${theme.whiteColor};
   transform: rotate(180deg);
-`
 
+  @media (max-width: 1300px) {
+    background-size: 16px;
+    padding-left: 46px;
+  }
+
+  @media (max-width: 600px) {
+    background-size: 14px;
+    padding-left: 36px;
+  }
+`;
+
+export const ProjectOverlayTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  justify-content: space-between;
+
+  @media (max-width: 600px) {
+    margin-right: 20px;
+  }
+`;
