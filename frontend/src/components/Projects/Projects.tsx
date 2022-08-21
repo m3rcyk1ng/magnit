@@ -28,7 +28,7 @@ const Projects: FunctionComponent<IProjects> = ({ projects }) => {
 
   return (
     <Container>
-      <Slide duration={1600} triggerOnce direction={'down'}>
+      <Slide duration={1300} triggerOnce direction={'down'}>
         <h2>{text.PROJECT}</h2>
       </Slide>
       {projects?.slice(0, amountShowProjects).map(({ project, city, name, month, image, street, year, _id }) => (

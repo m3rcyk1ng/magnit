@@ -21,8 +21,11 @@ import { Link } from 'react-router-dom';
 const Footer: FunctionComponent = () => {
   const width = window.innerWidth || document.documentElement.clientWidth ||
     document.body.clientWidth;
-
   const mobile = width <= 500;
+
+  function handleNavClick() {
+    window.scrollTo(0, 0);
+  }
 
   return (
     <StyledFooter>
@@ -33,7 +36,7 @@ const Footer: FunctionComponent = () => {
         <Nav>
           <List>
             {navItems.map(({title, path}, i) => (
-              <ListItem key={i}>
+              <ListItem key={i} onClick={handleNavClick}>
                 <StyledLink to={path}>{title}</StyledLink>
               </ListItem>
             ))}

@@ -63,4 +63,8 @@ export const text = {
   NUMBER: '+7 (999) 999-99-99',
   ASK_QUESTION: 'Задать вопрос',
   SCROLL_DOWN: 'Scrolling Down →',
+  HEADER_TITLE01: 'Делаем будущее - настоящим',
+  HEADER_TITLE02: 'Объединяем возможности.',
+  HEADER_TITLE03: 'Создаём решения наш опыт для вашей уверенности',
+  HEADER_TITLE04: 'Дорожим репутацией. Ценим доверие',
 };

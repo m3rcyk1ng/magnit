@@ -25,14 +25,14 @@ const VacancyCard: FunctionComponent<any> = (props) => {
 
   return (
     <VacancyCardWrapper>
-      <Fade delay={3600} duration={2000} triggerOnce>
+      <Fade delay={2500} duration={1300} triggerOnce>
       <VacancyImageCont>
         <VacancyImage img={image}/>
         <VacancyImageFrame frame={Frame}/>
       </VacancyImageCont>
       </Fade>
       <VacancyInfoCont>
-        <Fade cascade delay={1600} triggerOnce direction={'down'} duration={700}>
+        <Fade cascade delay={1100} triggerOnce direction={'down'} duration={500}>
         <VacancyTitle>{name}</VacancyTitle>
           <VacancyInfoText>
             <p style={{textTransform: 'uppercase'}}>{(text.SALARY + ':' )}</p>
@@ -46,7 +46,7 @@ const VacancyCard: FunctionComponent<any> = (props) => {
             <p style={{textTransform: 'uppercase'}}>{(text.EXP + ':' )}</p>
             <VacancyTextBold>{` ${experience}`}</VacancyTextBold>
           </VacancyInfoText>
-          <AttentionSeeker delay={3500} effect={'pulse'}>
+          <AttentionSeeker delay={2000} effect={'pulse'}>
             <VacancyButton onClick={handleCardClick}>{text.VACANCY_MORE}</VacancyButton>
           </AttentionSeeker>
         </Fade>

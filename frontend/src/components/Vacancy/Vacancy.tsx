@@ -110,11 +110,11 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
               {text.BACK}
             </ButtonBack>
           </Fade>
-          <Slide duration={3000} triggerOnce>
+          <Slide duration={1500} triggerOnce>
             <VacancyTitle>{name}</VacancyTitle>
           </Slide>
           <VacancyInfoText>
-            <Fade duration={2000} cascade delay={2000} direction={'right'}>
+            <Fade duration={1000} cascade delay={1500} direction={'right'}>
               <p style={{textTransform: 'uppercase'}}>{(text.SALARY + ':')}</p>
               <VacancyTextBold>{(` ${toPrecision(salary, false)} ${text.RUB}`)}</VacancyTextBold>
             </Fade>
@@ -122,7 +122,7 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
           <VacancyBlocksRow>
             {vacancyBlock.map((el) => (
               <VacancyInfoBlock>
-                <Fade duration={2000} cascade delay={2000} direction={'right'}>
+                <Fade duration={1000} cascade delay={1500} direction={'right'}>
                   <Icon image={el.icon}/>
                   <VacancyTextBlockContainer>
                     <VacancyText>{el.title}</VacancyText>
@@ -132,12 +132,12 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
               </VacancyInfoBlock>
             ))}
           </VacancyBlocksRow>
-          <Fade cascade delay={3500}>
+          <Fade cascade delay={2000}>
             <p>{description}</p>
             <VacancyConditionsContainer>
               <h3 style={{marginBottom: '20px'}}>{text.CONDITIONS}:</h3>
               {conditions?.map((el, i) => (
-                <Fade duration={2000} cascade delay={2000} direction={'up'}>
+                <Fade duration={1500} cascade delay={1500} direction={'up'}>
                 <VacancyConditionsRow key={i}>
                   <Polygon/>
                   <p>{el}</p>
@@ -147,12 +147,12 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
             </VacancyConditionsContainer>
           </Fade>
           <VacancyButtons>
-            <Fade direction={'up'} delay={4000} duration={2000}>
+            <Fade direction={'up'} delay={2500} duration={1500}>
               <VacancyRespondButton onClick={() => setIsContactDialogOpen(true)}>
                 {text.RESPOND_VACANCY}
               </VacancyRespondButton>
             </Fade>
-            <Fade direction={'up'} delay={5000} duration={3000}>
+            <Fade direction={'up'} delay={3000} duration={1500}>
             <VacancyShowNumberButton onClick={() => setIsShowNumberDialog(true)}>
               {text.SHOW_NUMBER}
             </VacancyShowNumberButton>

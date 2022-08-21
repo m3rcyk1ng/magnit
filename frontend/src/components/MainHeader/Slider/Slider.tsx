@@ -53,9 +53,14 @@ const ImageSlider: FunctionComponent<{ parentWidth: number | null; parentHeight:
     });
   }, [parentWidth, parentHeight])
 
+  useEffect(() => {
+    if (sliderIndex || sliderIndex === 0) {
+      getSliderIndex(sliderIndex);
+    }
+  }, [sliderIndex])
+
   function handleTextSwitchClick(slideIndex: number) {
     setSliderIndex(slideIndex);
-    getSliderIndex(slideIndex);
   }
 
   function handleButtonSwitchClick(direction: string) {

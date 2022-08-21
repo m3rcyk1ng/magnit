@@ -52,7 +52,7 @@ export const BlockTitle = styled.h3`
   color: ${theme.whiteColor};
   text-transform: initial;
   margin-bottom: 1.875rem;
-  transition: all 0.5s ease-in;
+  transition: all 0.3s linear;
 
   @media (max-width: 1600px) {
     font-size: 3.75rem;
@@ -75,6 +75,7 @@ export const BlockText = styled.p`
   text-transform: initial;
   font-size: 1.125rem;
   line-height: 1.75;
+  text-align: justify;
 
   @media (max-width: 1150px) {
     font-size: 1rem;
@@ -108,29 +109,6 @@ export const PhoneNumber = styled.p`
   @media (max-width: 1150px) {
     font-size: 18px;
   }
-`;
-
-export const InfoRow = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const InfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: max-content;
-`;
-
-export const InfoTitle = styled.h4`
-  font-size: 2.375rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-`;
-
-export const InfoDescription = styled.p`
-  font-size: 18px;
-  line-height: 24px;
-  text-transform: initial;
 `;
 
 export const LanguageSwitcher = styled.div`

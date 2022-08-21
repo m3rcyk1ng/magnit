@@ -8,6 +8,7 @@ import {
   TextContainer,
   TextsBlocks,
   GridContainer,
+  CounterOverlay
 } from './AboutCompany.styles';
 import { text } from '../../utils/Text';
 import { AboutCompanyNumbers } from './AboutCompany.constants';
@@ -52,20 +53,20 @@ const AboutCompany: FunctionComponent = () => {
 
   return (
     <Container id="about">
-      <Slide duration={2000} triggerOnce direction={'left'}>
+      <Slide duration={1000} triggerOnce direction={'left'}>
         <h2>{text.ABOUT_COMPANY}</h2>
       </Slide>
       <TextsBlocks>
-        <Fade duration={2000} delay={1000} cascade triggerOnce direction={'up'}>
+        <Fade duration={1300} delay={600} cascade triggerOnce direction={'up'}>
           <TextContainer>
             <TextBlock>
-              {/*{text.TEXT_BLOCK_FIRST}*/}
-              <p style={{ paddingTop: '0.75rem' }}>{text.TEXT_BLOCK_FIRST_02}</p>
+              {text.TEXT_BLOCK_FIRST_02}
             </TextBlock>
             <TextBlock>{text.TEXT_BLOCK_SECOND}</TextBlock>
           </TextContainer>
         </Fade>
-        <Fade duration={2000} delay={1000} cascade triggerOnce direction={'up'}>
+        <Fade duration={1300} delay={600} cascade triggerOnce direction={'right'}>
+          <CounterOverlay>
           <GridContainer>
             {AboutCompanyNumbers.map((el, i) => (
               <NumberSection key={i}>
@@ -76,9 +77,10 @@ const AboutCompany: FunctionComponent = () => {
               </NumberSection>
             ))}
           </GridContainer>
+          </CounterOverlay>
         </Fade>
       </TextsBlocks>
-      <Slide duration={2000} triggerOnce direction={'left'}>
+      <Slide duration={1300} triggerOnce direction={'left'}>
         <h2>{text.PARTNERS}</h2>
       </Slide>
       <PartnerBlock />

@@ -4,17 +4,13 @@ import {
   Block,
   BlockTitle,
   BlockText,
-  InfoRow,
-  InfoContainer,
-  InfoTitle,
-  InfoDescription,
   PhoneNumber,
   BlockRow,
   LanguageSwitcher
 } from './MainHeader.styles';
 import ImageSlider from './Slider/Slider';
 import { text } from "../../utils/Text";
-import { Slide } from 'react-awesome-reveal';
+import { Slide, Fade } from 'react-awesome-reveal';
 
 const MainHeader: FunctionComponent = () => {
   const mainContainerRef = useRef<HTMLDivElement | null>(null);
@@ -40,10 +36,11 @@ const MainHeader: FunctionComponent = () => {
   }
 
   const renderSliderTitle = (index: number) => {
-    if (index === 1) return 'Делаем будущее - настоящим';
-    if (index === 2) return 'Объединяем возможности.';
-    if (index === 3) return 'Создаём решения наш опыт для вашей уверенности';
-    return 'Дорожим репутацией. Ценим доверие';
+    if (index === 0) return text.HEADER_TITLE04;
+    if (index === 1) return text.HEADER_TITLE01;
+    if (index === 2) return text.HEADER_TITLE02;
+    if (index === 3) return text.HEADER_TITLE03;
+    return text.HEADER_TITLE04;
   }
 
   useLayoutEffect(() => {
@@ -52,19 +49,21 @@ const MainHeader: FunctionComponent = () => {
     return () => window.removeEventListener('resize', setParentSizes);
   });
 
-  // TODO почистить лишнее по стилям и анимацию смены тайтла
-
   return (
     <>
       <MainContainer ref={mainContainerRef}>
         <Block>
-          <Slide duration={1700} direction={'left'} triggerOnce>
           <div>
-            <BlockTitle>{renderSliderTitle(sliderIndex)}</BlockTitle>
+            <Slide duration={1700} direction={'left'} triggerOnce>
+              <BlockTitle>{renderSliderTitle(sliderIndex)}</BlockTitle>
+            </Slide>
+            <Fade delay={1100} duration={1200} triggerOnce cascade direction={'up'}>
             <BlockText>
               {text.TEXT_BLOCK_FIRST}
             </BlockText>
+            </Fade>
           </div>
+          <Fade duration={1200} direction={'up'} cascade delay={1300} triggerOnce>
           <BlockRow>
             <PhoneNumber>{text.PHONE_NUMBER}</PhoneNumber>
             <LanguageSwitcher>
@@ -72,7 +71,7 @@ const MainHeader: FunctionComponent = () => {
               <button>EN</button>
             </LanguageSwitcher>
           </BlockRow>
-          </Slide>
+          </Fade>
         </Block>
         <ImageSlider parentWidth={parentWidth} parentHeight={parentHeight} getSliderIndex={(index) => getSliderIndex(index || 0)} />
       </MainContainer>
