@@ -10,6 +10,17 @@ export const Container = styled.div<{ mainPage: boolean }>`
     opacity: .7;
   }
 
+  @media (max-width: 980px) {
+    width: 45px;
+    height: 52px;
+  }
+  
+  .logoLetters {
+    @media (max-width: 980px) {
+      display: none;
+    }
+  }
+
   svg {
     ${(props) =>
       props.mainPage &&

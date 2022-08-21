@@ -1,10 +1,11 @@
 import { FunctionComponent, useEffect, useState } from 'react';
-import { StyledHeader, Nav, ListItem, List, StyledLink, StyledLinkCompany } from './Header.styles';
+import { StyledHeader, Nav, ListItem, List, StyledLink, StyledLinkCompany, HeaderIconsContainer } from './Header.styles';
 import Logo from '../Logo/Logo';
 import { navItems } from '../../utils/NavItems';
 import { Link, useLocation } from 'react-router-dom';
 import Burger from '../Burger/Burger';
 import { NavHashLink } from 'react-router-hash-link';
+import Phone from "../Phone/Phone";
 
 const Header: FunctionComponent = () => {
   const { pathname } = useLocation();
@@ -34,26 +35,31 @@ const Header: FunctionComponent = () => {
   return !projectDetailPage ? (
     <StyledHeader mainPage={mainPage}>
       <Link to={'/'}>
-        <Logo/>
+        <Logo />
       </Link>
       <Nav isOpenMenu={isOpenMenu}>
         <List isOpenMenu={isOpenMenu} mainPage={mainPage} onClick={handleBurgerClick}>
-          {navItems.map(({title, path, hash}, i) => (
+          {navItems.map(({ title, path, hash }, i) => (
             <ListItem key={i}>
-              {hash ?
+              {hash ? (
                 <StyledLinkCompany mainPage={mainPage}>
-                  <NavHashLink color={'FFF'} to={`${path}${hash}`} style={{color}}>{title}</NavHashLink>
+                  <NavHashLink color={'FFF'} to={`${path}${hash}`} style={{ color }}>
+                    {title}
+                  </NavHashLink>
                 </StyledLinkCompany>
-                :
-                <StyledLink mainPage={mainPage} to={{pathname: path, hash: hash}}>
+              ) : (
+                <StyledLink mainPage={mainPage} to={{ pathname: path, hash: hash }}>
                   {title}
                 </StyledLink>
-              }
+              )}
             </ListItem>
           ))}
         </List>
       </Nav>
-      <Burger isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu}/>
+      <HeaderIconsContainer>
+        <Phone />
+        <Burger isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
+      </HeaderIconsContainer>
     </StyledHeader>
   ) : null;
 };

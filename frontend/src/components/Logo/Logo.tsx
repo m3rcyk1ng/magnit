@@ -37,7 +37,7 @@ function Logo() {
           </linearGradient>
         </defs>
       </svg>
-      <svg width="145" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="145" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" className={'logoLetters'}>
         <g>
           <path
             className={'part-two'}

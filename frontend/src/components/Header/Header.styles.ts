@@ -151,3 +151,11 @@ export const StyledLink = styled(Link)<{ mainPage: boolean }>`
     transform: scaleX(1);
   }
 `;
+
+export const HeaderIconsContainer = styled.div`
+	display: none;
+
+  @media (max-width: 899px) {
+    display: flex;
+	}
+`
