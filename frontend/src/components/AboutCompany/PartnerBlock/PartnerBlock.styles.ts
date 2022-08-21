@@ -52,6 +52,7 @@ export const BackgroundHexagon = styled.div`
   @media (max-width: 800px) {
     width: 250px;
     height: 285px;
+    background-size: contain;
   }
 
   @media (max-width: 700px) {

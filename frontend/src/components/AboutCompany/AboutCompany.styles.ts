@@ -30,7 +30,7 @@ export const GridContainer = styled.div`
   filter: drop-shadow(15px 5px 15px rgba(2, 35, 70, 0.9));
   padding: 3rem 1.5rem;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1150px) {
     grid-template-columns: repeat(2, minmax(165px, 400px));
     gap: 56px 86px;
   }
@@ -77,15 +77,21 @@ export const NumberSection = styled.div`
   display: flex;
   flex-direction: column;
   border-left: 1px solid ${theme.whiteColor};
+  min-height: 32rem;
+
+  @media (max-width: 1150px) {
+    min-height: max-content;
+  }
 `;
 
 export const SumTitle = styled.p`
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
   margin-left: 2rem;
   line-height: 1.2;
+  white-space: nowrap;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1220px) {
     font-size: 2rem;
   }
 `;
@@ -102,10 +108,13 @@ export const SumDesc = styled.p<{ isShowDescription: boolean, transition: number
   ${(props) => props.isShowDescription && `
     opacity: 1;
   `};
-  @keyframes visibleTextAnimation {
-    0% {transform: translateY(-150%);}
+
+  ${(props) => props.isShowDescription && `
+    @keyframes visibleTextAnimation {
+    0% {transform: translateY(150%);}
     100% {transform: translateY(0%);}
   }
+  `};
 
   @media (max-width: 600px) {
     font-size: 0.875rem;

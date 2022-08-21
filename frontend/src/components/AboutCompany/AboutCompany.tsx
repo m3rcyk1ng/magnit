@@ -1,32 +1,37 @@
-import { FunctionComponent, useEffect, useState } from 'react';
-import { Container } from '../../index.styles';
+import {FunctionComponent, useEffect, useState} from 'react';
+import {Container} from '../../index.styles';
 import {
   NumberSection,
   SumDesc,
-  SumTitle,
   TextBlock,
   TextContainer,
   TextsBlocks,
   GridContainer,
 } from './AboutCompany.styles';
-import { text } from '../../utils/Text';
-import { AboutCompanyNumbers } from './AboutCompany.constants';
+import {text} from '../../utils/Text';
+import {AboutCompanyNumbers} from './AboutCompany.constants';
 import PartnerBlock from './PartnerBlock/PartnerBlock';
-import { useNavigate } from 'react-router-dom';
-import { Fade, Slide } from 'react-awesome-reveal';
+import {useNavigate} from 'react-router-dom';
+import {Fade, Slide} from 'react-awesome-reveal';
+import Counter from './Counter/Counter';
 
 const AboutCompany: FunctionComponent = () => {
   const [isShowDescription, setShowDescription] = useState(false);
   const navigate = useNavigate();
   // const [yPosition , setYPosition] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const isCounterStart = scrollPosition >= 1300;
+  const scrollReader = scrollPosition >= 1200;
+  const [isCounterStart , setIsCounterStart] = useState(false);
   // console.log('isCounterStart', isCounterStart);
   // console.log('scrollPosition', scrollPosition);
   const handleScroll = () => {
     const position = window.scrollY;
     setScrollPosition(position);
   };
+
+  useEffect(() => {
+    if (scrollReader) setIsCounterStart(true);
+  }, [scrollReader]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -40,14 +45,8 @@ const AboutCompany: FunctionComponent = () => {
     window.scrollTo(0, 0);
   }, [navigate]);
 
-  function Counter(val: number, i: number) {
-    const [currVal, setCurrVal] = useState(0);
-    const step = (10 / val) * 250;
-    useEffect(() => {
-      currVal !== val && setTimeout(setCurrVal, step, currVal + 1);
-      if (currVal === val) setShowDescription(true);
-    }, [currVal]);
-    return <SumTitle>{i === 3 && currVal === 200 ? `${currVal}+` : currVal}</SumTitle>;
+  const handleShowDesc = (b: boolean) => {
+    setShowDescription(b);
   }
 
   return (
@@ -65,22 +64,24 @@ const AboutCompany: FunctionComponent = () => {
           </TextContainer>
         </Fade>
         <Fade duration={1300} delay={600} cascade triggerOnce direction={'right'}>
-            <GridContainer>
-              {AboutCompanyNumbers.map((el, i) => (
-                <NumberSection key={i}>
-                  {Counter(Number(el.sum), i)}
-                  <SumDesc isShowDescription={isShowDescription} transition={i + 3}>
-                    {el.description}
-                  </SumDesc>
-                </NumberSection>
-              ))}
-            </GridContainer>
+          <GridContainer>
+            {AboutCompanyNumbers.map((el, i) => (
+              <NumberSection key={i}>
+                {isCounterStart &&
+                  <Counter end={Number(el.sum)} index={i} showDesc={handleShowDesc}/>
+                }
+                <SumDesc isShowDescription={isShowDescription} transition={i + 2.5}>
+                  {el.description}
+                </SumDesc>
+              </NumberSection>
+            ))}
+          </GridContainer>
         </Fade>
       </TextsBlocks>
       <Slide duration={1300} triggerOnce direction={'left'}>
         <h2>{text.PARTNERS}</h2>
       </Slide>
-      <PartnerBlock />
+      <PartnerBlock/>
     </Container>
   );
 };
