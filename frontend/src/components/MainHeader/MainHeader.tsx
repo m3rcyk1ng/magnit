@@ -18,6 +18,7 @@ import BackButton from '../../assets/images/back-button.svg';
 import { text } from '../../utils/Text';
 import { Slide, Fade } from 'react-awesome-reveal';
 import { PROJECT_OVERLAY } from './MainHeader.constants';
+import { useNavigate } from 'react-router-dom';
 
 const MainHeader: FunctionComponent = () => {
   const mainContainerRef = useRef<HTMLDivElement | null>(null);
@@ -25,6 +26,7 @@ const MainHeader: FunctionComponent = () => {
   const [parentHeight, setParentHeight] = useState<number | null>(null);
   const [sliderIndex, setSliderIndex] = useState(0);
   const [projectOverlay, setProjectOverlay] = useState({title: '', address: '', id: ''});
+  const navigate = useNavigate();
 
   useEffect(() => {
     PROJECT_OVERLAY.map(({title, address, id}, index) => {
@@ -55,6 +57,10 @@ const MainHeader: FunctionComponent = () => {
         setParentHeight(clientHeight);
       }
     }
+  }
+
+  function handleProjectClick() {
+    navigate(`/project/${projectOverlay.id}`);
   }
 
   const renderSliderTitle = (index: number) => {
@@ -89,12 +95,12 @@ const MainHeader: FunctionComponent = () => {
             </BlockRow>
           </Fade>
         </Block>
-        <ProjectOverlay>
+        <ProjectOverlay onClick={handleProjectClick}>
           <ProjectOverlayTextContainer>
             <ProjectOverlayTitle>{projectOverlay.title}</ProjectOverlayTitle>
             <ProjectOverlayAddress>{projectOverlay.address}</ProjectOverlayAddress>
           </ProjectOverlayTextContainer>
-          <ProjectOverlayButton img={BackButton} />
+          <ProjectOverlayButton img={BackButton} onClick={handleProjectClick}/>
         </ProjectOverlay>
         <ImageSlider
           parentWidth={parentWidth}
