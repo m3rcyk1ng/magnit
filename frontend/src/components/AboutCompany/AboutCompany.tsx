@@ -8,7 +8,6 @@ import {
   TextContainer,
   TextsBlocks,
   GridContainer,
-  CounterOverlay
 } from './AboutCompany.styles';
 import { text } from '../../utils/Text';
 import { AboutCompanyNumbers } from './AboutCompany.constants';
@@ -66,7 +65,6 @@ const AboutCompany: FunctionComponent = () => {
           </TextContainer>
         </Fade>
         <Fade duration={1300} delay={600} cascade triggerOnce direction={'right'}>
-          <CounterOverlay>
           <GridContainer>
             {AboutCompanyNumbers.map((el, i) => (
               <NumberSection key={i}>
@@ -77,7 +75,6 @@ const AboutCompany: FunctionComponent = () => {
               </NumberSection>
             ))}
           </GridContainer>
-          </CounterOverlay>
         </Fade>
       </TextsBlocks>
       <Slide duration={1300} triggerOnce direction={'left'}>

@@ -26,6 +26,9 @@ export const GridContainer = styled.div`
   gap: 0 86px;
   margin-bottom: 50px;
   color: ${theme.whiteColor};
+  background-color: rgba(2, 35, 70, 0.9);
+  filter: drop-shadow(15px 5px 15px rgba(2, 35, 70, 0.9));
+  padding: 3rem 1.5rem;
 
   @media (max-width: 1000px) {
     grid-template-columns: repeat(2, minmax(165px, 400px));
@@ -107,34 +110,4 @@ export const SumDesc = styled.p<{ isShowDescription: boolean, transition: number
   @media (max-width: 600px) {
     font-size: 0.875rem;
   }
-`;
-
-export const CounterOverlay = styled.div`
-  width: max-content;
-  height: 100%;
-  padding: 3rem 1.5rem;
-  background-color: rgba(2, 35, 70, 0.9);
-  filter: drop-shadow(15px 5px 15px rgba(2, 35, 70, 0.9));
-  //@media (max-width: 1100px) {
-  //  width: 300px;
-  //  padding: 3rem;
-  //}
-  //
-  //@media (max-width: 600px) {
-  //  position: absolute;
-  //  width: 100%;
-  //  height: 20rem;
-  //  top: 50%;
-  //  display: flex;
-  //  flex-direction: column;
-  //  align-items: center;
-  //  background: rgb(2, 35, 70);
-  //  background: linear-gradient(
-  //    0deg,
-  //    rgba(2, 35, 70, 1) 0%,
-  //    rgba(2, 35, 70, 1) 25%,
-  //    rgba(2, 35, 70, 0.547) 90%,
-  //    rgba(0, 0, 0, 0) 100%
-  //  );
-  //}
 `;
