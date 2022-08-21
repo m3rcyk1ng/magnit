@@ -24,7 +24,25 @@ const MainHeader: FunctionComponent = () => {
   const [parentWidth, setParentWidth] = useState<number | null>(null);
   const [parentHeight, setParentHeight] = useState<number | null>(null);
   const [sliderIndex, setSliderIndex] = useState(0);
-  const [projectOverlay, setProjectOverlay] = useState({ title: '', address: '', id: '' });
+  const [projectOverlay, setProjectOverlay] = useState({title: '', address: '', id: ''});
+
+  useEffect(() => {
+    PROJECT_OVERLAY.map(({title, address, id}, index) => {
+      if (index === sliderIndex) {
+        setProjectOverlay({title: title, address: address, id: id})
+      }
+    })
+  }, [sliderIndex]);
+
+  useLayoutEffect(() => {
+    window.addEventListener('resize', setParentSizes);
+    setParentSizes();
+    return () => window.removeEventListener('resize', setParentSizes);
+  });
+
+  function getSliderIndex(index: number) {
+    setSliderIndex(index);
+  }
 
   function setParentSizes() {
     if (mainContainerRef) {
@@ -39,31 +57,13 @@ const MainHeader: FunctionComponent = () => {
     }
   }
 
-  function getSliderIndex(index: number) {
-    setSliderIndex(index);
-  }
-
   const renderSliderTitle = (index: number) => {
     if (index === 0) return text.HEADER_TITLE04;
     if (index === 1) return text.HEADER_TITLE01;
     if (index === 2) return text.HEADER_TITLE02;
     if (index === 3) return text.HEADER_TITLE03;
     return text.HEADER_TITLE04;
-  };
-
-  useLayoutEffect(() => {
-    window.addEventListener('resize', setParentSizes);
-    setParentSizes();
-    return () => window.removeEventListener('resize', setParentSizes);
-  });
-
-  useEffect(() => {
-    PROJECT_OVERLAY.map(({ title, address, id }, index) => {
-      if (index === sliderIndex) {
-        setProjectOverlay({ title: title, address: address, id: id });
-      }
-    });
-  }, [sliderIndex]);
+  }
 
   return (
     <>
@@ -74,7 +74,9 @@ const MainHeader: FunctionComponent = () => {
               <BlockTitle>{renderSliderTitle(sliderIndex)}</BlockTitle>
             </Slide>
             <Fade delay={1100} duration={1200} triggerOnce cascade direction={'up'}>
-              <BlockText>{text.TEXT_BLOCK_FIRST}</BlockText>
+              <BlockText>
+                {text.TEXT_BLOCK_FIRST}
+              </BlockText>
             </Fade>
           </div>
           <Fade duration={1200} direction={'up'} cascade delay={1300} triggerOnce>

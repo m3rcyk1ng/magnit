@@ -26,28 +26,28 @@ const ProjectCard: FunctionComponent<any> = (props) => {
   return (
     <ProjectContainer>
       <Fade duration={1500} delay={1000} triggerOnce cascade direction={'up'}>
-      <LeftBlock>
-        <Slide direction={'up'} duration={1500} triggerOnce delay={2000}>
-        <InfoRow>
-          <InfoText>{month}</InfoText>
-          <Polygon />
-          <InfoText>{year}</InfoText>
-          <Polygon />
-          <InfoText>{city}</InfoText>
-          <Polygon />
-          <InfoText>{project}</InfoText>
-        </InfoRow>
-        </Slide>
-        <ImageContainer img={image}>
-          <Button onClick={handleCardClick}>{text.BUTTON_MORE}</Button>
-        </ImageContainer>
-      </LeftBlock>
-      <RightBlock>
-        <Fade duration={1000} triggerOnce cascade damping={1} direction={'up'} delay={1000}>
-          <ProjectName>{name}</ProjectName>
-          <StreetText>{street}</StreetText>
-        </Fade>
-      </RightBlock>
+        <LeftBlock>
+          <Slide direction={'up'} duration={1500} triggerOnce delay={2000}>
+            <InfoRow>
+              <InfoText>{month}</InfoText>
+              <Polygon/>
+              <InfoText>{year}</InfoText>
+              <Polygon/>
+              <InfoText>{city}</InfoText>
+              <Polygon/>
+              <InfoText>{project}</InfoText>
+            </InfoRow>
+          </Slide>
+          <ImageContainer img={image}>
+            <Button onClick={handleCardClick}>{text.BUTTON_MORE}</Button>
+          </ImageContainer>
+        </LeftBlock>
+        <RightBlock>
+          <Fade duration={800} triggerOnce direction={'up'}>
+            <ProjectName>{name}</ProjectName>
+            <StreetText>{street}</StreetText>
+          </Fade>
+        </RightBlock>
       </Fade>
     </ProjectContainer>
   );

@@ -1,4 +1,4 @@
-import { text } from "../../utils/Text";
+import { text } from '../../utils/Text';
 
 export const AboutCompanyNumbers = [
   {

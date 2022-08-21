@@ -9,13 +9,13 @@ const PartnerBlock: FunctionComponent = () => {
     <GridContainer>
       <FirstRow>
         <Fade duration={500} delay={1000} triggerOnce cascade direction={'right'}>
-        {PARTNERS_FIRST_ROW.map(({name, image, href}, index) => (
-        <a key={index} href={href} target='_blank'>
-          <BackgroundHexagon>
-          <PartnerLogo src={image}/>
-          </BackgroundHexagon>
-        </a>
-      ))}
+          {PARTNERS_FIRST_ROW.map(({name, image, href}, index) => (
+            <a key={index} href={href} target='_blank'>
+              <BackgroundHexagon>
+                <PartnerLogo src={image}/>
+              </BackgroundHexagon>
+            </a>
+          ))}
         </Fade>
       </FirstRow>
     </GridContainer>

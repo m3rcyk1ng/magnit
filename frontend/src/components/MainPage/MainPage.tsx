@@ -6,8 +6,8 @@ const MainPage: FunctionComponent = () => {
 
   return (
     <>
-      <MainHeader />
-      <AboutCompany />
+      <MainHeader/>
+      <AboutCompany/>
     </>
   )
 }

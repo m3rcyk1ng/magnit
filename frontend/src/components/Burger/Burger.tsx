@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { BurgerRow, StyledBurger } from './Burger.styles';
 import { IBurger } from './IBurger';
 import { useLocation } from 'react-router-dom';
 
-function Burger({ isOpenMenu, setIsOpenMenu }: IBurger) {
+const Burger: FunctionComponent<IBurger> = ({ isOpenMenu, setIsOpenMenu }) => {
   const { pathname } = useLocation();
   const mainPage = pathname === '/';
 

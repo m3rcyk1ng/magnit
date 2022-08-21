@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import {FirstLine, LoaderWrapper, SecondLine, ThirdLine} from './Loader.styles';
+import { FirstLine, LoaderWrapper, SecondLine, ThirdLine } from './Loader.styles';
 
 const Loader: FunctionComponent = () => {
 

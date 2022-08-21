@@ -1,8 +1,10 @@
-import React, {FunctionComponent, memo, useEffect, useState} from 'react';
+import React, { FunctionComponent, memo, useEffect, useState } from 'react';
 import {
   SumTitle,
 } from '../AboutCompany.styles';
-export const Counter: FunctionComponent<{end: number, index: number, showDesc: (b: boolean) => void;}> = ({ end, index, showDesc }) => {
+import { ICounter } from './Counter.interfaces';
+
+export const Counter: FunctionComponent<ICounter> = ({end, index, showDesc}) => {
   const [isShowDescription, setShowDescription] = useState(false);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useEffect, useState} from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import {
   Section,
   VacancyInfoText,
@@ -24,17 +24,17 @@ import {
   ShowNumberCloseButton,
   ShowNumberOverlay
 } from './Vacancy.styles';
-import {text} from '../../utils/Text';
-import {useNavigate, useParams} from 'react-router-dom';
-import {Container} from '../../index.styles';
-import {IVacancies} from "../Vacancies/Vacancy.interfaces";
-import {toPrecision} from "../../utils/Functions";
-import UpdateIcon from "../../assets/images/update.svg";
-import EmploymentIcon from "../../assets/images/employment.svg";
-import ExperienceIcon from "../../assets/images/experience.svg";
-import EducationIcon from "../../assets/images/education.svg";
-import BackButtonBlue from "../../assets/images/back-button-blue.svg";
-import ContactDialog from "../ContactDialog/ContactDialog";
+import { text } from '../../utils/Text';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Container } from '../../index.styles';
+import { IVacancies } from '../Vacancies/Vacancy.interfaces';
+import { toPrecision } from '../../utils/Functions';
+import UpdateIcon from '../../assets/images/update.svg';
+import EmploymentIcon from '../../assets/images/employment.svg';
+import ExperienceIcon from '../../assets/images/experience.svg';
+import EducationIcon from '../../assets/images/education.svg';
+import BackButtonBlue from '../../assets/images/back-button-blue.svg';
+import ContactDialog from '../ContactDialog/ContactDialog';
 import { Fade, Slide } from 'react-awesome-reveal';
 
 const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
@@ -61,11 +61,13 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
     description,
     workload
   } = currentVacancy[0] || {};
-  const vacancyBlock = [{
-    icon: UpdateIcon,
-    title: text.UPDATED,
-    value: updatedBy,
-  },
+
+  const vacancyBlock = [
+    {
+      icon: UpdateIcon,
+      title: text.UPDATED,
+      value: updatedBy,
+    },
     {
       icon: EmploymentIcon,
       title: text.EMPLOYMENT,
@@ -138,10 +140,10 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
               <h3 style={{marginBottom: '20px'}}>{text.CONDITIONS}:</h3>
               {conditions?.map((el, i) => (
                 <Fade duration={1500} cascade delay={1500} direction={'up'}>
-                <VacancyConditionsRow key={i}>
-                  <Polygon/>
-                  <p>{el}</p>
-                </VacancyConditionsRow>
+                  <VacancyConditionsRow key={i}>
+                    <Polygon/>
+                    <p>{el}</p>
+                  </VacancyConditionsRow>
                 </Fade>
               ))}
             </VacancyConditionsContainer>
@@ -153,9 +155,9 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
               </VacancyRespondButton>
             </Fade>
             <Fade direction={'up'} delay={3000} duration={1500}>
-            <VacancyShowNumberButton onClick={() => setIsShowNumberDialog(true)}>
-              {text.SHOW_NUMBER}
-            </VacancyShowNumberButton>
+              <VacancyShowNumberButton onClick={() => setIsShowNumberDialog(true)}>
+                {text.SHOW_NUMBER}
+              </VacancyShowNumberButton>
             </Fade>
           </VacancyButtons>
         </Section>

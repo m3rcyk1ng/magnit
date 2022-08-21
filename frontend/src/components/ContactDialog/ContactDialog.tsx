@@ -14,18 +14,10 @@ import {
 } from './ContactDialog.styles';
 import { text } from '../../utils/Text';
 import ContactImageBg from '../../assets/images/contactbg.png';
-import { IContactDialog } from './ContactDialog.interfaces';
+import { IContactDialog, IForm } from './ContactDialog.interfaces';
 import { FormProvider, useForm } from 'react-hook-form';
 
-interface IForm {
-  name: string;
-  email: string;
-  phone: string;
-  topic: string;
-  message: string;
-}
-
-const ContactDialog: FunctionComponent<IContactDialog> = ({ isOpen, onClose }) => {
+const ContactDialog: FunctionComponent<IContactDialog> = ({isOpen, onClose}) => {
   const formMethods = useForm({
     defaultValues: {
       name: '',
@@ -39,7 +31,7 @@ const ContactDialog: FunctionComponent<IContactDialog> = ({ isOpen, onClose }) =
 
   const {
     register,
-    formState: { errors },
+    formState: {errors},
     handleSubmit,
     reset,
   } = formMethods;
@@ -66,11 +58,11 @@ const ContactDialog: FunctionComponent<IContactDialog> = ({ isOpen, onClose }) =
           <ContactDialogFormContainer>
             <InputContainer>
               <ContactDialogInput
-                {...register('name', { required: 'Укажите ваше имя' })}
+                {...register('name', {required: 'Укажите ваше имя'})}
                 type={'text'}
                 name={'name'}
                 placeholder={text.NAME}
-                style={{ border: errors.name?.message ? '1px solid red' : '' }}
+                style={{border: errors.name?.message ? '1px solid red' : ''}}
               />
               <span>{errors.name?.message}</span>
             </InputContainer>
@@ -87,7 +79,7 @@ const ContactDialog: FunctionComponent<IContactDialog> = ({ isOpen, onClose }) =
                   type={'email'}
                   name={'email'}
                   placeholder={text.EMAIL}
-                  style={{ border: errors.email?.message ? '1px solid red' : '' }}
+                  style={{border: errors.email?.message ? '1px solid red' : ''}}
                 />
                 <span>{errors.email?.message}</span>
               </InputContainer>
@@ -103,34 +95,34 @@ const ContactDialog: FunctionComponent<IContactDialog> = ({ isOpen, onClose }) =
                   type={'tel'}
                   name={'phone'}
                   placeholder={text.PHONE}
-                  style={{ border: errors.phone?.message ? '1px solid red' : '' }}
+                  style={{border: errors.phone?.message ? '1px solid red' : ''}}
                 />
                 <span>{errors.phone?.message}</span>
               </InputContainer>
             </ContactInputsRow>
             <InputContainer>
               <ContactDialogInput
-                {...register('topic', { required: 'Заполните тему обращения' })}
+                {...register('topic', {required: 'Заполните тему обращения'})}
                 type={'text'}
                 name={'topic'}
                 placeholder={text.TOPIC}
-                style={{ border: errors.topic?.message ? '1px solid red' : '' }}
+                style={{border: errors.topic?.message ? '1px solid red' : ''}}
               />
               <span>{errors.topic?.message}</span>
             </InputContainer>
             <TextareaContainer>
               <ContactDialogTextarea
-                {...register('message', { required: 'Поле не может быть пустым' })}
+                {...register('message', {required: 'Поле не может быть пустым'})}
                 name={'message'}
                 placeholder={text.YOUR_MESSAGE}
                 rows={4}
-                style={{ border: errors.message?.message ? '1px solid red' : '' }}
+                style={{border: errors.message?.message ? '1px solid red' : ''}}
               />
               <span>{errors.message?.message}</span>
             </TextareaContainer>
             <ContactDialogButtonSend type={'submit'}>{text.SEND}</ContactDialogButtonSend>
           </ContactDialogFormContainer>
-          <CloseButton onClick={handleClose} />
+          <CloseButton onClick={handleClose}/>
         </ContactForm>
       </FormProvider>
     </ContactDialogWrapper>

@@ -1,5 +1,5 @@
-import {FunctionComponent, useEffect, useState} from 'react';
-import {Container} from '../../index.styles';
+import { FunctionComponent, useEffect, useState } from 'react';
+import { Container } from '../../index.styles';
 import {
   NumberSection,
   SumDesc,
@@ -8,22 +8,19 @@ import {
   TextsBlocks,
   GridContainer,
 } from './AboutCompany.styles';
-import {text} from '../../utils/Text';
-import {AboutCompanyNumbers} from './AboutCompany.constants';
+import { text } from '../../utils/Text';
+import { AboutCompanyNumbers } from './AboutCompany.constants';
 import PartnerBlock from './PartnerBlock/PartnerBlock';
-import {useNavigate} from 'react-router-dom';
-import {Fade, Slide} from 'react-awesome-reveal';
+import { useNavigate } from 'react-router-dom';
+import { Fade, Slide } from 'react-awesome-reveal';
 import Counter from './Counter/Counter';
 
 const AboutCompany: FunctionComponent = () => {
   const [isShowDescription, setShowDescription] = useState(false);
   const navigate = useNavigate();
-  // const [yPosition , setYPosition] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const scrollReader = scrollPosition >= 1200;
-  const [isCounterStart , setIsCounterStart] = useState(false);
-  // console.log('isCounterStart', isCounterStart);
-  // console.log('scrollPosition', scrollPosition);
+  const scrollReader = scrollPosition >= 1080;
+  const [isCounterStart, setIsCounterStart] = useState(false);
   const handleScroll = () => {
     const position = window.scrollY;
     setScrollPosition(position);
@@ -35,7 +32,6 @@ const AboutCompany: FunctionComponent = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
