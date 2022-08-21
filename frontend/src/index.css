@@ -16,6 +16,11 @@ html {
   overflow-x: hidden;
 }
 
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 h2 {
   position: relative;
   font-weight: 700;
@@ -26,7 +31,6 @@ h2 {
   display: table;
   margin: 1em 0.5em 5rem;
   letter-spacing: 2px;
-  /*animation: 2s ease-in-out slideInFromLeft;*/
 }
 
 h2:before {
@@ -38,7 +42,6 @@ h2:before {
   height: 25px;
   border-top: 4px solid var(--mainColor);
   border-left: 4px solid var(--mainColor);
-  /*animation: 2s ease-in-out slideInFromTop;*/
 }
 
 h2:after {
@@ -50,7 +53,6 @@ h2:after {
   height: 25px;
   border-bottom: 4px solid var(--mainColor);
   border-right: 4px solid var(--mainColor);
-  /*animation: 2s ease-in-out slideInFromLeft;*/
 }
 
 h3 {
@@ -108,61 +110,4 @@ img {
         font-size: 2rem;
         margin-bottom: 2.5rem;
     }
-}
-
-/*@keyframes slideInFromLeft {*/
-/*  0% {*/
-/*    transform: translateX(-100%);*/
-/*  }*/
-/*  100% {*/
-/*    transform: translateX(0);*/
-/*  }*/
-/*}*/
-
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translate3d(150px, 0, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes slideInFromTop {
-  0% {
-    opacity: 0;
-    transform: translate3d(-150px, 100px, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes slideInFromBottom {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 100px, 100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translate3d(-100px, 0, 100px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
 }
