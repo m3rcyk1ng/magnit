@@ -27,7 +27,7 @@ const Contacts: FunctionComponent = () => {
 
   useEffect(() => {
     if (isStartLoading) {
-      setTimeout(setIsLoading, 1000, false);
+      setTimeout(setIsLoading, 500, false);
     }
   }, [isStartLoading]);
 
@@ -36,7 +36,7 @@ const Contacts: FunctionComponent = () => {
   return (
     <>
       <Container>
-        <Slide duration={1500} onVisibilityChange={() => setTimeout(setStartLoading, 1500, true)} triggerOnce
+        <Slide duration={1500} onVisibilityChange={() => setTimeout(setStartLoading, 700, true)} triggerOnce
                direction={'left'}>
           <ContactsMainTitle>{text.CONTACTS}</ContactsMainTitle>
         </Slide>
@@ -45,12 +45,12 @@ const Contacts: FunctionComponent = () => {
         ) : null}
         {isLoading ? <div/> : (
           <ContactsWrapper transition={!isLoading}>
-            <Fade delay={1000} duration={2000} direction={'up'}>
+            <Fade delay={1000} duration={1300} direction={'up'}>
               <LocationWrapper>
                 <Location/>
               </LocationWrapper>
             </Fade>
-            <Fade duration={1000} cascade delay={2000} direction={'up'}>
+            <Fade duration={1300} cascade delay={1000} direction={'up'}>
               <ContactsContainer>
                 <ContactsTitle>{text.MAGNIT_OOO}</ContactsTitle>
                 {CONTACTS.map((el, i) => (
