@@ -20,7 +20,7 @@ class ProjectsApi {
 }
 
 export const projectApi = new ProjectsApi({
-  url: 'http://localhost:3001/projects',
+  url: 'https://api.sk-magnit.ru/projects',
   headers: {
     'Content-Type': 'application/json',
   },

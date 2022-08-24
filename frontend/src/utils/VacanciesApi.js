@@ -20,7 +20,7 @@ class VacanciesApi {
 }
 
 export const vacanciesApi = new VacanciesApi({
-  url: 'http://localhost:3001/vacancies',
+  url: 'https://api.sk-magnit.ru/vacancies',
   headers: {
     'Content-Type': 'application/json',
   },
