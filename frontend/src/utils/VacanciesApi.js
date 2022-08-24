@@ -15,6 +15,7 @@ class VacanciesApi {
     return fetch(`${this._url}`, {
       headers: this._headers,
       method: 'GET',
+      credentials: 'include',
     }).then(this._checkStatus);
   }
 }
