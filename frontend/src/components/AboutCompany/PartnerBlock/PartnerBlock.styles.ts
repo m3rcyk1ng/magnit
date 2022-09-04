@@ -13,10 +13,12 @@ export const PartnerLogo = styled.img `
 
   @media (max-width: 800px) {
     max-width: 150px;
+    max-height: 160px;
 	}
 
   @media (max-width: 510px) {
     max-width: 110px;
+    max-height: 110px;
 	}
 `;
 

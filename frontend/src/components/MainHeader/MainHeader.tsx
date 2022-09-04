@@ -12,11 +12,12 @@ import {
   ProjectOverlayAddress,
   ProjectOverlayButton,
   ProjectOverlayTextContainer,
+  TextWrapper
 } from './MainHeader.styles';
 import ImageSlider from './Slider/Slider';
 import BackButton from '../../assets/images/back-button.svg';
 import { text } from '../../utils/Text';
-import { Slide, Fade } from 'react-awesome-reveal';
+import {Slide, Fade, Reveal, Zoom} from 'react-awesome-reveal';
 import { PROJECT_OVERLAY } from './MainHeader.constants';
 import { useNavigate } from 'react-router-dom';
 
@@ -75,7 +76,7 @@ const MainHeader: FunctionComponent = () => {
     <>
       <MainContainer ref={mainContainerRef}>
         <Block>
-          <div>
+          <TextWrapper>
             <Slide duration={1700} direction={'left'} triggerOnce>
               <BlockTitle>{renderSliderTitle(sliderIndex)}</BlockTitle>
             </Slide>
@@ -84,7 +85,7 @@ const MainHeader: FunctionComponent = () => {
                 {text.TEXT_BLOCK_FIRST}
               </BlockText>
             </Fade>
-          </div>
+          </TextWrapper>
           <Fade duration={1200} direction={'up'} cascade delay={1300} triggerOnce>
             <BlockRow>
               <PhoneNumber>{text.PHONE_NUMBER}</PhoneNumber>

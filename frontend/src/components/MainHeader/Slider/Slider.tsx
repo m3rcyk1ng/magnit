@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback, useEffect, useRef, useState } from 'react';
+import {FunctionComponent, useCallback, useEffect, useRef, useState} from 'react';
 import {
   ImageItem,
   SliderContainer,
@@ -10,8 +10,10 @@ import {
   SliderWrapper,
   ScrollDown,
 } from './Slider.styles';
-import { MainHeaderPhotos } from '../MainHeader.constants';
-import { text } from '../../../utils/Text';
+import {MainHeaderPhotos} from '../MainHeader.constants';
+import {text} from '../../../utils/Text';
+import {Zoom} from 'react-awesome-reveal';
+
 
 const ImageSlider: FunctionComponent<{ parentWidth: number | null; parentHeight: number | null; getSliderIndex: (index?: number) => void }> = ({
   parentWidth,
@@ -106,13 +108,13 @@ const ImageSlider: FunctionComponent<{ parentWidth: number | null; parentHeight:
         {MainHeaderPhotos.map(renderImageSlide)}
       </SliderWrapper>
       <SliderControls>
-        <>
+        <Zoom duration={2000} delay={1500} triggerOnce>
           <SliderSwitchLeft onClick={() => handleButtonSwitchClick('left')}/>
           <SliderTextSwitcherWrapper>
             {MainHeaderPhotos.map(renderImageSwitcher)}
           </SliderTextSwitcherWrapper>
           <SliderSwitchRight onClick={() => handleButtonSwitchClick('right')}/>
-        </>
+        </Zoom>
       </SliderControls>
     </SliderContainer>
   );

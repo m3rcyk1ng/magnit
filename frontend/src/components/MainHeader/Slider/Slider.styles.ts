@@ -51,6 +51,7 @@ export const SliderControls = styled.div`
   display: flex;
   align-items: center;
   z-index: 2;
+  animation: 1s buttonsSlide;
 `;
 
 export const SliderSwitchLeft = styled.button`

@@ -16,10 +16,10 @@ export const MainContainer = styled.div`
 export const Block = styled.div`
   position: absolute;
   top: 0;
-  width: 41%;
+  width: 100%;
   height: 100%;
   padding: 1.875rem;
-  background-color: rgba(2, 35, 70, 0.8);
+  background-color: rgba(40, 40, 40, 0.7);
   text-transform: uppercase;
   z-index: 2;
   display: flex;
@@ -27,25 +27,17 @@ export const Block = styled.div`
   justify-content: flex-end;
   color: ${theme.whiteColor};
 
-  @media (max-width: 1600px) {
-    width: 35%;
-  }
-
   @media (max-width: 980px) {
     position: absolute;
-    width: 100%;
-    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(
-      180deg,
-      rgba(2, 35, 70, 0.8) 0%,
-      rgba(2, 35, 70, 0.384) 92.38%,
-      rgba(0, 0, 0, 0) 100%
-    );
+    background: linear-gradient(180deg,
+    rgba(2, 35, 70, 0.8) 0%,
+    rgba(2, 35, 70, 0.384) 92.38%,
+    rgba(0, 0, 0, 0) 100%);
     backdrop-filter: blur(8px);
   }
 `;
@@ -56,20 +48,38 @@ export const ProjectOverlay = styled.div`
   right: 0;
   height: 7.5rem;
   padding: 1.875rem;
-  background-color: rgba(217, 217, 217, 0.6);
+  min-width: 29.75rem;
+  background-color: rgba(217, 217, 217, 0.2);
   backdrop-filter: blur(9px);
   z-index: 2;
   display: flex;
   color: ${theme.whiteColor};
   justify-content: space-between;
   align-items: center;
+  animation: 2s overlayUp;
+  
   &:hover {
     cursor: pointer;
     background-color: rgba(217, 217, 217, 0.4);
     transition: 0.5s;
   }
+
+  @keyframes overlayUp {
+    0% {
+      transform: translateX(400px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @media (max-width: 1600px) {
+    min-width: 24rem;
+  }
   
   @media (max-width: 1300px) {
+    min-width: 18rem;
     padding: 1.25rem;
     height: 5.5rem;
   }
@@ -92,9 +102,11 @@ export const BlockTitle = styled.h3`
   font-weight: 700;
   color: ${theme.whiteColor};
   text-transform: initial;
-  margin-bottom: 1.875rem;
+  //margin-bottom: 1.875rem;
   transition: all 0.3s linear;
-
+  margin: auto;
+  white-space: pre-wrap;
+  
   @media (max-width: 1600px) {
     font-size: 3.75rem;
   }
@@ -112,11 +124,28 @@ export const BlockTitle = styled.h3`
   }
 `;
 
+export const TextWrapper = styled.div`
+  width: 75%;
+  margin: auto;
+  text-align: center;
+  padding-top: 12rem;
+
+  @media (max-width: 980px) {
+    padding-top: 0;
+  }
+
+  @media (max-width: 600px) {
+    width: 90%;
+  }
+`;
+
 export const BlockText = styled.p`
   text-transform: initial;
   font-size: 1.125rem;
+  margin: 3rem auto;
   line-height: 1.75;
-  text-align: justify;
+  text-align: center;
+  width: 80%;
 
   @media (max-width: 1150px) {
     font-size: 1rem;
@@ -154,6 +183,8 @@ export const PhoneNumber = styled.p`
 
 export const LanguageSwitcher = styled.div`
   display: flex;
+  position: absolute;
+  top: 70%;
 
   button {
     border: none;
@@ -229,6 +260,7 @@ export const ProjectOverlayTextContainer = styled.div`
   flex-direction: column;
   margin-right: 40px;
   justify-content: space-between;
+  
 
   @media (max-width: 600px) {
     margin-right: 20px;
