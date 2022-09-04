@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import {FunctionComponent, useCallback, useEffect, useState} from 'react';
 import { Container } from '../../index.styles';
 import {
   NumberSection,
@@ -13,7 +13,7 @@ import {
 import { text } from '../../utils/Text';
 import { AboutCompanyNumbers } from './AboutCompany.constants';
 import PartnerBlock from './PartnerBlock/PartnerBlock';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import { Fade, Slide } from 'react-awesome-reveal';
 import Counter from './Counter/Counter';
 
@@ -21,12 +21,12 @@ const AboutCompany: FunctionComponent = () => {
   const [isShowDescription, setShowDescription] = useState(false);
   const navigate = useNavigate();
   const [scrollPosition, setScrollPosition] = useState(0);
-  const scrollReader = scrollPosition >= 1000;
+  const scrollReader = scrollPosition >= 950;
   const [isCounterStart, setIsCounterStart] = useState(false);
-  const handleScroll = () => {
+  const handleScroll = useCallback(()=> {
     const position = window.scrollY;
     setScrollPosition(position);
-  };
+  }, [window.scrollY]);
 
   useEffect(() => {
     if (scrollReader) setIsCounterStart(true);

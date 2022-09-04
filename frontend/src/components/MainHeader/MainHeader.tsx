@@ -17,7 +17,7 @@ import {
 import ImageSlider from './Slider/Slider';
 import BackButton from '../../assets/images/back-button.svg';
 import { text } from '../../utils/Text';
-import {Slide, Fade, Reveal, Zoom} from 'react-awesome-reveal';
+import { Slide, Fade } from 'react-awesome-reveal';
 import { PROJECT_OVERLAY } from './MainHeader.constants';
 import { useNavigate } from 'react-router-dom';
 
