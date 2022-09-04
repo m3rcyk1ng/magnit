@@ -26,9 +26,39 @@ export const FirstRow = styled.div `
   display: flex;
   flex-wrap: wrap;
 	justify-content: center;
-
+  animation: 2s partnerAnim infinite;
+  &:nth-child(even) {
+    animation: 2s partnerAnimRev infinite;
+  }
+  
   @media (max-width: 1000px) {
     justify-content: space-around;
+  }
+  
+  @keyframes partnerAnim {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(12px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes partnerAnimRev {
+    0% {
+      transform: translateY(12px);
+    }
+
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(12px);
+    }
   }
 `;
 

@@ -110,7 +110,9 @@ export const CloseButton = styled.div`
   transition: opacity 0.2s ease-in;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.6;
+    transition: 0.3s;
+    cursor: pointer;
   }
 `;
 
@@ -145,4 +147,9 @@ export const ContactDialogButtonSend = styled.button`
   color: ${theme.whiteColor};
   font-size: 0.875rem;
   background-color: ${theme.backgroundColor};
+  &:hover {
+    cursor: pointer;
+    background-color: ${theme.secondaryBlue};
+    transition: 0.5s;
+  }
 `;
