@@ -27,13 +27,18 @@ export const FirstRow = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   animation: 2s partnerAnim infinite;
-	
+
   div:nth-child(2n) {
     animation: 2s partnerAnimRev infinite;
   }
 
   @media (max-width: 1000px) {
     justify-content: space-around;
+    animation: none;
+
+    div:nth-child(2n) {
+      animation: none;
+    }
   }
 
   @keyframes partnerAnim {
