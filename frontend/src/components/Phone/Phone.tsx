@@ -15,7 +15,7 @@ const Phone = () => {
       <PhoneButton mainPage={mainPage} onClick={handlePhoneVisible}>
         <PhoneIcon />
       </PhoneButton>
-      <PhoneNumber mainPage={mainPage} isNumberVisible={isNumberVisible}>{text.PHONE_NUMBER}</PhoneNumber>
+      <PhoneNumber href={`tel:${text.NUMBER}`} mainPage={mainPage} isNumberVisible={isNumberVisible}>{text.PHONE_NUMBER}</PhoneNumber>
     </PhoneContainer>
   );
 };

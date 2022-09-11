@@ -24,7 +24,7 @@ export const PhoneButton = styled.button<{ mainPage: boolean }>`
   }
 `;
 
-export const PhoneNumber = styled.p<{ mainPage: boolean; isNumberVisible: boolean }>`
+export const PhoneNumber = styled.a<{ mainPage: boolean; isNumberVisible: boolean }>`
 	display: ${(props) => (props.isNumberVisible ? 'flex' : 'none')};
   opacity: ${(props) => (props.isNumberVisible ? 1 : 0)};
 	transition: all .2s ease-in;
