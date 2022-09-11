@@ -41,6 +41,14 @@ const vacancySchema = new mongoose.Schema({
     type: String,
     required: true,
   }],
+  fullEducation: {
+    type: String,
+    required: false,
+  },
+  responsibilities: [{
+    type: String,
+    required: true,
+  }],
   phoneNumber: {
     type: String,
     required: true,

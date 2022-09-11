@@ -18,6 +18,14 @@ class VacanciesApi {
       credentials: 'include',
     }).then(this._checkStatus);
   }
+
+  deleteVacancy({ vacancyId }) {
+    return fetch(`${this._url}/${vacancyId}`, {
+      headers: this._headers,
+      method: 'DELETE',
+      credentials: 'include',
+    }).then(this._checkStatus);
+  }
 }
 
 export const vacanciesApi = new VacanciesApi({

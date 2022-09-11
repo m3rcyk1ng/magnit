@@ -22,7 +22,7 @@ import {
   ShowNumberDialogTitle,
   ShowNumberDialogNumber,
   ShowNumberCloseButton,
-  ShowNumberOverlay
+  ShowNumberOverlay,
 } from './Vacancy.styles';
 import { text } from '../../utils/Text';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -37,8 +37,8 @@ import BackButtonBlue from '../../assets/images/back-button-blue.svg';
 import ContactDialog from '../ContactDialog/ContactDialog';
 import { Fade, Slide } from 'react-awesome-reveal';
 
-const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
-  let {id} = useParams();
+const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
+  let { id } = useParams();
   const navigate = useNavigate();
   const [isShowNumberDialog, setIsShowNumberDialog] = useState(false);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
@@ -59,7 +59,9 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
     updatedBy,
     conditions,
     description,
-    workload
+    workload,
+    responsibilities,
+    fullEducation,
   } = currentVacancy[0] || {};
 
   const vacancyBlock = [
@@ -83,11 +85,13 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
       title: text.EDUCATION,
       value: education,
     },
-  ]
+  ];
 
   const renderContactDialog = () => {
-    return <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)}/>
-  }
+    return (
+      <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)} />
+    );
+  };
 
   const renderShowNumberDialog = () => {
     return (
@@ -96,11 +100,13 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
           <ShowNumberDialogTitle>{text.PLACEMENT}</ShowNumberDialogTitle>
           <ShowNumberDialogText>{text.PLACEMENT_DESC}</ShowNumberDialogText>
           <ShowNumberDialogNumber>{text.NUMBER}</ShowNumberDialogNumber>
-          <ShowNumberCloseButton onClick={() => setIsShowNumberDialog(false)}>{text.CLOSE}</ShowNumberCloseButton>
+          <ShowNumberCloseButton onClick={() => setIsShowNumberDialog(false)}>
+            {text.CLOSE}
+          </ShowNumberCloseButton>
         </ShowNumberDialog>
       </ShowNumberOverlay>
-    )
-  }
+    );
+  };
 
   return (
     <>
@@ -108,7 +114,7 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
         <Section>
           <Fade duration={1500}>
             <ButtonBack onClick={() => navigate(-1)}>
-              <img src={BackButtonBlue} alt={text.ARROW}/>
+              <img src={BackButtonBlue} alt={text.ARROW} />
               {text.BACK}
             </ButtonBack>
           </Fade>
@@ -117,15 +123,15 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
           </Slide>
           <VacancyInfoText>
             <Fade duration={1000} cascade delay={1500} direction={'right'}>
-              <p style={{textTransform: 'uppercase'}}>{(text.SALARY + ':')}</p>
-              <VacancyTextBold>{(` ${toPrecision(salary, false)} ${text.RUB}`)}</VacancyTextBold>
+              <p style={{ textTransform: 'uppercase' }}>{text.SALARY + ':'}</p>
+              <VacancyTextBold>{` ${toPrecision(salary, false)} ${text.RUB}`}</VacancyTextBold>
             </Fade>
           </VacancyInfoText>
           <VacancyBlocksRow>
             {vacancyBlock.map((el) => (
               <VacancyInfoBlock>
                 <Fade duration={1000} cascade delay={1500} direction={'right'}>
-                  <Icon image={el.icon}/>
+                  <Icon image={el.icon} />
                   <VacancyTextBlockContainer>
                     <VacancyText>{el.title}</VacancyText>
                     <VacancyValue>{el.value}</VacancyValue>
@@ -134,14 +140,33 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
               </VacancyInfoBlock>
             ))}
           </VacancyBlocksRow>
-          <Fade cascade delay={2000}>
+          <Fade cascade delay={1500}>
             <p>{description}</p>
             <VacancyConditionsContainer>
-              <h3 style={{marginBottom: '20px'}}>{text.CONDITIONS}:</h3>
+              <h3 style={{ marginBottom: '20px' }}>{text.RESPONSIBILITIES}:</h3>
+              {responsibilities?.map((el, i) => (
+                <Fade duration={1500} cascade delay={1500} direction={'up'}>
+                  <VacancyConditionsRow key={i}>
+                    <Polygon />
+                    <p>{el}</p>
+                  </VacancyConditionsRow>
+                </Fade>
+              ))}
+            </VacancyConditionsContainer>
+            {fullEducation && (
+              <>
+                <h3 style={{ marginBottom: '20px' }}>{text.FULL_EDUCATION}:</h3>
+                <p>{fullEducation}</p>
+              </>
+            )}
+          </Fade>
+          <Fade cascade delay={2000}>
+            <VacancyConditionsContainer>
+              <h3 style={{ marginBottom: '20px' }}>{text.CONDITIONS}:</h3>
               {conditions?.map((el, i) => (
                 <Fade duration={1500} cascade delay={1500} direction={'up'}>
                   <VacancyConditionsRow key={i}>
-                    <Polygon/>
+                    <Polygon />
                     <p>{el}</p>
                   </VacancyConditionsRow>
                 </Fade>
@@ -166,6 +191,6 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
       {renderShowNumberDialog()}
     </>
   );
-}
+};
 
 export default Vacancy;

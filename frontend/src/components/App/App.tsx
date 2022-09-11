@@ -10,6 +10,7 @@ import Vacancies from '../Vacancies/Vacancies';
 import MainPage from '../MainPage/MainPage';
 import { vacanciesApi } from '../../utils/VacanciesApi';
 import Vacancy from '../Vacancy/Vacancy';
+import Admin from "../Admin/Admin";
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -56,6 +57,7 @@ function App() {
           element={<Vacancy vacancies={vacancies}/>}
         />
         <Route path="/contacts" element={<Contacts/>}/>
+        <Route path="/admin" element={<Admin/>}/>
       </Routes>
       <div style={{flexGrow: '1'}}/>
       <Footer/>

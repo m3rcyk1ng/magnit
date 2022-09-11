@@ -18,6 +18,14 @@ class ProjectsApi {
       credentials: 'include',
     }).then(this._checkStatus);
   }
+
+  deleteProject({ projectId }) {
+    return fetch(`${this._url}/${projectId}`, {
+      headers: this._headers,
+      method: 'DELETE',
+      credentials: 'include',
+    }).then(this._checkStatus);
+  }
 }
 
 export const projectApi = new ProjectsApi({

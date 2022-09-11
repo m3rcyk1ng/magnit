@@ -13,6 +13,8 @@ export interface IVacancyCard {
   salary: number;
   updatedBy: string;
   workload: string;
+  responsibilities?: string[];
+  fullEducation?: string;
   __v?: number;
   _id: string | undefined;
 }

@@ -29,6 +29,8 @@ router.post(
       workload: Joi.string().required(),
       description: Joi.string().required(),
       conditions: Joi.array().items(Joi.string().required()),
+      responsibilities: Joi.array().items(Joi.string().required()),
+      fullEducation: Joi.string(),
       phoneNumber: Joi.string().required(),
     }),
   }),

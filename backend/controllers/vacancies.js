@@ -19,6 +19,8 @@ module.exports.createVacancies = (req, res, next) => {
     workload,
     description,
     conditions,
+    fullEducation,
+    responsibilities,
     phoneNumber,
     vacancyId,
   } = req.body;
@@ -33,6 +35,8 @@ module.exports.createVacancies = (req, res, next) => {
     workload,
     description,
     conditions,
+    fullEducation,
+    responsibilities,
     phoneNumber,
     vacancyId,
   })
