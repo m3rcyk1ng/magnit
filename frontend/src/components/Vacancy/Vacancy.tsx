@@ -160,7 +160,7 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
               </>
             )}
           </Fade>
-          <Fade cascade delay={2000}>
+          <Fade cascade delay={200}>
             <p style={{whiteSpace: 'pre-wrap'}}>{description}</p>
             <VacancyConditionsContainer>
               <h3 style={{ marginBottom: '20px' }}>{text.CONDITIONS}:</h3>
