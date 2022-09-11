@@ -166,7 +166,7 @@ export const Title = styled.h4`
   margin-bottom: 10px;
 `;
 
-export const Email = styled.a`
+export const Email = styled.h3`
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.2;
@@ -176,10 +176,12 @@ export const Email = styled.a`
   color: ${theme.whiteColor};
 `;
 
-export const Paragraph = styled.p`
+export const Paragraph = styled.a`
   font-size: 0.875rem;
   line-height: 1.5;
   max-width: 286px;
+	text-decoration: none;
+	color: ${theme.whiteColor};
 
   @media (max-width: 1130px) {
     max-width: 200px;

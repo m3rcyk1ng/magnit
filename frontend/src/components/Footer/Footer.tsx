@@ -53,8 +53,8 @@ const Footer: FunctionComponent = () => {
           <Paragraph>{text.ADDRESS_TEXT}</Paragraph>
         </ColumnContainer>
         <ColumnContainer>
-          <Email href={`mailto:${text.EMAIL_TEXT}`}>{text.EMAIL}</Email>
-          <Paragraph>{text.EMAIL_TEXT}</Paragraph>
+          <Email>{text.EMAIL}</Email>
+          <Paragraph href={`mailto:${text.EMAIL_TEXT}`}>{text.EMAIL_TEXT}</Paragraph>
         </ColumnContainer>
       </ContactContainer>
       {mobile && <Copyright>&#169; {text.COPYRIGHT}</Copyright>}
