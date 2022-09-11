@@ -95,7 +95,7 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
         <ShowNumberDialog isPopupOpen={isShowNumberDialog}>
           <ShowNumberDialogTitle>{text.PLACEMENT}</ShowNumberDialogTitle>
           <ShowNumberDialogText>{text.PLACEMENT_DESC}</ShowNumberDialogText>
-          <ShowNumberDialogNumber>{text.NUMBER}</ShowNumberDialogNumber>
+          <ShowNumberDialogNumber href={`tel:${text.NUMBER}`}>{text.NUMBER}</ShowNumberDialogNumber>
           <ShowNumberCloseButton onClick={() => setIsShowNumberDialog(false)}>{text.CLOSE}</ShowNumberCloseButton>
         </ShowNumberDialog>
       </ShowNumberOverlay>

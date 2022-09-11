@@ -283,9 +283,13 @@ export const ShowNumberDialogText = styled.p `
   text-align: center;
   margin: 0 auto 1rem;
 `
-export const ShowNumberDialogNumber = styled.h3 `
+export const ShowNumberDialogNumber = styled.a `
   text-align: center;
   margin: 0 auto 2rem;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: 700;
+  color: ${theme.backgroundColor};
 `
 
 export const ShowNumberCloseButton = styled.button`
