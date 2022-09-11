@@ -172,8 +172,6 @@ export const Email = styled.h3`
   line-height: 1.2;
   text-transform: uppercase;
   margin-bottom: 10px;
-  text-decoration: none;
-  color: ${theme.whiteColor};
 `;
 
 export const Paragraph = styled.a`
