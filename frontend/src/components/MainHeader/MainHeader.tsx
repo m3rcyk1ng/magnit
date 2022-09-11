@@ -88,7 +88,7 @@ const MainHeader: FunctionComponent = () => {
           </TextWrapper>
           <Fade duration={1200} direction={'up'} cascade delay={1300} triggerOnce>
             <BlockRow>
-              <PhoneNumber>{text.PHONE_NUMBER}</PhoneNumber>
+              <PhoneNumber href={`tel:${text.NUMBER}`}>{text.PHONE_NUMBER}</PhoneNumber>
               <LanguageSwitcher>
                 <button>RU</button>
                 <button>EN</button>

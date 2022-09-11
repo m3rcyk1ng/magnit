@@ -99,7 +99,7 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
         <ShowNumberDialog isPopupOpen={isShowNumberDialog}>
           <ShowNumberDialogTitle>{text.PLACEMENT}</ShowNumberDialogTitle>
           <ShowNumberDialogText>{text.PLACEMENT_DESC}</ShowNumberDialogText>
-          <ShowNumberDialogNumber>{text.NUMBER}</ShowNumberDialogNumber>
+          <ShowNumberDialogNumber href={`tel:${text.NUMBER}`}>{text.NUMBER}</ShowNumberDialogNumber>
           <ShowNumberCloseButton onClick={() => setIsShowNumberDialog(false)}>
             {text.CLOSE}
           </ShowNumberCloseButton>
@@ -161,6 +161,7 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
             )}
           </Fade>
           <Fade cascade delay={2000}>
+            <p style={{whiteSpace: 'pre-wrap'}}>{description}</p>
             <VacancyConditionsContainer>
               <h3 style={{ marginBottom: '20px' }}>{text.CONDITIONS}:</h3>
               {conditions?.map((el, i) => (

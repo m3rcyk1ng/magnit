@@ -170,11 +170,13 @@ export const BlockRow = styled.div`
   }
 `;
 
-export const PhoneNumber = styled.p`
+export const PhoneNumber = styled.a`
   text-transform: initial;
   font-size: 1.3125rem;
   line-height: 1.22;
   font-weight: 700;
+  text-decoration: none;
+  color: ${theme.whiteColor};
 
   @media (max-width: 1150px) {
     font-size: 18px;

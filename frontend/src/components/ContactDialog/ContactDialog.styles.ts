@@ -18,8 +18,7 @@ export const ContactDialogWrapper = styled.div<{ isOpen: boolean }>`
   z-index: 2;
 `;
 
-export const ContactForm = styled.form<{ ContactImageBg: string }>`
-  width: 45rem;
+export const ContactForm = styled.form`
   min-height: 33rem;
   background-color: ${theme.whiteColor};
   display: flex;
@@ -29,10 +28,6 @@ export const ContactForm = styled.form<{ ContactImageBg: string }>`
   border: 2px ${theme.backgroundColor} solid;
   padding: 2rem 2rem;
   position: relative;
-  background-image: url(${(props) => props.ContactImageBg});
-  background-repeat: no-repeat;
-  background-position: bottom right 4rem;
-
   p {
     max-width: 27rem;
   }
@@ -44,7 +39,7 @@ export const InputContainer = styled.div`
   height: 3rem;
   margin-bottom: 1rem;
   width: 100%;
-
+  
   span {
     color: red;
     font-size: 0.75rem;
@@ -54,9 +49,23 @@ export const InputContainer = styled.div`
   }
 `;
 
+export const LeftWrapper = styled.div`
+  width: max-content;
+  border-right: 2px solid ${theme.backgroundColor};
+  padding-right: 2em;
+`;
+
+export const RightWrapper = styled.div`
+  width: 20em;
+  padding-left: 2em;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const TextareaContainer = styled(InputContainer)`
   height: 100%;
 	min-height: 6.5rem;
+  max-height: 17rem;
 `;
 
 export const ContactDialogTitle = styled.h3`
@@ -113,6 +122,7 @@ export const CloseButton = styled.div`
     opacity: 0.6;
     transition: 0.3s;
     cursor: pointer;
+    transform: scale(1.1);
   }
 `;
 
@@ -142,6 +152,7 @@ export const ContactDialogTextarea = styled.textarea`
 export const ContactDialogButtonSend = styled.button`
   padding: 1rem;
   max-width: 18.75rem;
+  margin: 2em auto 0;
   border-radius: 10px;
   text-transform: uppercase;
   color: ${theme.whiteColor};

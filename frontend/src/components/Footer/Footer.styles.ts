@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { theme } from '../../utils/Theme';
-import { Link } from 'react-router-dom';
+import {theme} from '../../utils/Theme';
+import {Link} from 'react-router-dom';
 
 export const StyledFooter = styled.footer`
   background-color: ${theme.backgroundColor};
@@ -126,10 +126,12 @@ export const ContactContainer = styled.div`
   }
 `;
 
-export const Number = styled.p`
+export const Number = styled.a`
   font-size: 1.5rem;
   line-height: 1.2;
   font-weight: 600;
+  text-decoration: none;
+  color: ${theme.whiteColor};
 
   @media (max-width: 1130px) {
     font-size: 1.25rem;
@@ -163,6 +165,17 @@ export const Title = styled.h4`
   text-transform: uppercase;
   margin-bottom: 10px;
 `;
+
+export const Email = styled.a`
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: ${theme.whiteColor};
+`;
+
 export const Paragraph = styled.p`
   font-size: 0.875rem;
   line-height: 1.5;
