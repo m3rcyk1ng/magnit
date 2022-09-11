@@ -114,8 +114,9 @@ export const VacancyConditionsContainer = styled.div `
 export const Polygon = styled.div`
   background-image: url(${polygon});
   background-repeat: no-repeat;
-  width: 0.75rem;
+  width: 1rem;
   height: 0.75rem;
+	margin-top: 2px;
   margin-right: 1rem;
 
   @media (max-width: 800px) {
@@ -131,7 +132,7 @@ export const Polygon = styled.div`
 
 export const VacancyConditionsRow = styled.div `
   display: flex;
-  align-items: center;
+  align-items: baseline;
 `
 
 export const VacancyButtons = styled.div `

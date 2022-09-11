@@ -122,7 +122,7 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
             <VacancyTitle>{name}</VacancyTitle>
           </Slide>
           <VacancyInfoText>
-            <Fade duration={1000} cascade delay={1500} direction={'right'}>
+            <Fade duration={1000} cascade delay={1500} direction={'right'} triggerOnce>
               <p style={{ textTransform: 'uppercase' }}>{text.SALARY + ':'}</p>
               <VacancyTextBold>{` ${toPrecision(salary, false)} ${text.RUB}`}</VacancyTextBold>
             </Fade>
@@ -130,7 +130,7 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
           <VacancyBlocksRow>
             {vacancyBlock.map((el) => (
               <VacancyInfoBlock>
-                <Fade duration={1000} cascade delay={1500} direction={'right'}>
+                <Fade duration={1000} cascade delay={1500} direction={'right'} triggerOnce>
                   <Icon image={el.icon} />
                   <VacancyTextBlockContainer>
                     <VacancyText>{el.title}</VacancyText>
@@ -140,12 +140,12 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
               </VacancyInfoBlock>
             ))}
           </VacancyBlocksRow>
-          <Fade cascade delay={1500}>
+          <Fade cascade delay={1500} triggerOnce>
             <p>{description}</p>
             <VacancyConditionsContainer>
               <h3 style={{ marginBottom: '20px' }}>{text.RESPONSIBILITIES}:</h3>
               {responsibilities?.map((el, i) => (
-                <Fade duration={1500} cascade delay={1500} direction={'up'}>
+                <Fade duration={1500} cascade delay={1500} direction={'up'} triggerOnce>
                   <VacancyConditionsRow key={i}>
                     <Polygon />
                     <p>{el}</p>
@@ -160,12 +160,11 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
               </>
             )}
           </Fade>
-          <Fade cascade delay={200}>
-            <p style={{whiteSpace: 'pre-wrap'}}>{description}</p>
+          <Fade cascade delay={200} triggerOnce>
             <VacancyConditionsContainer>
               <h3 style={{ marginBottom: '20px' }}>{text.CONDITIONS}:</h3>
               {conditions?.map((el, i) => (
-                <Fade duration={1500} cascade delay={1500} direction={'up'}>
+                <Fade duration={1500} cascade delay={1500} direction={'up'} triggerOnce>
                   <VacancyConditionsRow key={i}>
                     <Polygon />
                     <p>{el}</p>
@@ -175,12 +174,12 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
             </VacancyConditionsContainer>
           </Fade>
           <VacancyButtons>
-            <Fade direction={'up'} delay={2500} duration={1500}>
+            <Fade direction={'up'} delay={2500} duration={1500} triggerOnce>
               <VacancyRespondButton onClick={() => setIsContactDialogOpen(true)}>
                 {text.RESPOND_VACANCY}
               </VacancyRespondButton>
             </Fade>
-            <Fade direction={'up'} delay={3000} duration={1500}>
+            <Fade direction={'up'} delay={3000} duration={1500} triggerOnce>
               <VacancyShowNumberButton onClick={() => setIsShowNumberDialog(true)}>
                 {text.SHOW_NUMBER}
               </VacancyShowNumberButton>
