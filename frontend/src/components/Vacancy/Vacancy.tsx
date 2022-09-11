@@ -135,7 +135,7 @@ const Vacancy: FunctionComponent<IVacancies> = ({vacancies}) => {
             ))}
           </VacancyBlocksRow>
           <Fade cascade delay={2000}>
-            <p>{description}</p>
+            <p style={{whiteSpace: 'pre-wrap'}}>{description}</p>
             <VacancyConditionsContainer>
               <h3 style={{marginBottom: '20px'}}>{text.CONDITIONS}:</h3>
               {conditions?.map((el, i) => (
