@@ -115,8 +115,7 @@ export const Polygon = styled.div`
   background-image: url(${polygon});
   background-repeat: no-repeat;
   width: 1rem;
-  height: 0.75rem;
-	margin-top: 2px;
+  height: 0.7rem;
   margin-right: 1rem;
 
   @media (max-width: 800px) {

@@ -164,7 +164,7 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
             <VacancyConditionsContainer>
               <h3 style={{ marginBottom: '20px' }}>{text.CONDITIONS}:</h3>
               {conditions?.map((el, i) => (
-                <Fade duration={1500} cascade delay={1500} direction={'up'} triggerOnce>
+                <Fade duration={200} cascade delay={200} direction={'up'} triggerOnce>
                   <VacancyConditionsRow key={i}>
                     <Polygon />
                     <p>{el}</p>
@@ -174,12 +174,12 @@ const Vacancy: FunctionComponent<IVacancies> = ({ vacancies }) => {
             </VacancyConditionsContainer>
           </Fade>
           <VacancyButtons>
-            <Fade direction={'up'} delay={2500} duration={1500} triggerOnce>
+            <Fade direction={'up'} delay={200} duration={200} triggerOnce>
               <VacancyRespondButton onClick={() => setIsContactDialogOpen(true)}>
                 {text.RESPOND_VACANCY}
               </VacancyRespondButton>
             </Fade>
-            <Fade direction={'up'} delay={3000} duration={1500} triggerOnce>
+            <Fade direction={'up'} delay={1500} duration={1500} triggerOnce>
               <VacancyShowNumberButton onClick={() => setIsShowNumberDialog(true)}>
                 {text.SHOW_NUMBER}
               </VacancyShowNumberButton>
