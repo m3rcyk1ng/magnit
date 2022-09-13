@@ -102,7 +102,7 @@ export const VacancyInfoText = styled.span`
 
 export const VacancyTextBold = styled.span`
   font-weight: bold;
-  white-space: pre-wrap;
+  white-space: pre;
   line-height: 2rem;
   text-transform: uppercase;
 `;
