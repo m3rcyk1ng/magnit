@@ -42,7 +42,7 @@ const Project: FunctionComponent<IProjects> = ({projects}) => {
   const renderContactDialog = () => {
     return <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)}/>
   }
-  console.log('currentProject', currentProject);
+
   return (
     <>
       <Fade duration={2000} triggerOnce style={{width: '100%'}}>
@@ -59,8 +59,8 @@ const Project: FunctionComponent<IProjects> = ({projects}) => {
               <InfoBlock>
                 <Fade delay={1000} duration={1300} triggerOnce direction={'up'} cascade>
                   <p>{currentProject[0]?.street}</p>
-                  <p>{currentProject[0]?.year}</p>
-                  <p>{currentProject[0]?.squareMeters}</p>
+                  <p>{`Начало строительства: ${currentProject[0]?.year} год`}</p>
+                  <p>{`Общая площадь: ${currentProject[0]?.squareMeters}`}</p>
                   {currentProject[0]?.url && (<p>{currentProject[0]?.url}:</p>)}
                 </Fade>
               </InfoBlock>

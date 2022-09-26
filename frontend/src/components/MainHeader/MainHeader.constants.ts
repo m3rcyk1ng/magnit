@@ -19,5 +19,5 @@ export const MainHeaderPhotos = [
 ]
 
 export const PROJECT_OVERLAY = [
-  {title: 'ЖК "Lucky"', address: 'ул. 2-я Звенигородская, 12', id: '630269c26159a1b05fed6027'},
+  {title: 'ЖК "Lucky"', address: 'ул. 2-я Звенигородская, 12', id: '63314d7e5f301ab8ff64260f'},
 ]

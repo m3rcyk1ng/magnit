@@ -208,7 +208,14 @@ export const Box = styled.div`
   flex-direction: column;
   margin-right: 30px;
   max-width: 282px;
+  min-width: 282px;
+  min-height: 173px;
 
+  @media (max-width: 1270px) {
+    min-width: 0;
+    min-height: 0;
+  }
+  
   @media (max-width: 600px) {
     margin-right: 15px;
     padding-left: 1rem;
@@ -219,6 +226,7 @@ export const Box = styled.div`
 export const Image = styled.div<{ image: string }>`
   width: 90px;
   height: 89px;
+  background-size: contain;
   background-image: url(${(props) => props.image});
   margin-bottom: 1.25rem;
   background-repeat: no-repeat;
