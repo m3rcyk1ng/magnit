@@ -12,7 +12,7 @@ export interface IProjectCard {
   city: string;
   image: string;
   imageGallery: string[];
-  month: string;
+  month?: string;
   name: string;
   optionalBlock?: IOptionalBlock[];
   project: string;

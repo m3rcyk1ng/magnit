@@ -26,8 +26,7 @@ router.post('/projects', celebrate({
 				.required(),
 			year: Joi.string()
 				.required(),
-			month: Joi.string()
-				.required(),
+			month: Joi.string(),
 			city: Joi.string()
 				.required(),
 			project: Joi.string()
@@ -36,7 +35,6 @@ router.post('/projects', celebrate({
 				.required()
 				.pattern(urlRegExp),
 			url: Joi.string()
-				.required()
 				.pattern(urlRegExp),
 			name: Joi.string()
 				.required(),

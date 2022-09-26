@@ -42,7 +42,7 @@ const Project: FunctionComponent<IProjects> = ({projects}) => {
   const renderContactDialog = () => {
     return <ContactDialog isOpen={isContactDialogOpen} onClose={() => setIsContactDialogOpen(false)}/>
   }
-
+  console.log('currentProject', currentProject);
   return (
     <>
       <Fade duration={2000} triggerOnce style={{width: '100%'}}>
@@ -61,7 +61,7 @@ const Project: FunctionComponent<IProjects> = ({projects}) => {
                   <p>{currentProject[0]?.street}</p>
                   <p>{currentProject[0]?.year}</p>
                   <p>{currentProject[0]?.squareMeters}</p>
-                  <p>{currentProject[0]?.url}:</p>
+                  {currentProject[0]?.url && (<p>{currentProject[0]?.url}:</p>)}
                 </Fade>
               </InfoBlock>
               <Button onClick={() => setIsContactDialogOpen(true)}>{text.ASK_QUESTION}</Button>

@@ -19,8 +19,5 @@ export const MainHeaderPhotos = [
 ]
 
 export const PROJECT_OVERLAY = [
-  {title: 'VESPER TVERSKAYA', address: 'УЛ. 1-Я ТВЕРСКАЯ-ЯМСКАЯ, 2', id: '630269c26159a1b05fed6027'},
-  {title: 'VESPER NE TVERSKAYA', address: 'УЛ. 2-Я ТВЕРСКАЯ-ЯМСКАЯ, 2', id: '6306006d556581bdbfd6c07d'},
-  {title: 'VESPER POD TVERSKOY', address: 'УЛ. 3-Я ТВЕРСКАЯ-ЯМСКАЯ', id: '63060091556581bdbfd6c083'},
-  {title: 'VESPER ZA TVERSKOY', address: 'УЛ. 4-Я ТВЕРСКАЯ-ЯМСКАЯ', id: '630600b6556581bdbfd6c089'}
+  {title: 'ЖК "Lucky"', address: 'ул. 2-я Звенигородская, 12', id: '630269c26159a1b05fed6027'},
 ]

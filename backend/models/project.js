@@ -12,7 +12,7 @@ const projectSchema = new mongoose.Schema({
 	},
 	month: {
 		type: String,
-		required: true,
+		required: false,
 	},
 	city: {
 		type: String,
@@ -31,7 +31,7 @@ const projectSchema = new mongoose.Schema({
 	},
 	url: {
 		type: String,
-		required: true,
+		required: false,
 		validate: {
 			validator: (url) => isUrl(url),
 		},

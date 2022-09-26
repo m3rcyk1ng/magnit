@@ -29,7 +29,8 @@ const ProjectCard: FunctionComponent<any> = (props) => {
         <LeftBlock>
           <Slide direction={'up'} duration={1500} triggerOnce delay={2000}>
             <InfoRow>
-              <InfoText>{month}</InfoText>
+              {month && (
+                <InfoText>{month}</InfoText>)}
               <Polygon/>
               <InfoText>{year}</InfoText>
               <Polygon/>

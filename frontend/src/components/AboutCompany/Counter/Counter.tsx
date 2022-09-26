@@ -21,8 +21,8 @@ export const Counter: FunctionComponent<ICounter> = ({end, index, showDesc}) => 
       if (currVal > end) setCurrVal(end);
       if (currVal === end) setShowDescription(true);
     }, [currVal]);
-    if (index === 0 && currVal === 108000) return `${Math.ceil(currVal)} м³`;
-    if (index === 3 && currVal === 200) return `${currVal}+`
+    if (index === 1 && currVal === 108) return `${Math.ceil(currVal)} тыс. м³`;
+    if (index === 3 && currVal === 400) return `${currVal}+`
     return Math.ceil(currVal);
   }
 
