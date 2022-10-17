@@ -69,7 +69,7 @@ const Project: FunctionComponent<IProjects> = ({projects}) => {
           </Block>
           <RowImages>
             <Fade cascade duration={1000} triggerOnce direction={'bottom-right'}>
-              {currentProject[0]?.imageGallery?.reverse().slice(0, 3).map((el: string | undefined) => (
+              {currentProject[0]?.imageGallery?.slice(0, 3).reverse().map((el: string | undefined) => (
                 <img src={el} alt={text.PROJECT_IMAGE} className={'row-el'}/>
               ))}
             </Fade>
